@@ -6,6 +6,8 @@ import styled from "styled-components"
 const Logo = styled(`a`)`
   max-width: 25%;
   float: left;
+  display: block;
+  padding: 10px;
 `
 
 const Menu = styled(`ul`)`
@@ -33,10 +35,8 @@ const Hamburger = styled(`p`)`
     float: right;
   }
 `
-
-// list fr mt3  mw6
 const Header = () => (
-  <header className="h2 mb3">
+  <header className="h2 mv3">
     <Menu>
       <li className="inline-flex mr4">
         <Link className="no-underline black" to="">
@@ -67,7 +67,7 @@ const Header = () => (
     <Hamburger>Bro</Hamburger>
     <Logo>
       <img
-        className="w-auto v-top h4 pt3"
+        className="w-auto v-top h4"
         src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/107805819_1618135975008618_6871536287947456080_o.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=jqGke2Vgv-8AX-J0zaJ&_nc_ht=scontent-iad3-1.xx&oh=67ca6f78889def9af017274ee3d054c8&oe=5FDA4176"
       />
     </Logo>

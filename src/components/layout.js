@@ -7,44 +7,55 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { mq, gutter, offset, offsetXxl } from "../utils/presets"
+import styled from "styled-components"
 
 import Header from "./header"
-import "./layout.css"
 import "./tachyons.min.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const Container = styled(`div`)`
+  margin-top: calc(67vh - ${gutter.default});
+  padding: ${gutter.default};
+  ${mq.tablet} {
+    margin-left: ${offset};
+    margin-top: 0;
+    max-width: 37.5rem;
+    padding: ${gutter.tablet};
+    position: relative;
+  }
+  ${mq.desktop} {
+    padding: ${gutter.desktop};
+    padding-top: ${gutter.tablet};
+  }
+  ${mq.xxl} {
+    margin-left: ${offsetXxl};
+  }
+`
 
+const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
+      <Container>
+        <div
           style={{
-            marginTop: `2rem`,
+            margin: `0 auto`,
+            maxWidth: 960,
+            padding: `0 1.0875rem 1.45rem`,
           }}
         >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+          <main>{children}</main>
+          <footer
+            style={{
+              marginTop: `2rem`,
+            }}
+          >
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.com">Gatsby</a>
+          </footer>
+        </div>
+      </Container>
     </>
   )
 }
