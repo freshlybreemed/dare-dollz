@@ -17,6 +17,8 @@ Dare Dollz are stylish, bold, and provocative. Here you can purchase Dare Dollz 
 - **GraphQL**
 
 - **Shopify**
+
+- **Contenful**
 ## 🧐 What's inside?
 
 
