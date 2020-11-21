@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 
-import SEO from '~/components/seo'
-import ProductForm from '~/components/ProductForm'
+import SEO from '../components/seo'
+import ProductForm from '../components/ProductForm'
 import {
   Img,
 
-} from '~/utils/styles'
+} from '../utils/styles'
 import { ProductTitle, ProductDescription, ProductContainer, GridLeftContainer, GridRightContainer } from './styles'
 
 const ProductPage = ({ data }) => {

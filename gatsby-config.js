@@ -7,7 +7,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Dare Dollz`,
-    description: `Kick off your next, ecommerce experience with this Gatsby starter. This starter ships with credentials to a shopify demo store so you can try it out immediately.`,
+    description: `Created by @dariusxmoreno & @daremoreno`,
     author: `@freshlybreemed`,
   },
   plugins: [
