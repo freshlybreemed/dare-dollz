@@ -17,7 +17,7 @@ exports.createPages = ({ graphql, actions }) => {
       console.log(node.handle)
       createPage({
         path: `/product/${node.handle}/`,
-        component: path.resolve(`./src/templates/ProductPage.js`),
+        component: path.resolve(`./src/templates/ProductPage.tsx`),
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.

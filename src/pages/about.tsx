@@ -1,8 +1,16 @@
 
 import React from 'react'
-import { Link } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby"
 import styled from '@emotion/styled'
 import SEO from '../components/seo'
+
+import {
+  Img,
+  Container,
+  TwoColumnGrid,
+  GridLeft,
+  GridRight,
+} from '../utils/styles'
 
 const Paragraph = styled.p`
   font-size: 1.1rem;
@@ -22,9 +30,29 @@ const Header = styled.span`
 
  `
 const AboutPage = () => {
+  const {file} = useStaticQuery(graphql`
+    {
+      file(relativePath: {in: "founders.jpg"}) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+    }
+  `)
   return (
     <Wrapper>
-    <SEO title="About" keywords={[`dare moreno`, `darius moreno`, `dare dollz`]} />
+      <Container>
+        <TwoColumnGrid>
+          <GridLeft>
+            <Img fluid={file.childImageSharp.fluid}/>
+            <Img fluid={file.childImageSharp.fluid}/>
+          </GridLeft>
+          <GridRight>
+
     <Header>Darius Moreno</Header>
     <Paragraph>Darius is an L.A. based artist who works in 2D and 3D mediums, predominately sculpture and 
       paintings. His work is inspired by the grit of hip hop culture. This is evident when before he received
@@ -49,6 +77,10 @@ const AboutPage = () => {
 
 
 </Paragraph>
+          </GridRight>
+        </TwoColumnGrid>
+      </Container>
+    <SEO title="About" keywords={[`dare moreno`, `darius moreno`, `dare dollz`]} />
   </Wrapper>
   )
 }
