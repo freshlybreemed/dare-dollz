@@ -18,7 +18,7 @@ export const GlobalStyle = props => (
         margin: 0;
       }
       html {
-        font-family: sans-serif;
+        font-family: Helvetica Neue LT Std,Helvetica Neue,sans-serif;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
       }
