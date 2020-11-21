@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
-    <img alt="DareDollz" src="https://s.w.org/images/core/emoji/13.0.0/svg/1f331.svg" width="60" />
+    <img alt="DareDollz" src="https://bubblegumclub.co.za/wp-content/uploads/2019/12/dare-dollz-1.jpg" width="100" />
   </a>
 </p>
 <h1 align="center">
@@ -19,10 +19,7 @@ Dare Dollz are stylish, bold, and provocative. Here you can purchase Dare Dollz 
 - **Shopify**
 
 - **Contentful**
-## 🧐 What's inside?
 
-
-## 🎓 Learning Dare Dollz 
 Follow the founders @daremoreno @dariusxmoreno
 
 <!-- AUTO-GENERATED-CONTENT:END -->
