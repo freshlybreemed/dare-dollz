@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.com">
-    <img alt="DareDollz" src="https://bubblegumclub.co.za/wp-content/uploads/2019/12/dare-dollz-1.jpg" width="100" />
+    <img alt="DareDollz" src="https://bubblegumclub.co.za/wp-content/uploads/2019/12/dare-dollz-1.jpg" width="400" />
   </a>
 </p>
 <h1 align="center">
