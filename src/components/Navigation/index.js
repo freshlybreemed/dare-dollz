@@ -30,7 +30,7 @@ const Navigation = ({ siteTitle, logo }) => {
     <Wrapper>
       <Container>
         {/* <MenuLink to="/">{siteTitle}</MenuLink> */}
-        <MenuLogoWrapper>
+        <MenuLogoWrapper to="/">
 
         <MenuLogo 
 fluid={fluid}/>
@@ -39,7 +39,7 @@ fluid={fluid}/>
         <MenuLink to="/about">About</MenuLink>
         <MenuLink to="/">Dollz</MenuLink>
         <MenuLink to="/">Vidoes</MenuLink>
-        <MenuLink to="/">Comics</MenuLink>
+        <MenuLink to="/comics">Comics</MenuLink>
         <MenuLink to="/">Studio</MenuLink>
         <MenuLink to="/cart">
           {hasItems && <CartCounter>{quantity}</CartCounter>}
