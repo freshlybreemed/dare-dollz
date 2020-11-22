@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
-import reduce from 'lodash/reduce'
-import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import React, { useContext, useState } from "react"
+import reduce from "lodash/reduce"
+import PropTypes from "prop-types"
+import classnames from "classnames"
+import "./hamburgers.min.css"
 
-import StoreContext from '~/context/StoreContext'
+import StoreContext from "~/context/StoreContext"
 import {
   CartCounter,
   Container,
@@ -11,12 +12,13 @@ import {
   MenuLinks,
   MenuLogo,
   Wrapper,
-  MenuLogoWrapper
-} from './styles'
+  MenuLogoWrapper,
+  HamburgerWrapper
+} from "./styles"
 
 const useQuantity = () => {
   const {
-    store: { checkout },
+    store: { checkout }
   } = useContext(StoreContext)
   const items = checkout ? checkout.lineItems : []
   const total = reduce(items, (acc, item) => acc + item.quantity, 0)
@@ -25,38 +27,50 @@ const useQuantity = () => {
 
 const Navigation = ({ siteTitle, logo }) => {
   const [hasItems, quantity] = useQuantity()
-  const {childImageSharp:  {fluid}   } = logo
-  return (   
+  const [hamburgerActive, setHamburgerActive] = useState(false)
+  return (
     <Wrapper>
       <Container>
         {/* <MenuLink to="/">{siteTitle}</MenuLink> */}
         <MenuLogoWrapper to="/">
-
-        <MenuLogo 
-fluid={fluid}/>
+          <MenuLogo src={logo} />
         </MenuLogoWrapper>
         <MenuLinks>
-        <MenuLink to="/about">About</MenuLink>
-        <MenuLink to="/">Dollz</MenuLink>
-        <MenuLink to="/">Vidoes</MenuLink>
-        <MenuLink to="/comics">Comics</MenuLink>
-        <MenuLink to="/">Studio</MenuLink>
-        <MenuLink to="/cart">
-          {hasItems && <CartCounter>{quantity}</CartCounter>}
-          Cart 🛍
-        </MenuLink>
+          <MenuLink to="/about">About</MenuLink>
+          <MenuLink to="/">Dollz</MenuLink>
+          <MenuLink to="/">Vidoes</MenuLink>
+          <MenuLink to="/comics">Comics</MenuLink>
+          <MenuLink to="/">Studio</MenuLink>
+          <MenuLink to="/cart">
+            {hasItems && <CartCounter>{quantity}</CartCounter>}
+            Cart 🛍
+          </MenuLink>
         </MenuLinks>
+        <HamburgerWrapper>
+          <button
+            onClick={() => setHamburgerActive(!hamburgerActive)}
+            class={`hamburger hamburger--collapse ${classnames({
+              "is-active": hamburgerActive
+            })}`}
+            style={{ outline: "none", padding: "none" }}
+            type="button"
+          >
+            <span class="hamburger-box">
+              <span class="hamburger-inner"></span>
+            </span>
+          </button>
+        </HamburgerWrapper>
       </Container>
     </Wrapper>
   )
 }
 
 Navigation.propTypes = {
-  siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string
 }
 
 Navigation.defaultProps = {
-  siteTitle: ``,
+  siteTitle: ``
 }
 
 export default Navigation

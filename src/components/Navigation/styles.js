@@ -1,8 +1,8 @@
-import styled from '@emotion/styled'
-import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import styled from "@emotion/styled"
+import { Link } from "gatsby"
+import Img from "gatsby-image"
 
-import { breakpoints } from '../../utils/styles'
+import { breakpoints } from "../../utils/styles"
 
 export const Wrapper = styled.div`
   margin-bottom: 1.45rem;
@@ -12,7 +12,6 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 1.45rem;
   margin: 0 auto;
   max-width: 960px;
 `
@@ -32,11 +31,24 @@ export const MenuLink = styled(Link)`
     justify-content: center;
   }
 `
-export const MenuLogo = styled(Img)`
-  width:100px;
-  height:100px;
+export const MenuLogo = styled.img`
   float: left;
-
+  padding-top: 1rem;
+  padding-left: 0.6rem;
+  @media (max-width: ${breakpoints.s}px) {
+    width: 100px;
+  }
+  @media (min-width: ${breakpoints.s}px) {
+    width: 120px;
+  }
+`
+export const HamburgerWrapper = styled.div`
+  display: flex;
+  @media (min-width: 700px) {
+    float: right;
+    display: none;
+    justify-content: center;
+  }
 `
 export const MenuLogoWrapper = styled(Link)`
   line-height: 0;
@@ -58,7 +70,6 @@ export const MenuLinks = styled(Link)`
 `
 
 export const CartCounter = styled.span`
-  background-color: white;
   color: #663399;
   border-radius: 20px;
   padding: 0 10px;
