@@ -1,7 +1,10 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled"
 
-import { breakpoints } from '../../utils/styles'
+import { breakpoints } from "../../utils/styles"
 
+export const Wrapper = styled.div`
+  padding-top: 2rem;
+`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -19,18 +22,15 @@ export const Product = styled.div`
 `
 
 export const Title = styled.span`
-  font-weight: 300;
   font-size: 1.2rem;
   text-align: center;
 `
 
 export const PriceTag = styled.span`
-  font-weight: 300;
-  font-size: 1rem;
   text-align: center;
   margin-top: 15px;
 
   :before {
-    content: '- ';
+    content: "- ";
   }
 `
