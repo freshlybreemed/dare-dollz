@@ -4,6 +4,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import SEO from "../components/seo"
 import ProductGrid from "../components/ProductGrid"
 import styled from "@emotion/styled"
+import logoGIF from "../images/logo.gif"
 
 import { breakpoints, Img } from "../utils/styles"
 
@@ -47,7 +48,7 @@ const IndexPage = () => {
     <>
       <SEO
         title="Dare Dollz"
-        image={allContentfulHomePage.edges[0].node.photos[0].fluid.src}
+        image={logoGIF}
         keywords={[`dare dollz`, `daredollz`]}
       />
       <Wrapper>
