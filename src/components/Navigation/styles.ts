@@ -21,6 +21,10 @@ export const MenuLink = styled(Link)`
   color: black;
   text-transform: uppercase;
   text-decoration: none;
+  font-weight: 700;
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
   padding-top: 1rem;
   margin-top: 1rem;
   margin-right: 30px;
@@ -39,8 +43,9 @@ export const MenuLogo = styled.img`
   float: left;
   padding-top: 1rem;
   padding-left: 0.6rem;
+  vertical-align: middle;
   @media (max-width: ${breakpoints.s}px) {
-    width: 100px;
+    width: 90px;
   }
   @media (min-width: ${breakpoints.s}px) {
     width: 120px;
@@ -48,6 +53,7 @@ export const MenuLogo = styled.img`
 `
 export const HamburgerWrapper = styled.div`
   display: flex;
+  /* vertical-align:middle; */
   @media (min-width: 700px) {
     float: right;
     display: none;
@@ -61,7 +67,7 @@ export const MenuLogoWrapper = styled(Link)`
   height: 60px;
 `
 
-export const MenuLinks = styled(Link)`
+export const MenuLinks = styled.div`
   float: right;
   z-index: 890;
   display: none;
