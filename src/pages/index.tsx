@@ -43,10 +43,13 @@ const IndexPage = () => {
       }
     }
   `)
-  console.log(allContentfulHomePage)
   return (
     <>
-      <SEO title="Dare Dollz" keywords={[`dare dollz`, `daredollz`]} />
+      <SEO
+        title="Dare Dollz"
+        image={allContentfulHomePage.edges[0].node.photos[0].fluid.src}
+        keywords={[`dare dollz`, `daredollz`]}
+      />
       <Wrapper>
         <Img fluid={allContentfulHomePage.edges[0].node.photos[0].fluid} />
 
