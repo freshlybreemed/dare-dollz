@@ -1,6 +1,6 @@
-const path = require('path')
+const path = require("path")
 
-require('dotenv').config({
+require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
 })
 
@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: `Dare Dollz`,
     description: `Created by @dariusxmoreno & @daremoreno`,
-    author: `@freshlybreemed`,
+    author: `@freshlybreemed`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,8 +16,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -31,8 +31,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-      },
+        icon: `src/images/gatsby-icon.png` // This path is relative to the root of the site.
+      }
     },
     {
       resolve: `gatsby-source-shopify`,
@@ -40,7 +40,7 @@ module.exports = {
         // The domain name of your Shopify shop. This is required.
         // Example: 'gatsby-source-shopify-test-shop' if your Shopify address is
         // 'gatsby-source-shopify-test-shop.myshopify.com'.
-        shopName: process.env.SHOP_NAME,
+        shopName: process.env.GATSBY_SHOP_NAME,
 
         // An API access token to your Shopify shop. This is required.
         // You can generate an access token in the "Manage private apps" section
@@ -48,39 +48,39 @@ module.exports = {
         // to select "Allow this app to access your storefront data using the
         // Storefront API".
         // See: https://help.shopify.com/api/custom-storefronts/storefront-api/getting-started#authentication
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
 
         // Set verbose to true to display a verbose output on `npm run develop`
         // or `npm run build`. This prints which nodes are being fetched and how
         // much time was required to fetch and process the data.
         // Defaults to true.
-        verbose: true,
-      },
+        verbose: true
+      }
     },
     {
-      resolve: 'gatsby-plugin-root-import',
+      resolve: "gatsby-plugin-root-import",
       options: {
-        '~': path.join(__dirname, 'src/'),
-      },
+        "~": path.join(__dirname, "src/")
+      }
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-134421805-1",
         anonymize: true,
-        respectDNT: true,
-      },
+        respectDNT: true
+      }
     },
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `ahava7ytbjix`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
-    },
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ],
+  ]
 }
