@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import "./hamburgers.min.css"
 
-import StoreContext from "~/context/StoreContext"
+import StoreContext from "../../context/StoreContext"
 import {
   CartCounter,
   Container,
@@ -25,9 +25,13 @@ const useQuantity = () => {
   return [total !== 0, total]
 }
 
-const Navigation = ({ siteTitle, logo }) => {
+const Navigation = ({
+  siteTitle,
+  logo,
+  hamburgerActive,
+  setHamburgerActive
+}) => {
   const [hasItems, quantity] = useQuantity()
-  const [hamburgerActive, setHamburgerActive] = useState(false)
   return (
     <Wrapper>
       <Container>
@@ -36,7 +40,7 @@ const Navigation = ({ siteTitle, logo }) => {
         </MenuLogoWrapper>
         <MenuLinks>
           <MenuLink to="/">Dollz</MenuLink>
-          <MenuLink to="/">Videos</MenuLink>
+          <MenuLink to="/shop">Shop</MenuLink>
           <MenuLink to="/comics">Comics</MenuLink>
           <MenuLink to="/studio">Studio</MenuLink>
           <MenuLink to="/cart">
@@ -48,14 +52,14 @@ const Navigation = ({ siteTitle, logo }) => {
           <button
             aria-label="menu"
             onClick={() => setHamburgerActive(!hamburgerActive)}
-            class={`hamburger hamburger--collapse ${classnames({
+            className={`hamburger hamburger--collapse ${classnames({
               "is-active": hamburgerActive
             })}`}
             style={{ outline: "none", padding: "none" }}
             type="button"
           >
-            <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
+            <span className="hamburger-box">
+              <span className="hamburger-inner"></span>
             </span>
           </button>
         </HamburgerWrapper>

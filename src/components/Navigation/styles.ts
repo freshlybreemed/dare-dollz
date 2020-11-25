@@ -4,7 +4,9 @@ import { Link } from "gatsby"
 import { breakpoints } from "../../utils/styles"
 
 export const Wrapper = styled.div`
-  margin-bottom: 1.45rem;
+  margin-bottom: 2rem;
+  /* position:  ; */
+  /* top: 0; */
 `
 
 export const Container = styled.div`
@@ -23,7 +25,10 @@ export const MenuLink = styled(Link)`
   margin-top: 1rem;
   margin-right: 30px;
   font-size: 1.25rem;
-
+  transition: opacity 0.15s ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
   @media (max-width: ${breakpoints.s}px) {
     float: right;
     display: flex;
@@ -55,11 +60,12 @@ export const MenuLogoWrapper = styled(Link)`
   display: inline-block;
   height: 60px;
 `
+
 export const MenuLinks = styled(Link)`
-  float: right
+  float: right;
   z-index: 890;
   display: none;
-  text-decoration:none;
+  text-decoration: none;
   @media (min-width: 700px) {
     float: right;
     display: flex;
