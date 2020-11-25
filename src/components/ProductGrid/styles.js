@@ -24,6 +24,7 @@ export const Product = styled.div`
 export const Title = styled.span`
   font-size: 1.2rem;
   text-align: center;
+  text-transform: uppercase;
 `
 
 export const PriceTag = styled.span`

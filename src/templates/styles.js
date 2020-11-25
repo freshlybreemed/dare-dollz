@@ -20,6 +20,7 @@ export const ProductContainer = styled.div`
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  padding: 1.5rem 1.3rem 1.3rem 1.5rem;
 `
 export const ProductTitle = styled.h1`
   font-size: 2.25rem;
@@ -30,6 +31,8 @@ export const ProductTitle = styled.h1`
   font-weight: 400;
   margin: 0 0 0.5rem;
   line-height: 1.4;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d4d4d4;
 `
 
 export const ProductDescription = styled.div`

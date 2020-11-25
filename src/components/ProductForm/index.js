@@ -2,8 +2,25 @@ import React, { useState, useContext, useEffect, useCallback } from "react"
 import find from "lodash/find"
 import isEqual from "lodash/isEqual"
 import PropTypes from "prop-types"
+import classnames from "classnames"
 
 import StoreContext from "~/context/StoreContext"
+import {
+  Label,
+  Option,
+  OptionsList,
+  OptionsWrapper,
+  SelectedValue,
+  QuantityInput,
+  QuantityWrapper,
+  AddToCartContainer,
+  AddToCartWrapper,
+  AddToCartButton,
+  QuantityContainer,
+  Add,
+  Minus,
+  Value
+} from "./styles"
 
 const ProductForm = ({ product }) => {
   const {
@@ -22,6 +39,7 @@ const ProductForm = ({ product }) => {
   const productVariant =
     client.product.helpers.variantForOptions(product, variant) || variant
   const [available, setAvailable] = useState(productVariant.availableForSale)
+  console.log(product)
 
   const checkAvailability = useCallback(
     productId => {
@@ -98,45 +116,64 @@ const ProductForm = ({ product }) => {
   return (
     <>
       <h3>{price}</h3>
-      {options.map(({ id, name, values }, index) => (
-        <React.Fragment key={id}>
-          <label htmlFor={name}>{name} </label>
-          <select
-            name={name}
-            key={id}
-            onBlur={event => handleOptionChange(index, event)}
-          >
-            {values.map(value => (
-              <option
-                value={value}
-                key={`${name}-${value}`}
-                disabled={checkDisabled(name, value)}
+      <OptionsWrapper>
+        {options.map(({ id, name, values }, index) => (
+          <Label key={id}>
+            <label htmlFor={name}>{`${name}: `} </label>
+            <SelectedValue>
+              <OptionsList>
+                {/* <select
+              name={name}
+              key={id}
+              onBlur={event => handleOptionChange(index, event)}
+            > */}
+                {values.map(value => (
+                  <Option>
+                    {/* <option */}
+                    {/* value={value}
+                    key={`${name}-${value}`}
+                    disabled={checkDisabled(name, value)}
+                  > */}
+                    {value}
+                    {/* </option> */}
+                  </Option>
+                ))}
+                {/* </select> */}
+                <br />
+              </OptionsList>
+            </SelectedValue>
+          </Label>
+        ))}
+        <Label>
+          <label htmlFor="quantity">Quantity: </label>
+          <AddToCartContainer>
+            <AddToCartWrapper>
+              <QuantityContainer>
+                <QuantityWrapper>
+                  <Add>+</Add>
+                  <Minus>-</Minus>
+                  <QuantityInput
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    min="1"
+                    step="1"
+                    onChange={handleQuantityChange}
+                    value={quantity}
+                  />
+                </QuantityWrapper>
+              </QuantityContainer>
+              <AddToCartButton
+                type="submit"
+                disabled={!available || adding}
+                onClick={handleAddToCart}
               >
-                {value}
-              </option>
-            ))}
-          </select>
-          <br />
-        </React.Fragment>
-      ))}
-      <label htmlFor="quantity">Quantity </label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-      />
-      <br />
-      <button
-        type="submit"
-        disabled={!available || adding}
-        onClick={handleAddToCart}
-      >
-        Add to Cart
-      </button>
+                Add to Cart
+              </AddToCartButton>
+            </AddToCartWrapper>
+          </AddToCartContainer>
+        </Label>
+      </OptionsWrapper>
       {!available && <p>This Product is out of Stock!</p>}
     </>
   )
