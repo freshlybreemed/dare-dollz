@@ -54,7 +54,6 @@ export const MenuLogoWrapper = styled(Link)`
   margin: 0;
   display: inline-block;
   height: 60px;
-}
 `
 export const MenuLinks = styled(Link)`
   float: right
