@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 `
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 2.5rem;
 
   @media (max-width: ${breakpoints.s}px) {
@@ -22,9 +22,13 @@ export const Product = styled.div`
 `
 
 export const Title = styled.span`
-  font-size: 1.2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  top: 50%;
+  width: 100%;
   text-align: center;
-  text-transform: uppercase;
+  opacity: 0;
 `
 
 export const PriceTag = styled.span`
