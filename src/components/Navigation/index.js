@@ -36,7 +36,7 @@ const Navigation = ({ siteTitle, logo }) => {
         </MenuLogoWrapper>
         <MenuLinks>
           <MenuLink to="/">Dollz</MenuLink>
-          <MenuLink to="/">Vidoes</MenuLink>
+          <MenuLink to="/">Videos</MenuLink>
           <MenuLink to="/comics">Comics</MenuLink>
           <MenuLink to="/studio">Studio</MenuLink>
           <MenuLink to="/cart">
