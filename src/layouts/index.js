@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
@@ -6,15 +6,11 @@ import ContextProvider from "~/provider/ContextProvider"
 import logoGIF from "../images/logo.gif"
 import { GlobalStyle } from "~/utils/styles"
 import Navigation from "~/components/Navigation"
-
-const Wrapper = styled.div`
-  margin: 0 auto x
-  max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
-`
-
-const Page = styled.div``
+import { Wrapper, Page } from "./styles"
+import { Mobile, MobileLinks } from "./styles"
 const Layout = ({ children }) => {
+  const [hamburgerActive, setHamburgerActive] = useState(false)
+
   return (
     <ContextProvider>
       <GlobalStyle />
@@ -31,9 +27,18 @@ const Layout = ({ children }) => {
         render={data => (
           <Page>
             <Navigation
+              hamburgerActive={hamburgerActive}
+              setHamburgerActive={setHamburgerActive}
               logo={logoGIF}
               siteTitle={data.site.siteMetadata.title}
             />
+            <Mobile style={hamburgerActive ? { width: "100%" } : {}}>
+              <MobileLinks>About</MobileLinks>
+              <MobileLinks href="#">Services</MobileLinks>
+              <MobileLinks href="#">Clients</MobileLinks>
+              <MobileLinks href="#">Contact</MobileLinks>
+            </Mobile>
+
             <Wrapper>
               {children}
               <footer></footer>
@@ -46,7 +51,7 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

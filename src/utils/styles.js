@@ -1,13 +1,13 @@
-import React from 'react'
-import Image from 'gatsby-image'
-import styled from '@emotion/styled'
-import { Global, css } from '@emotion/core'
+import React from "react"
+import Image from "gatsby-image"
+import styled from "@emotion/styled"
+import { Global, css } from "@emotion/core"
 
 export const breakpoints = {
   s: 576,
   m: 768,
   l: 992,
-  xl: 1200,
+  xl: 1200
 }
 
 export const GlobalStyle = props => (
@@ -18,7 +18,7 @@ export const GlobalStyle = props => (
         margin: 0;
       }
       html {
-        font-family: Helvetica Neue LT Std,Helvetica Neue,sans-serif;
+        font-family: Helvetica Neue LT Std, Helvetica Neue, sans-serif;
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
       }
@@ -27,7 +27,7 @@ export const GlobalStyle = props => (
 )
 
 export const Img = styled(Image)`
-  max-width: 100 %;
+  max-width: 100%;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -36,6 +36,10 @@ export const Img = styled(Image)`
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  transition: opacity 0.15s ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
 `
 
 export const Container = styled.div`
@@ -47,7 +51,7 @@ export const TwoColumnGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 2rem 1fr;
   grid-template-rows: 1auto;
-  grid-template-areas: 'left . right';
+  grid-template-areas: "left . right";
 
   @media (max-width: ${breakpoints.l}px) {
     display: block;

@@ -1,21 +1,75 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import ProductGrid from "../components/ProductGrid"
 import styled from "@emotion/styled"
 
+import { breakpoints, Img } from "../utils/styles"
+
 export const Wrapper = styled.div`
   padding-top: 2rem;
 `
+export const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 
-const IndexPage = () => (
-  <>
-    <SEO title="Dare Dollz" keywords={[`dare dollz`, `daredollz`]} />
-    <Wrapper>
-      <ProductGrid />
-    </Wrapper>
-  </>
-)
+  @media (max-width: ${breakpoints.s}px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
+
+export const Product = styled.div`
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+`
+
+const IndexPage = () => {
+  const { allContentfulHomePage } = useStaticQuery(graphql`
+    query {
+      allContentfulHomePage {
+        edges {
+          node {
+            id
+            photos {
+              fluid {
+                ...GatsbyContentfulFluid_noBase64
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+  console.log(allContentfulHomePage)
+  return (
+    <>
+      <SEO title="Dare Dollz" keywords={[`dare dollz`, `daredollz`]} />
+      <Wrapper>
+        <Img fluid={allContentfulHomePage.edges[0].node.photos[0].fluid} />
+
+        <Grid>
+          {allContentfulHomePage.edges[0].node.photos.map((curr, id) => {
+            return (
+              id > 0 && (
+                <Product key={id}>
+                  <Link to="">
+                    {" "}
+                    <Img
+                      fluid={curr.fluid}
+                      // alt={handle}
+                    />
+                  </Link>
+                </Product>
+              )
+            )
+          })}
+        </Grid>
+      </Wrapper>
+    </>
+  )
+}
 
 export default IndexPage
