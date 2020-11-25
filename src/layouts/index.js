@@ -33,10 +33,10 @@ const Layout = ({ children }) => {
               siteTitle={data.site.siteMetadata.title}
             />
             <Mobile style={hamburgerActive ? { width: "100%" } : {}}>
-              <MobileLinks>About</MobileLinks>
-              <MobileLinks href="#">Services</MobileLinks>
-              <MobileLinks href="#">Clients</MobileLinks>
-              <MobileLinks href="#">Contact</MobileLinks>
+              <MobileLinks>Comics</MobileLinks>
+              <MobileLinks href="/shop">Shop</MobileLinks>
+              <MobileLinks href="/studio">Studio</MobileLinks>
+              <MobileLinks href="/">Dollz</MobileLinks>
             </Mobile>
 
             <Wrapper>
