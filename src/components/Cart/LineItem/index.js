@@ -1,14 +1,14 @@
-import React, { useContext } from 'react'
-import { Link } from 'gatsby'
+import React, { useContext } from "react"
+import { Link } from "gatsby"
 
-import StoreContext from '~/context/StoreContext'
-import { Wrapper } from './styles'
+import StoreContext from "~/context/StoreContext"
+import { Wrapper } from "./styles"
 
 const LineItem = props => {
   const { item } = props
   const {
     removeLineItem,
-    store: { client, checkout },
+    store: { client, checkout }
   } = useContext(StoreContext)
 
   const variantImage = item.variant.image ? (
@@ -31,14 +31,13 @@ const LineItem = props => {
 
   return (
     <Wrapper>
-      {console.log(item)}
       <Link to={`/product/${item.variant.product.handle}/`}>
         {variantImage}
       </Link>
       <p>
         {item.title}
         {`  `}
-        {item.variant.title === !'Default Title' ? item.variant.title : ''}
+        {item.variant.title === !"Default Title" ? item.variant.title : ""}
       </p>
       {selectedOptions}
       {item.quantity}
