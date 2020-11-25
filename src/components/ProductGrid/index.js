@@ -43,7 +43,7 @@ const ProductGrid = () => {
 
   const getPrice = price =>
     Intl.NumberFormat(undefined, {
-      currency: checkout.currencyCode ? checkout.currencyCode : "EUR",
+      currency: checkout.currencyCode ? checkout.currencyCode : "USD",
       minimumFractionDigits: 2,
       style: "currency"
     }).format(parseFloat(price ? price : 0))
@@ -71,9 +71,7 @@ const ProductGrid = () => {
                     />
                   )}
                 </Link>
-                <Title>
-                  {title} <PriceTag>{getPrice(firstVariant.price)}</PriceTag>
-                </Title>
+                <Title>{title}</Title>
               </Product>
             )
           )
