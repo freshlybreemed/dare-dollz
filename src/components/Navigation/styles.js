@@ -1,6 +1,5 @@
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 
 import { breakpoints } from "../../utils/styles"
 

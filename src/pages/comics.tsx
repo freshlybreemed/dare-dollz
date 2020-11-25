@@ -1,20 +1,22 @@
+import React from "react"
 
-import React from 'react'
-import { Link } from 'gatsby'
+import SEO from "../components/seo"
+import ComicView from "../components/Comics/ComicView"
+import styled from "@emotion/styled"
 
-import SEO from '../components/seo'
-import ComicView from '../components/Comics/ComicView'
+const Wrapper = styled.p`
+  padding-top: 3rem;
+`
 
 const ComicsPage = () => {
   return (
-  <>
-    <SEO title="Comics" keywords={[`gatsby`, `application`, `react`]} />
-    {/* <h1>About</h1> */}
-    {/* <p>Welcome to your new Shop powered by Gatsby and Shopify.</p> */}
-    <ComicView/>
-    <Link to="/page-2/">Go to page 2</Link>
-  </>
-)
-  }
+    <>
+      <SEO title="Comics" keywords={[`gatsby`, `application`, `react`]} />
+      <Wrapper>
+        <ComicView />
+      </Wrapper>
+    </>
+  )
+}
 
 export default ComicsPage

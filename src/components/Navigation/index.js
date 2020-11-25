@@ -31,16 +31,14 @@ const Navigation = ({ siteTitle, logo }) => {
   return (
     <Wrapper>
       <Container>
-        {/* <MenuLink to="/">{siteTitle}</MenuLink> */}
         <MenuLogoWrapper to="/">
-          <MenuLogo src={logo} />
+          <MenuLogo atl="logo" src={logo} />
         </MenuLogoWrapper>
         <MenuLinks>
-          <MenuLink to="/about">About</MenuLink>
           <MenuLink to="/">Dollz</MenuLink>
           <MenuLink to="/">Vidoes</MenuLink>
           <MenuLink to="/comics">Comics</MenuLink>
-          <MenuLink to="/">Studio</MenuLink>
+          <MenuLink to="/studio">Studio</MenuLink>
           <MenuLink to="/cart">
             {hasItems && <CartCounter>{quantity}</CartCounter>}
             Cart 🛍
@@ -48,6 +46,7 @@ const Navigation = ({ siteTitle, logo }) => {
         </MenuLinks>
         <HamburgerWrapper>
           <button
+            aria-label="menu"
             onClick={() => setHamburgerActive(!hamburgerActive)}
             class={`hamburger hamburger--collapse ${classnames({
               "is-active": hamburgerActive
