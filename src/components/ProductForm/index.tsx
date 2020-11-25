@@ -2,9 +2,8 @@ import React, { useState, useContext, useEffect, useCallback } from "react"
 import find from "lodash/find"
 import isEqual from "lodash/isEqual"
 import PropTypes from "prop-types"
-import classnames from "classnames"
 
-import StoreContext from "~/context/StoreContext"
+import StoreContext from "../../context/StoreContext"
 import {
   Label,
   Option,
@@ -30,6 +29,7 @@ const ProductForm = ({ product }) => {
     priceRange: { minVariantPrice }
   } = product
   const [variant, setVariant] = useState({ ...initialVariant })
+  const [color, setColor] = useState("")
   const [quantity, setQuantity] = useState(1)
   const {
     addVariantToCart,
@@ -128,17 +128,15 @@ const ProductForm = ({ product }) => {
               onBlur={event => handleOptionChange(index, event)}
             > */}
                 {values.map(value => (
-                  <Option>
+                  <Option selected={true}>
                     {/* <option */}
                     {/* value={value}
                     key={`${name}-${value}`}
                     disabled={checkDisabled(name, value)}
                   > */}
                     {value}
-                    {/* </option> */}
                   </Option>
                 ))}
-                {/* </select> */}
                 <br />
               </OptionsList>
             </SelectedValue>

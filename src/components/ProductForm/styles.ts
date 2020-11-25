@@ -1,17 +1,21 @@
-import styled, { css } from "@emotion/styled"
+import styled from "@emotion/styled"
 import { breakpoints } from "../../utils/styles"
+import { css } from "@emotion/react"
 
 export const Label = styled.div`
   padding-bottom: 1rem;
 `
+
 export const SelectedValue = styled.div`
   width: 100%;
 `
+
 export const AddToCartWrapper = styled.div`
   display: block;
   margin: 20px 0;
   overflow: hidden;
 `
+
 export const AddToCartButton = styled.button`
   width: 65%;
   margin-left: 5%;
@@ -23,6 +27,7 @@ export const AddToCartButton = styled.button`
   font-style: normal;
   height: 30px;
 `
+
 export const AddToCartContainer = styled.div``
 
 export const Add = styled.div`
@@ -33,6 +38,7 @@ export const Add = styled.div`
   padding: 5px 3px 10px 15px;
   cursor: pointer;
 `
+
 export const Minus = styled.div`
   position: absolute;
   left: 5px;
@@ -41,15 +47,18 @@ export const Minus = styled.div`
   padding: 5px 10px 15px 3px;
   cursor: pointer;
 `
+
 export const QuantityContainer = styled.div`
   width: 30%;
   float: left;
   white-space: nowrap;
 `
+
 export const QuantityWrapper = styled.div`
   width: 100%;
   position: relative;
 `
+
 export const QuantityInput = styled.input`
   width: 100%;
   height: 30px;
@@ -57,6 +66,7 @@ export const QuantityInput = styled.input`
   padding: 100;
   margin: 0 20px 0 0;
 `
+
 export const Value = styled.div`
   width: 100%;
 `
@@ -72,10 +82,16 @@ export const OptionsList = styled.li`
   display: flex;
   flex-wrap: wrap;
 `
-export const Option = styled.li`
+
+interface OptionProps {
+  selected: boolean
+}
+
+export const Option = styled.li<OptionProps>`
   margin-right: 10px;
   flex-basis: 22%;
   display: list-item;
+  font-weight: 350;
   list-style: none;
   text-transform: capitalize;
   border: 1px solid black;
