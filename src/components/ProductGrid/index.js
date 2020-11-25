@@ -9,6 +9,7 @@ const ProductGrid = () => {
   const {
     store: { checkout }
   } = useContext(StoreContext)
+  console.log("checkout", checkout)
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query {
