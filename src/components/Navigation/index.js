@@ -36,11 +36,10 @@ const Navigation = ({ siteTitle, logo }) => {
           <MenuLogo src={logo} />
         </MenuLogoWrapper>
         <MenuLinks>
-          <MenuLink to="/about">About</MenuLink>
           <MenuLink to="/">Dollz</MenuLink>
           <MenuLink to="/">Vidoes</MenuLink>
           <MenuLink to="/comics">Comics</MenuLink>
-          <MenuLink to="/">Studio</MenuLink>
+          <MenuLink to="/studio">Studio</MenuLink>
           <MenuLink to="/cart">
             {hasItems && <CartCounter>{quantity}</CartCounter>}
             Cart 🛍
