@@ -45,7 +45,7 @@ const Navigation = ({
           <MenuLink to="/studio">Studio</MenuLink>
           <MenuLink to="/cart">
             {hasItems && <CartCounter>{quantity}</CartCounter>}
-            Cart 🛍
+            Cart
           </MenuLink>
         </MenuLinks>
         <HamburgerWrapper>
