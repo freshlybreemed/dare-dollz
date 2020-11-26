@@ -19,10 +19,12 @@ export const AddToCartWrapper = styled.div`
 export const AddToCartButton = styled.button`
   width: 65%;
   margin-left: 5%;
-  background-color: black;
-  color: white;
+  border: black;
+  /* border */
+  background-color: white;
+  color: black;
   padding: 10px 0 10px 0;
-  font-weight: 200;
+  font-weight: 400;
   font-size: 16px;
   font-style: normal;
   height: 30px;
@@ -97,6 +99,11 @@ export const Option = styled.li<OptionProps>`
   border: 1px solid black;
   padding: 0.5rem;
   margin: 0.2rem;
+  cursor: default;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
   ${props =>
     props.selected &&
     css`
