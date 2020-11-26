@@ -14,7 +14,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: baseline;
   margin: 0 auto;
-  max-width: 960px;
+  /* max-width: 960px; */
 `
 
 export const MenuLink = styled(Link)`
@@ -39,6 +39,7 @@ export const MenuLink = styled(Link)`
     justify-content: center;
   }
 `
+
 export const MenuLogo = styled.img`
   float: left;
   padding-top: 1rem;
@@ -80,9 +81,9 @@ export const MenuLinks = styled.div`
 `
 
 export const CartCounter = styled.span`
-  color: #663399;
+  /* color: #663399; */
   border-radius: 20px;
-  padding: 0 10px;
+  padding: 0px 10px;
   font-size: 1.2rem;
   float: right;
   margin: -10px;

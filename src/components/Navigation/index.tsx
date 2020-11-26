@@ -15,6 +15,8 @@ import {
   MenuLogoWrapper,
   HamburgerWrapper
 } from "./styles"
+import { Img } from "../../utils/styles"
+import { useStaticQuery, graphql } from "gatsby"
 
 const useQuantity = () => {
   const {
@@ -31,12 +33,25 @@ const Navigation = ({
   hamburgerActive,
   setHamburgerActive
 }) => {
+  const { file } = useStaticQuery(graphql`
+    {
+      file(relativePath: { in: "shopping-cart.png" }) {
+        id
+        childImageSharp {
+          fixed(width: 30) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
   const [hasItems, quantity] = useQuantity()
+
   return (
     <Wrapper>
       <Container>
         <MenuLogoWrapper to="/">
-          <MenuLogo atl="logo" src={logo} />
+          <MenuLogo alt="logo" src={logo} />
         </MenuLogoWrapper>
         <MenuLinks>
           <MenuLink to="/">Dollz</MenuLink>
@@ -44,8 +59,13 @@ const Navigation = ({
           <MenuLink to="/comics">Comics</MenuLink>
           <MenuLink to="/studio">Studio</MenuLink>
           <MenuLink to="/cart">
-            {hasItems && <CartCounter>{quantity}</CartCounter>}
-            Cart
+            {hasItems && (
+              <>
+                <CartCounter>{quantity}</CartCounter>{" "}
+                <Img fixed={file.childImageSharp.fixed} />
+              </>
+            )}
+            {/* Cart */}
           </MenuLink>
         </MenuLinks>
         <HamburgerWrapper>
