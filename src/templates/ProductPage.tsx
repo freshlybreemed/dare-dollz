@@ -16,7 +16,11 @@ const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
   return (
     <>
-      <SEO title={product.title} description={product.description} />
+      <SEO
+        image={null}
+        title={product.title}
+        description={product.description}
+      />
       <ProductContainer>
         <GridLeftContainer>
           {product.images.map(image => (

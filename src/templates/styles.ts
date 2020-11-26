@@ -2,10 +2,12 @@ import styled from "@emotion/styled"
 // import { breakpoints } from '../utils/styles'
 
 export const GridLeftContainer = styled.div`
-  width: 66.66667%;
+  padding-right: 1rem;
+  width: 60.66667%;
 `
 export const GridRightContainer = styled.div`
-  width: 33.333%;
+  width: 30.333%;
+  /* padding: 1rem; */
 `
 
 export const ProductContainer = styled.div`
@@ -27,8 +29,9 @@ export const ProductTitle = styled.h1`
   margin-bottom: 15px;
   word-wrap: break-word;
   text-transform: uppercase;
+  font-style: italic;
   font-family: "Helvetica", "Helvetica", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   margin: 0 0 0.5rem;
   line-height: 1.4;
   padding-bottom: 1rem;
