@@ -3,13 +3,16 @@ import { graphql } from "gatsby"
 
 import SEO from "../components/seo"
 import ProductForm from "../components/ProductForm"
-import { Img } from "../utils/styles"
 import {
+  PhotoRow,
+  Img,
+  photoGallery,
   ProductTitle,
   ProductDescription,
-  ProductContainer,
-  GridLeftContainer,
-  GridRightContainer
+  Container,
+  TwoColumnGrid,
+  GridLeft,
+  GridRight
 } from "./styles"
 
 const ProductPage = ({ data }) => {
@@ -21,24 +24,38 @@ const ProductPage = ({ data }) => {
         title={product.title}
         description={product.description}
       />
-      <ProductContainer>
-        <GridLeftContainer>
-          {product.images.map(image => (
-            <Img
-              fluid={image.localFile.childImageSharp.fluid}
-              key={image.id}
-              alt={product.title}
+      <Container>
+        <TwoColumnGrid>
+          <GridLeft>
+          <Img
+            fluid={product.images[0].localFile.childImageSharp.fluid}
+            alt={product.title}
             />
-          ))}
-        </GridLeftContainer>
-        <GridRightContainer>
+          <PhotoRow>
+            {product.images.map((image,ind) =>  {
+              return (
+              <Img fluid={image.localFile.childImageSharp.fluid} />
+              )
+            })}
+          </PhotoRow>
+
+          </GridLeft>
+          <GridRight>
           <ProductTitle>{product.title}</ProductTitle>
           <ProductDescription
             dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
           />
           <ProductForm product={product} />
+
+          </GridRight>
+        </TwoColumnGrid>
+      </Container>
+      {/* <ProductContainer>
+        <GridLeftContainer>
+        </GridLeftContainer>
+        <GridRightContainer>
         </GridRightContainer>
-      </ProductContainer>
+      </ProductContainer> */}
     </>
   )
 }
