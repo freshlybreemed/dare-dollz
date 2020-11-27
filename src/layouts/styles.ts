@@ -4,7 +4,7 @@ export const Wrapper = styled.div``
 
 export const Page = styled.div`
   transition: margin-left 0.5s;
-  padding: 20px;
+  padding: 20px 0 20px 0;
  
 `
 
