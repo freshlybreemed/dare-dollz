@@ -66,15 +66,6 @@ const Navigation = ({
           }
         }
       }
-
-      close: file(relativePath: { in: "x.svg" }) {
-        id
-        childImageSharp {
-          fixed(width: 30) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
     }
   `)
   const [hasItems, quantity] = useQuantity()
