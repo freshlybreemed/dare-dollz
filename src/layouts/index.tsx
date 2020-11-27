@@ -24,35 +24,35 @@ const Layout = ({ children }) => {
               }
             }
           }
-          `}
-        render={data => (<>
-          <CartWrapper style={cartActive ? { width: "50%" } : {}}>
-           <Cart setCartActive={setCartActive}
-            cartActive={cartActive}/>
-          </CartWrapper>
-          <Page>
-            <Navigation
-              hamburgerActive={hamburgerActive}
-              setHamburgerActive={setHamburgerActive}
-              setCartActive={setCartActive}
-              cartActive={cartActive}
-              logo={logoGIF}
-              siteTitle={data.site.siteMetadata.title}
-            />
-            <Mobile style={hamburgerActive ? { width: "100%" } : {}}>
-              <MobileLink>Comics</MobileLink>
-              <MobileLink href="/shop">Shop</MobileLink>
-              <MobileLink href="/dollz">Dollz</MobileLink>
-              <MobileLink href="/studio">Studio</MobileLink>
-              <MobileLink href="/contact">Contact</MobileLink>
-            </Mobile>
+        `}
+        render={data => (
+          <>
+            <CartWrapper style={cartActive ? { width: "50%" } : {}}>
+              <Cart setCartActive={setCartActive} cartActive={cartActive} />
+            </CartWrapper>
+            <Page>
+              <Navigation
+                hamburgerActive={hamburgerActive}
+                setHamburgerActive={setHamburgerActive}
+                setCartActive={setCartActive}
+                cartActive={cartActive}
+                logo={logoGIF}
+                siteTitle={data.site.siteMetadata.title}
+              />
+              <Mobile style={hamburgerActive ? { width: "100%" } : {}}>
+                <MobileLink href="/comics">Comics</MobileLink>
+                <MobileLink href="/shop">Shop</MobileLink>
+                <MobileLink href="/dollz">Dollz</MobileLink>
+                <MobileLink href="/studio">Studio</MobileLink>
+                <MobileLink href="/contact">Contact</MobileLink>
+              </Mobile>
 
-
-            <Wrapper>
-              {children}
-              <footer></footer>
-            </Wrapper>
-          </Page></>
+              <Wrapper>
+                {children}
+                <footer></footer>
+              </Wrapper>
+            </Page>
+          </>
         )}
       />
     </ContextProvider>
