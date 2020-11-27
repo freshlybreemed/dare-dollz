@@ -6,7 +6,7 @@ import logoGIF from "../images/logo.gif"
 import { GlobalStyle } from "~/utils/styles"
 import Navigation from "~/components/Navigation"
 import { Wrapper, Page } from "./styles"
-import { Mobile, MobileLinks } from "./styles"
+import { Mobile, MobileLink } from "./styles"
 const Layout = ({ children }) => {
   const [hamburgerActive, setHamburgerActive] = useState(false)
 
@@ -32,10 +32,11 @@ const Layout = ({ children }) => {
               siteTitle={data.site.siteMetadata.title}
             />
             <Mobile style={hamburgerActive ? { width: "100%" } : {}}>
-              <MobileLinks>Comics</MobileLinks>
-              <MobileLinks href="/shop">Shop</MobileLinks>
-              <MobileLinks href="/studio">Studio</MobileLinks>
-              <MobileLinks href="/">Dollz</MobileLinks>
+              <MobileLink>Comics</MobileLink>
+              <MobileLink href="/shop">Shop</MobileLink>
+              <MobileLink href="/dollz">Dollz</MobileLink>
+              <MobileLink href="/studio">Studio</MobileLink>
+              <MobileLink href="/contact">Contact</MobileLink>
             </Mobile>
 
             <Wrapper>

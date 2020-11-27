@@ -23,13 +23,17 @@ export const Mobile = styled.div`
   }
 `
 
-export const MobileLinks = styled.a`
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
+export const MobileLink = styled.a`
+  padding: 8px 30px 8px 32px;
   font-size: 25px;
   color: black;
   display: block;
+  font-weight: 700;
+  text-align:right;
   transition: 0.3s;
+  text-transform: uppercase;
+  text-decoration: none;
+
   &:hover {
     color: #f1f1f1;
   }
