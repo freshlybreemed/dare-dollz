@@ -67,20 +67,10 @@ const ProductForm = ({ product }) => {
   const handleOptionChange = (optionIndex, value) => {
     const currentOptions = [...variant.selectedOptions]
 
-    console.log(
-      "idx",
-      optionIndex,
-      value,
-      "variants",
-      variants,
-      "currentOptions",
-      currentOptions
-    )
     currentOptions[optionIndex] = {
       ...currentOptions[optionIndex],
       value
     }
-    console.log(currentOptions)
     const selectedVariant = find(variants, ({ selectedOptions }) =>
       isEqual(currentOptions, selectedOptions)
     )
