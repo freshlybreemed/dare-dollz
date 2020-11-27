@@ -74,17 +74,21 @@ const ComicsPage = () => {
             </GridRight>
           </TwoColumnGrid>
           <Paragraph>
-            The Fabulous life of Dare Dollz follows the crime-fighting
-            adventures of four young insanely fashionable women working in a
-            private detective agency in Carnado City.
+            The idea for Dare Dollz started on a bored afternoon while visiting
+            our grandparents. Our grandma who collects dolls always encouraged
+            us to make our own sets and accessories as kids for our toys. We
+            decided that we wanted dolls that looked exactly like us or more
+            like who we wanted to be. Then we created this universe very similar
+            to our own. Where everyone was vibrant, moody, and fly. Thus Dare
+            Dollz was born.
           </Paragraph>
           <Paragraph>
-            Things start to heat up when a new trap rapper rises in popularity.
-            His influence causes crimes to rise in the city that they are paid
-            to protect.
-          </Paragraph>{" "}
+            Centered around a group of smart, fashionable, and highly trained
+            women working for an undercover detective agency in Carnado city.
+            You will be able to join this universe very soon. Keep checking in.
+          </Paragraph>
         </Container>
-      </Wrapper>{" "}
+      </Wrapper>
     </>
   )
 }
