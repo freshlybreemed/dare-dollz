@@ -33,7 +33,7 @@ const LineItem = props => {
 
   const selectedOptions = item.variant.selectedOptions
     ? item.variant.selectedOptions.map(
-        option => `${option.name}: ${option.value} `
+        option => <Paragraph>{option.name}: {option.value}</Paragraph>
       )
     : null
 

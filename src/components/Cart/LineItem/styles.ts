@@ -11,9 +11,10 @@ export const CloseButton = styled.div`
 width:20px;
 `
 export const Paragraph = styled.span`
-  font-size: 1.1rem;
+  font-size: .9rem;
   line-height: 1.5;
-  padding-top:1.5rem;
+  padding-top:1rem;
+  text-transform:capitalize;
   padding-bottom:1.5rem;
 
 `
