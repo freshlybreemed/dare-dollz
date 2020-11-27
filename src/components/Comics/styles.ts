@@ -1,10 +1,40 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled"
+import Image from "gatsby-image"
 
-import { breakpoints } from '../../utils/styles'
+import { breakpoints } from "../../utils/styles"
+
+export const Wrapper = styled.p`
+  /* padding-top: 1rem; */
+  padding-left: 2rem;
+  padding-right: 2rem;
+`
+export const Img = styled(Image)`
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.45rem;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  filter: none;
+  &:hover {
+    transition: opacity 0.15s ease-in-out;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray; /* IE 6-9 */
+  }
+`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2.5rem;
 
   @media (max-width: ${breakpoints.s}px) {
@@ -16,7 +46,6 @@ export const Comic = styled.div`
   min-height: 100%;
   flex-direction: column;
 `
-
 
 export const Title = styled.span`
   font-weight: 300;
