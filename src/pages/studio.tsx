@@ -18,7 +18,7 @@ const ParagraphHeader = styled.p`
   /* -moz-animation: AnimationName 59s ease infinite;
   -o-animation: AnimationName 59s ease infinite;
   animation: AnimationName 59s ease infinite; */
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   text-transform:uppercase;
   text-align:center;

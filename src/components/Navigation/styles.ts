@@ -5,8 +5,9 @@ import { breakpoints } from "../../utils/styles"
 
 export const Wrapper = styled.div`
   margin-bottom: 2rem;
-  /* position:  ; */
-  /* top: 0; */
+  @media (max-width:${breakpoints.m}px){
+    margin-bottom: .5rem;
+  }
 `
 
 export const Container = styled.div`

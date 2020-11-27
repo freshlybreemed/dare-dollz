@@ -6,6 +6,9 @@ import Image from "gatsby-image"
 export const Container = styled.div`
   margin: 0 auto;
   max-width: 960px;
+  @media (max-width: ${breakpoints.m}px){
+    padding: 0 1rem 0 1rem;
+  }
 `
 
 export const TwoColumnGrid = styled.div`
@@ -43,6 +46,11 @@ export const Img = styled(Image)`
   padding-right: 0;
   padding-top: 0;
   transition: opacity 0.15s ease-in-out;
+  @media (max-width: ${breakpoints.m}px) {
+    max-width:60%;
+    margin-left:auto;
+    margin-right:auto;
+  }
   
 `
 export const ProductContainer = styled.div`
