@@ -86,7 +86,7 @@ const IFrame = styled.iframe`
 const AboutPage = () => {
   const { dare, darius } = useStaticQuery(graphql`
     {
-      dare: file(relativePath: { in: "dare1.jpg" }) {
+      dare: file(relativePath: { in: "dare.jpg" }) {
         id
         childImageSharp {
           fluid {
@@ -94,7 +94,7 @@ const AboutPage = () => {
           }
         }
       }
-      darius: file(relativePath: { in: "darius2.JPG" }) {
+      darius: file(relativePath: { in: "darius.JPG" }) {
         id
         childImageSharp {
           fluid {
