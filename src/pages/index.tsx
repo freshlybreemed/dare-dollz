@@ -21,11 +21,59 @@ export const Grid = styled.div`
   }
 `
 
+const Image = styled.img`
+ /* Just in case there are inline attributes */
+ width: 100% !important;
+ height: auto !important;
+ padding-left: 1rem;
+
+@media (max-width: 1200px) {
+  #photos {
+  -moz-column-count:    4;
+  -webkit-column-count: 4;
+  column-count:         4;
+  }
+}
+@media (max-width: 1000px) {
+  #photos {
+  -moz-column-count:    3;
+  -webkit-column-count: 3;
+  column-count:         3;
+  }
+}
+@media (max-width: 800px) {
+  #photos {
+  -moz-column-count:    2;
+  -webkit-column-count: 2;
+  column-count:         2;
+  }
+}
+@media (max-width: 400px) {
+  #photos {
+  -moz-column-count:    1;
+  -webkit-column-count: 1;
+  column-count:         1;
+  }
+}
+`
+const Photos = styled.section`
+   /* Prevent vertical gaps */
+   line-height: 0;
+   
+   -webkit-column-count: 5;
+   -webkit-column-gap:   0px;
+   -moz-column-count:    5;
+   -moz-column-gap:      0px;
+   column-count:         5;
+   column-gap:           0px;
+`
+
 export const Product = styled.div`
   display: flex;
   min-height: 100%;
   flex-direction: column;
 `
+
 
 const IndexPage = () => {
   const { allContentfulHomePage } = useStaticQuery(graphql`
@@ -52,7 +100,17 @@ const IndexPage = () => {
         keywords={[`dare dollz`, `daredollz`]}
       />
       <Wrapper>
-        <Img fluid={allContentfulHomePage.edges[0].node.photos[0].fluid} />
+        <Photos>
+        {allContentfulHomePage.edges[0].node.photos.map((curr, id)=> {
+          return (
+            <Image
+              src={curr.fluid.src}
+                      // alt={handle}
+            />
+          )
+        })}
+        </Photos>
+        {/* <Img hover={false} fluid={allContentfulHomePage.edges[0].node.photos[0].fluid} />
 
         <Grid>
           {allContentfulHomePage.edges[0].node.photos.map((curr, id) => {
@@ -70,7 +128,7 @@ const IndexPage = () => {
               )
             )
           })}
-        </Grid>
+        </Grid> */}
       </Wrapper>
     </>
   )
