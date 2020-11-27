@@ -4,8 +4,7 @@ export const Wrapper = styled.div``
 
 export const Page = styled.div`
   transition: margin-left 0.5s;
-  padding: 20px;
- 
+  padding: 20px 0 20px 0;
 `
 
 export const CartWrapper = styled.div`
@@ -29,7 +28,7 @@ export const Mobile = styled.div`
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   /* top: 100; Stay at the top */
-  right: 0;
+  left: 0;
   background-color: white; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
@@ -45,7 +44,7 @@ export const MobileLink = styled.a`
   color: black;
   display: block;
   font-weight: 700;
-  text-align:right;
+  text-align: left;
   transition: 0.3s;
   cursor: default;
   text-transform: uppercase;

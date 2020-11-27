@@ -1,12 +1,14 @@
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import Image from "gatsby-image"
 
 import { breakpoints } from "../../utils/styles"
 
 export const Wrapper = styled.div`
   margin-bottom: 2rem;
-  /* position:  ; */
-  /* top: 0; */
+  @media (max-width: ${breakpoints.m}px) {
+    margin-bottom: 1.5rem;
+  }
 `
 
 export const Container = styled.div`
@@ -15,6 +17,12 @@ export const Container = styled.div`
   align-items: baseline;
   margin: 0 auto;
   /* max-width: 960px; */
+`
+export const Img = styled(Image)`
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: opacity 0.15s ease-in-out;
 `
 
 export const CartWrapper = styled.div`
@@ -34,6 +42,27 @@ export const CartWrapper = styled.div`
     opacity: 0.5;
   }
   @media (max-width: ${breakpoints.s}px) {
+    float: right;
+    display: flex;
+    justify-content: center;
+  }
+`
+export const CartWrapperMobile = styled.div`
+  color: black;
+  font-weight: 700;
+  display: none;
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  /* padding-top: 1rem;
+  margin-top: 1rem; */
+  margin-right: 30px;
+  font-size: 1.25rem;
+  /* transition: opacity 0.15s ease-in-out; */
+  &:hover {
+    opacity: 0.5;
+  }
+  @media (max-width: ${breakpoints.m}px) {
     float: right;
     display: flex;
     justify-content: center;
@@ -64,7 +93,7 @@ export const MenuLink = styled(Link)`
 `
 
 export const MenuLogo = styled.img`
-  float: left;
+  float: right;
   padding-top: 1rem;
   padding-left: 0.6rem;
   vertical-align: middle;
@@ -79,7 +108,7 @@ export const HamburgerWrapper = styled.div`
   display: flex;
   /* vertical-align:middle; */
   @media (min-width: 700px) {
-    float: right;
+    float: left;
     display: none;
     justify-content: center;
   }

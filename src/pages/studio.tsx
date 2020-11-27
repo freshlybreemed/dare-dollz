@@ -2,66 +2,91 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
 import SEO from "../components/seo"
+import Image from "gatsby-image"
 
 import {
-  Img,
   Container,
   TwoColumnGrid,
   GridLeft,
-  GridRight
+  GridRight,
+  breakpoints
 } from "../utils/styles"
-
-
 const ParagraphHeader = styled.p`
-  background:linear-gradient(140deg,#1c24e9,#9acd32);
+  background: linear-gradient(140deg, #1c24e9, #9acd32);
   /* -webkit-animation: AnimationName 59s ease infinite; */
   /* -moz-animation: AnimationName 59s ease infinite;
   -o-animation: AnimationName 59s ease infinite;
   animation: AnimationName 59s ease infinite; */
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
-  text-transform:uppercase;
-  text-align:center;
+  text-transform: uppercase;
+  text-align: center;
   font-weight: 700;
-  margin-top:2rem;
-  padding:2.5rem;
+  margin-top: 2rem;
+  padding: 2.5rem;
   /* padding-bottom:2.5rem; */
 `
 const Paragraph = styled.p`
   font-size: 1.1rem;
   line-height: 1.5;
-  padding-top:1.5rem;
-  padding-bottom:1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 `
 const Wrapper = styled.p`
   padding-top: 3rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 `
-const Header = styled.span`
+const Header = styled.h3`
   font-size: 1.4rem;
   font-weight: 400;
   text-transform: uppercase;
   line-height: 1.15;
   margin-top: 2rem;
+  @media (max-width: ${breakpoints.m}px) {
+    margin-bottom: 1rem;
+  }
 `
-
+const Img = styled(Image)`
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.45rem;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  filter: none;
+  &:hover {
+    transition: opacity 0.15s ease-in-out;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray; /* IE 6-9 */
+  }
+`
 const IFrame = styled.iframe`
-  width:100%;
-  height:400px;
+  width: 100%;
+  height: 400px;
 
-  @media screen and (max-width: 450px) 
-  {
-    width:100%;
-    height:180px;
+  @media screen and (max-width: 450px) {
+    width: 100%;
+    height: 180px;
   }
   @media screen and (max-width: 768px) {
-    width:100%;
-    height:325px;
+    width: 100%;
+    height: 325px;
   }
 `
 const AboutPage = () => {
   const { dare, darius } = useStaticQuery(graphql`
     {
-      dare: file(relativePath: { in: "dare.jpg" }) {
+      dare: file(relativePath: { in: "dare1.jpg" }) {
         id
         childImageSharp {
           fluid {
@@ -69,7 +94,7 @@ const AboutPage = () => {
           }
         }
       }
-      darius: file(relativePath: { in: "darius1.jpg" }) {
+      darius: file(relativePath: { in: "darius2.JPG" }) {
         id
         childImageSharp {
           fluid {
@@ -127,16 +152,22 @@ const AboutPage = () => {
           </GridRight>
         </TwoColumnGrid>
         <ParagraphHeader>
-          Dare Dollz is doll and streetwear brand created by LA based artists and twins Darius and Dare Moreno 
+          Dare Dollz is doll and streetwear brand created by LA based artists
+          and twins Darius and Dare Moreno
         </ParagraphHeader>
         <Paragraph>
-            Dare Moreno is an L.A. based based actor, filmmaker, art director,
-            and entrepreneur. Moreno is best known for her food and travel
-            series A Girl’s Gotta Eat! Darius works in 2D and 3D mediums,
-            predominately sculpture and paintings. His work is inspired by the
-            grit of hip hop culture.
+          Dare Moreno is an L.A. based based actor, filmmaker, art director, and
+          entrepreneur. Moreno is best known for her food and travel series A
+          Girl’s Gotta Eat! Darius works in 2D and 3D mediums, predominately
+          sculpture and paintings. His work is inspired by the grit of hip hop
+          culture.
         </Paragraph>
-        <IFrame src="https://www.youtube.com/embed/8InS6y58Bdk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></IFrame >
+        <IFrame
+          src="https://www.youtube.com/embed/8InS6y58Bdk"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></IFrame>
       </Container>
       <SEO
         title="About"

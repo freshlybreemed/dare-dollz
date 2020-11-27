@@ -1,11 +1,14 @@
 import styled from "@emotion/styled"
-import { breakpoints } from '../utils/styles'
+import { breakpoints } from "../utils/styles"
 import Image from "gatsby-image"
-
 
 export const Container = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 900px;
+  padding: 0 1rem 0 2rem;
+  @media (max-width: ${breakpoints.m}px) {
+    padding: 0 3rem 0 3rem;
+  }
 `
 
 export const TwoColumnGrid = styled.div`
@@ -43,7 +46,11 @@ export const Img = styled(Image)`
   padding-right: 0;
   padding-top: 0;
   transition: opacity 0.15s ease-in-out;
-  
+  @media (max-width: ${breakpoints.m}px) {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `
 export const ProductContainer = styled.div`
   -webkit-box-pack: start;
@@ -71,8 +78,8 @@ export const ProductTitle = styled.h1`
   line-height: 1.4;
   padding-bottom: 1rem;
   border-bottom: 1px solid #d4d4d4;
-  @media (max-width: ${breakpoints.m}px){
-    text-align:center;
+  @media (max-width: ${breakpoints.m}px) {
+    text-align: center;
   }
 `
 

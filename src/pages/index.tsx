@@ -25,7 +25,7 @@ const Image = styled.img`
  /* Just in case there are inline attributes */
  width: 100% !important;
  height: auto !important;
- padding-left: 1rem;
+ /* padding-left: 1rem; */
 
 @media (max-width: 1200px) {
   #photos {

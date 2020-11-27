@@ -132,19 +132,18 @@ const ProductForm = ({ product }) => {
               <label htmlFor={name}>{`${name}: `} </label>
               <SelectedValue>
                 <OptionsList>
-                  {/* <select
-              name={name}
-              key={id}
-            > */}
                   {values.map(value => (
                     <Option
                       value={value}
                       key={`${name}-${value}`}
                       onClick={event => handleOptionChange(index, value)}
-                      selected={false}
+                      selected={
+                        variant.selectedOptions.filter(
+                          curr => curr.name === name
+                        )[0].value === value
+                      }
                     >
                       {value}
-                      {/* <option */}
                     </Option>
                   ))}
                   <br />

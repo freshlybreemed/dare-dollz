@@ -32,30 +32,40 @@ const LineItem = props => {
   ) : null
 
   const selectedOptions = item.variant.selectedOptions
-    ? item.variant.selectedOptions.map(
-        option => `${option.name}: ${option.value} `
-      )
+    ? item.variant.selectedOptions.map(option => {
+        console.log(option.name, option.name === "Title")
+        return option.name !== "Title" ? (
+          <Paragraph>
+            {option.name}: {option.value}
+          </Paragraph>
+        ) : null
+      })
     : null
 
   const handleRemove = () => {
     removeLineItem(client, checkout.id, item.id)
   }
-
+  // console.log(item.variant.selectedOptions)
   return (
     <Wrapper>
       <Link to={`/product/${item.variant.product.handle}/`}>
         {variantImage}
       </Link>
-      <Paragraph>
-        {item.title} 
-      </Paragraph>
+      <Paragraph>{item.title}</Paragraph>
       <Paragraph>
         {item.variant.title === !"Default Title" ? item.variant.title : ""}
-      {selectedOptions}
+        {selectedOptions}
       </Paragraph>
       {item.quantity}
       <CloseButton onClick={handleRemove}>
-        <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 16 16"><path d="M0 14.434l6.4-6.4-6.4-6.4L1.634 0l6.4 6.4 6.4-6.4L16 1.634l-6.4 6.4 6.4 6.4L14.434 16l-6.4-6.4-6.4 6.4z"></path></svg>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          role="presentation"
+          viewBox="0 0 16 16"
+        >
+          <path d="M0 14.434l6.4-6.4-6.4-6.4L1.634 0l6.4 6.4 6.4-6.4L16 1.634l-6.4 6.4 6.4 6.4L14.434 16l-6.4-6.4-6.4 6.4z"></path>
+        </svg>
       </CloseButton>
     </Wrapper>
   )
