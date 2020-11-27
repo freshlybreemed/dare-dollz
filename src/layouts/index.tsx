@@ -44,7 +44,6 @@ const Layout = ({ children }) => {
                 <MobileLink href="/shop">Shop</MobileLink>
                 <MobileLink href="/dollz">Dollz</MobileLink>
                 <MobileLink href="/studio">Studio</MobileLink>
-                <MobileLink href="/contact">Contact</MobileLink>
               </Mobile>
 
               <Wrapper>
