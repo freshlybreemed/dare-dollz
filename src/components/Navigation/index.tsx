@@ -14,9 +14,11 @@ import {
   Wrapper,
   CartWrapper,
   MenuLogoWrapper,
-  HamburgerWrapper
+  HamburgerWrapper,
+  CartWrapperMobile,
+  Img
 } from "./styles"
-import { Img } from "../../utils/styles"
+// import { Img } from "../../utils/styles"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
@@ -34,7 +36,7 @@ interface OverlayProps {
   overlay: boolean
 }
 const Overlay = styled.div<OverlayProps>`
-  display:  none;
+  display: none;
   background: #000;
   opacity: 0.5;
   position: fixed;
@@ -43,10 +45,11 @@ const Overlay = styled.div<OverlayProps>`
   width: 100%;
   height: 100%;
   z-index: 99;
-  ${props => props.overlay && css`
-  display: block;
-
-  `}
+  ${props =>
+    props.overlay &&
+    css`
+      display: block;
+    `}
 `
 const Navigation = ({
   siteTitle,
@@ -73,27 +76,6 @@ const Navigation = ({
   return (
     <Wrapper>
       <Container>
-        <MenuLogoWrapper to="/">
-          <MenuLogo alt="logo" src={logo} />
-        </MenuLogoWrapper>
-        <MenuLinks>
-          <MenuLink to="/dollz">Dollz</MenuLink>
-          <MenuLink to="/shop">Shop</MenuLink>
-          <MenuLink to="/comics">Comics</MenuLink>
-          <MenuLink to="/studio">Studio</MenuLink>
-          <CartWrapper >
-            {hasItems && (
-              <div 
-                onClick={() => setCartActive(!cartActive)}
-                >
-                <CartCounter>{quantity}</CartCounter>{" "}
-                <Img 
-                  fixed={cart.childImageSharp.fixed} />
-              </div>
-            )}
-            {/* Cart */}
-          </CartWrapper>
-        </MenuLinks>
         <HamburgerWrapper>
           <button
             aria-label="menu"
@@ -109,7 +91,32 @@ const Navigation = ({
             </span>
           </button>
         </HamburgerWrapper>
-        <Overlay overlay={cartActive}/>
+        <MenuLogoWrapper to="/">
+          <MenuLogo alt="logo" src={logo} />
+        </MenuLogoWrapper>
+        <MenuLinks>
+          <MenuLink to="/dollz">Dollz</MenuLink>
+          <MenuLink to="/shop">Shop</MenuLink>
+          <MenuLink to="/comics">Comics</MenuLink>
+          <MenuLink to="/studio">Studio</MenuLink>
+          <CartWrapper>
+            {hasItems && (
+              <div onClick={() => setCartActive(!cartActive)}>
+                <CartCounter>{quantity}</CartCounter>{" "}
+                <Img fixed={cart.childImageSharp.fixed} />
+              </div>
+            )}
+          </CartWrapper>
+        </MenuLinks>
+        <CartWrapperMobile>
+          {hasItems && (
+            <div onClick={() => setCartActive(!cartActive)}>
+              <CartCounter>{quantity}</CartCounter>{" "}
+              <Img fixed={cart.childImageSharp.fixed} />
+            </div>
+          )}
+        </CartWrapperMobile>
+        <Overlay overlay={cartActive} />
       </Container>
     </Wrapper>
   )
