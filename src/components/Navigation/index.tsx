@@ -56,7 +56,7 @@ const Navigation = ({
   setCartActive,
   cartActive
 }) => {
-  const { cart,close } = useStaticQuery(graphql`
+  const { cart } = useStaticQuery(graphql`
     {
       cart: file(relativePath: { in: "shopping-cart.png" }) {
         id
