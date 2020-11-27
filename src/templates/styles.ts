@@ -1,15 +1,50 @@
 import styled from "@emotion/styled"
-// import { breakpoints } from '../utils/styles'
+import { breakpoints } from '../utils/styles'
+import Image from "gatsby-image"
 
-export const GridLeftContainer = styled.div`
-  padding-right: 1rem;
-  width: 60.66667%;
-`
-export const GridRightContainer = styled.div`
-  width: 30.333%;
-  /* padding: 1rem; */
+
+export const Container = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
 `
 
+export const TwoColumnGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2rem 1fr;
+  grid-template-rows: 1auto;
+  grid-template-areas: "left . right";
+
+  @media (max-width: ${breakpoints.m}px) {
+    display: block;
+  }
+`
+
+export const GridLeft = styled.div`
+  grid-area: left;
+`
+
+export const GridRight = styled.div`
+  grid-area: right;
+`
+
+export const PhotoRow = styled.div`
+  display: table;
+`
+export const PhotoGallery = styled.div`
+  display: table-cell;
+`
+export const Img = styled(Image)`
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  transition: opacity 0.15s ease-in-out;
+  
+`
 export const ProductContainer = styled.div`
   -webkit-box-pack: start;
   -ms-flex-pack: start;
@@ -36,6 +71,9 @@ export const ProductTitle = styled.h1`
   line-height: 1.4;
   padding-bottom: 1rem;
   border-bottom: 1px solid #d4d4d4;
+  @media (max-width: ${breakpoints.m}px){
+    text-align:center;
+  }
 `
 
 export const ProductDescription = styled.div`
