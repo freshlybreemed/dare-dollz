@@ -6,6 +6,13 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import { Container, TwoColumnGrid, GridLeft, GridRight } from "../utils/styles"
 
+const Paragraph = styled.p`
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding-top: 1rem;
+  /* padding-bottom: 1.5rem; */
+`
+
 const Wrapper = styled.p`
   padding-top: 3rem;
   padding-left: 1rem;
@@ -66,6 +73,16 @@ const ComicsPage = () => {
               <Img fluid={allContentfulAsset.edges[2].node.fluid} />
             </GridRight>
           </TwoColumnGrid>
+          <Paragraph>
+            The Fabulous life of Dare Dollz follows the crime-fighting
+            adventures of four young insanely fashionable women working in a
+            private detective agency in Carnado City.
+          </Paragraph>
+          <Paragraph>
+            Things start to heat up when a new trap rapper rises in popularity.
+            His influence causes crimes to rise in the city that they are paid
+            to protect.
+          </Paragraph>{" "}
         </Container>
       </Wrapper>{" "}
     </>
