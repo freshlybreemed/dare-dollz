@@ -22,7 +22,10 @@ export const Product = styled.div`
   position: relative;
 `
 
-export const Title = styled.span`
+interface TitleProps {
+  hover: boolean;
+}
+export const Title = styled.span<TitleProps>`
   position: absolute;
   left: 0;
   top: 50%;
@@ -31,7 +34,9 @@ export const Title = styled.span`
   color: black;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 18px /* opacity: 0; */
+  font-size: 18px;  
+  transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
+  opacity: 0; 
     ${props =>
       props.hover &&
       css`

@@ -9,7 +9,7 @@ const ProductGrid = () => {
   const {
     store: { checkout }
   } = useContext(StoreContext)
-  console.log("checkout", checkout)
+  const [highlightedProduct,setHighlightedProduct] = useState('')
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query {
@@ -62,15 +62,15 @@ const ProductGrid = () => {
                 variants: [firstVariant]
               }
             }) => (
-              <Product key={id}>
+              <Product onMouseEnter={()=>setHighlightedProduct(id)}  key={id}>
                 <Link to={`/product/${handle}/`}>
                   {firstImage && firstImage.localFile && (
-                    <Img
+                    <Img hover={highlightedProduct === id}
                       fluid={firstImage.localFile.childImageSharp.fluid}
                       alt={handle}
                     />
                   )}
-                  <Title>{title}</Title>
+                  <Title onMouseEnter={()=>setHighlightedProduct(id)} hover={highlightedProduct === id}>{title}</Title>
                 </Link>
               </Product>
             )
