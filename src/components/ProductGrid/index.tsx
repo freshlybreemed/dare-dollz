@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 
 import StoreContext from "../../context/StoreContext"
 import { Wrapper, Grid, Product, Title, PriceTag } from "./styles"
-import { Img } from "../..//utils/styles"
+import { ImgHover } from "../..//utils/styles"
 
 const ProductGrid = () => {
   const {
@@ -65,7 +65,7 @@ const ProductGrid = () => {
               <Product onMouseEnter={()=>setHighlightedProduct(id)}  key={id}>
                 <Link to={`/product/${handle}/`}>
                   {firstImage && firstImage.localFile && (
-                    <Img hover={highlightedProduct === id}
+                    <ImgHover hover={highlightedProduct === id}
                       fluid={firstImage.localFile.childImageSharp.fluid}
                       alt={handle}
                     />

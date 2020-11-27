@@ -26,10 +26,11 @@ export const GlobalStyle = props => (
   />
 )
 
-interface ImgProps {
+interface ImgHoverProps {
   hover:boolean
 }
-export const Img = styled(Image)<ImgProps>`
+
+export const ImgHover = styled(Image)<ImgHoverProps>`
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -45,6 +46,19 @@ export const Img = styled(Image)<ImgProps>`
       opacity: 0.5;
     }
   `}
+`
+export const Img = styled(Image)`
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.45rem;
+  transition: opacity 0.15s ease-in-out;
+  
 `
 
 export const Container = styled.div`

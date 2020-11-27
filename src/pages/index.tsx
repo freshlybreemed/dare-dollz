@@ -6,7 +6,7 @@ import ProductGrid from "../components/ProductGrid"
 import styled from "@emotion/styled"
 import logoGIF from "../images/logo.gif"
 
-import { breakpoints, Img } from "../utils/styles"
+import { breakpoints, ImgHover } from "../utils/styles"
 
 export const Wrapper = styled.div`
   padding-top: 2rem;
