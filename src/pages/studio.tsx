@@ -29,8 +29,8 @@ const ParagraphHeader = styled.p`
 const Paragraph = styled.p`
   font-size: 1.1rem;
   line-height: 1.5;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 1rem;
+  /* padding-bottom: 1.5rem; */
 `
 const Wrapper = styled.p`
   padding-top: 3rem;
@@ -44,7 +44,9 @@ const Header = styled.h3`
   line-height: 1.15;
   margin-top: 2rem;
   @media (max-width: ${breakpoints.m}px) {
+    margin-top: 1rem;
     margin-bottom: 1rem;
+    font-size: 1.1rem;
   }
 `
 const Img = styled(Image)`
@@ -71,6 +73,7 @@ const Img = styled(Image)`
   }
 `
 const IFrame = styled.iframe`
+  margin-top: 2rem;
   width: 100%;
   height: 400px;
 
@@ -83,6 +86,7 @@ const IFrame = styled.iframe`
     height: 325px;
   }
 `
+
 const AboutPage = () => {
   const { dare, darius } = useStaticQuery(graphql`
     {
@@ -152,15 +156,26 @@ const AboutPage = () => {
           </GridRight>
         </TwoColumnGrid>
         <ParagraphHeader>
-          Dare Dollz is doll and streetwear brand created by LA based artists
-          and twins Darius and Dare Moreno
+          "Dare Dollz are stylish, provocative, pop culture influenced dolls--as
+          well as a clothing line, and stop motion studio. Created by Darrion
+          and Darius Moreno"
         </ParagraphHeader>
         <Paragraph>
-          Dare Moreno is an L.A. based based actor, filmmaker, art director, and
-          entrepreneur. Moreno is best known for her food and travel series A
-          Girl’s Gotta Eat! Darius works in 2D and 3D mediums, predominately
-          sculpture and paintings. His work is inspired by the grit of hip hop
-          culture.
+          Dare Dollz was first established in the summer of 2018 while visiting
+          our grandparents in Virginia Beach. Since then our company now located
+          in Los Angeles, has grown into a creative space where we welcome
+          clients, artists and collaborators.
+        </Paragraph>
+        <Paragraph>
+          {" "}
+          We provide services through our design & art studio such as
+          storyboarding, character design, set design, photoshoots, and stop
+          motion video shoots.{" "}
+        </Paragraph>
+        <Paragraph>
+          Our videos & artworks have been featured in multiple publications such
+          as Vice, Office Magazine, Paper, The Fader, Source, New York Mag,
+          Bubblegum Club, and Redbull radio. Here is some of our work:
         </Paragraph>
         <IFrame
           src="https://www.youtube.com/embed/8InS6y58Bdk"
