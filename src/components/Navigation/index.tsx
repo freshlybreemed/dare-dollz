@@ -54,7 +54,7 @@ const Navigation = ({
           <MenuLogo alt="logo" src={logo} />
         </MenuLogoWrapper>
         <MenuLinks>
-          <MenuLink to="/">Dollz</MenuLink>
+          <MenuLink to="/dollz">Dollz</MenuLink>
           <MenuLink to="/shop">Shop</MenuLink>
           <MenuLink to="/comics">Comics</MenuLink>
           <MenuLink to="/studio">Studio</MenuLink>
