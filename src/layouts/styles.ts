@@ -5,6 +5,22 @@ export const Wrapper = styled.div``
 export const Page = styled.div`
   transition: margin-left 0.5s;
   padding: 20px;
+ 
+`
+
+export const CartWrapper = styled.div`
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Stay on top */
+  top: 100; /*Stay at the top */
+  right: 0;
+  background-color: white; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  @media screen and (max-height: 450px) {
+    padding-top: 15px;
+  }
 `
 
 export const Mobile = styled.div`
@@ -31,6 +47,7 @@ export const MobileLink = styled.a`
   font-weight: 700;
   text-align:right;
   transition: 0.3s;
+  cursor: default;
   text-transform: uppercase;
   text-decoration: none;
 
@@ -41,6 +58,7 @@ export const MobileLink = styled.a`
     font-size: 18px;
   }
 `
+
 export const closeNavButton = styled.a`
   position: absolute;
   top: 0;
