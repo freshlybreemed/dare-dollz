@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
         `}
         render={data => (
           <>
-            <CartWrapper style={cartActive ? { width: "50%" } : {}}>
+            <CartWrapper style={cartActive ? { width: "65%" } : {}}>
               <Cart setCartActive={setCartActive} cartActive={cartActive} />
             </CartWrapper>
             <Page>
