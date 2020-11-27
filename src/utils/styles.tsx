@@ -72,7 +72,7 @@ export const TwoColumnGrid = styled.div`
   grid-template-rows: 1auto;
   grid-template-areas: "left . right";
 
-  @media (max-width: ${breakpoints.l}px) {
+  @media (max-width: ${breakpoints.s}px) {
     display: block;
   }
 `
