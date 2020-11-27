@@ -1,15 +1,15 @@
-import React, { useContext } from "react"
+import React, { useContext,useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import StoreContext from "../../context/StoreContext"
 import { Wrapper, Grid, Product, Title, PriceTag } from "./styles"
-import { Img } from "../..//utils/styles"
+import { ImgHover } from "../..//utils/styles"
 
 const ProductGrid = () => {
   const {
     store: { checkout }
   } = useContext(StoreContext)
-  console.log("checkout", checkout)
+  const [highlightedProduct,setHighlightedProduct] = useState('')
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query {
@@ -62,15 +62,15 @@ const ProductGrid = () => {
                 variants: [firstVariant]
               }
             }) => (
-              <Product key={id}>
+              <Product onMouseEnter={()=>setHighlightedProduct(id)}  key={id}>
                 <Link to={`/product/${handle}/`}>
                   {firstImage && firstImage.localFile && (
-                    <Img
+                    <ImgHover hover={highlightedProduct === id}
                       fluid={firstImage.localFile.childImageSharp.fluid}
                       alt={handle}
                     />
                   )}
-                  <Title>{title}</Title>
+                  <Title onMouseEnter={()=>setHighlightedProduct(id)} hover={highlightedProduct === id}>{title}</Title>
                 </Link>
               </Product>
             )

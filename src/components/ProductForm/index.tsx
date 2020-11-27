@@ -61,18 +61,26 @@ const ProductForm = ({ product }) => {
   }, [productVariant, checkAvailability, product.shopifyId])
 
   const handleQuantityChange = ({ target }) => {
-    setQuantity(target.value)
+    if (target.value >= 1) setQuantity(target.value)
   }
 
-  const handleOptionChange = (optionIndex, { target }) => {
-    const { value } = target
+  const handleOptionChange = (optionIndex, value) => {
     const currentOptions = [...variant.selectedOptions]
 
+    console.log(
+      "idx",
+      optionIndex,
+      value,
+      "variants",
+      variants,
+      "currentOptions",
+      currentOptions
+    )
     currentOptions[optionIndex] = {
       ...currentOptions[optionIndex],
       value
     }
-
+    console.log(currentOptions)
     const selectedVariant = find(variants, ({ selectedOptions }) =>
       isEqual(currentOptions, selectedOptions)
     )
@@ -117,41 +125,57 @@ const ProductForm = ({ product }) => {
     <>
       <h3>{price}</h3>
       <OptionsWrapper>
-        {options.map(({ id, name, values }, index) => (
-          <Label key={id}>
-            <label htmlFor={name}>{`${name}: `} </label>
-            <SelectedValue>
-              <OptionsList>
-                {/* <select
+        {options
+          .filter(curr => curr.name !== "Title")
+          .map(({ id, name, values }, index) => (
+            <Label key={id}>
+              <label htmlFor={name}>{`${name}: `} </label>
+              <SelectedValue>
+                <OptionsList>
+                  {/* <select
               name={name}
               key={id}
-              onBlur={event => handleOptionChange(index, event)}
             > */}
-                {values.map(value => (
-                  <Option selected={true}>
-                    {/* <option */}
-                    {/* value={value}
-                    key={`${name}-${value}`}
-                    disabled={checkDisabled(name, value)}
-                  > */}
-                    {value}
-                  </Option>
-                ))}
-                <br />
-              </OptionsList>
-            </SelectedValue>
-          </Label>
-        ))}
+                  {values.map(value => (
+                    <Option
+                      value={value}
+                      key={`${name}-${value}`}
+                      onClick={event => handleOptionChange(index, value)}
+                      selected={false}
+                    >
+                      {value}
+                      {/* <option */}
+                    </Option>
+                  ))}
+                  <br />
+                </OptionsList>
+              </SelectedValue>
+            </Label>
+          ))}
         <Label>
           <label htmlFor="quantity">Quantity: </label>
           <AddToCartContainer>
             <AddToCartWrapper>
               <QuantityContainer>
                 <QuantityWrapper>
-                  <Add>+</Add>
-                  <Minus>-</Minus>
+                  <Add
+                    onClick={() => {
+                      const target = { value: quantity + 1 }
+                      handleQuantityChange({ target })
+                    }}
+                  >
+                    +
+                  </Add>
+                  <Minus
+                    onClick={() => {
+                      const target = { value: quantity - 1 }
+                      handleQuantityChange({ target })
+                    }}
+                  >
+                    -
+                  </Minus>
                   <QuantityInput
-                    type="number"
+                    // type="number"
                     id="quantity"
                     name="quantity"
                     min="1"

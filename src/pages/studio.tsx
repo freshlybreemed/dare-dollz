@@ -11,9 +11,27 @@ import {
   GridRight
 } from "../utils/styles"
 
+
+const ParagraphHeader = styled.p`
+  background:linear-gradient(140deg,#1c24e9,#9acd32);
+  /* -webkit-animation: AnimationName 59s ease infinite; */
+  /* -moz-animation: AnimationName 59s ease infinite;
+  -o-animation: AnimationName 59s ease infinite;
+  animation: AnimationName 59s ease infinite; */
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-transform:uppercase;
+  text-align:center;
+  font-weight: 700;
+  margin-top:2rem;
+  padding:2.5rem;
+  /* padding-bottom:2.5rem; */
+`
 const Paragraph = styled.p`
   font-size: 1.1rem;
   line-height: 1.5;
+  padding-top:1.5rem;
+  padding-bottom:1.5rem;
 `
 const Wrapper = styled.p`
   padding-top: 3rem;
@@ -25,10 +43,33 @@ const Header = styled.span`
   line-height: 1.15;
   margin-top: 2rem;
 `
+
+const IFrame = styled.iframe`
+  width:100%;
+  height:400px;
+
+  @media screen and (max-width: 450px) 
+  {
+    width:100%;
+    height:180px;
+  }
+  @media screen and (max-width: 768px) {
+    width:100%;
+    height:325px;
+  }
+`
 const AboutPage = () => {
-  const { file } = useStaticQuery(graphql`
+  const { dare, darius } = useStaticQuery(graphql`
     {
-      file(relativePath: { in: "founders.jpg" }) {
+      dare: file(relativePath: { in: "dare.jpg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      darius: file(relativePath: { in: "darius1.jpg" }) {
         id
         childImageSharp {
           fluid {
@@ -43,12 +84,13 @@ const AboutPage = () => {
       <Container>
         <TwoColumnGrid>
           <GridLeft>
-            <Img fluid={file.childImageSharp.fluid} />
-            <Img fluid={file.childImageSharp.fluid} />
+            <Img fluid={dare.childImageSharp.fluid} />
+            <Header>Dare Moreno</Header>
           </GridLeft>
           <GridRight>
+            <Img fluid={darius.childImageSharp.fluid} />
             <Header>Darius Moreno</Header>
-            <Paragraph>
+            {/* <Paragraph>
               Darius is an L.A. based artist who works in 2D and 3D mediums,
               predominately sculpture and paintings. His work is inspired by the
               grit of hip hop culture. This is evident when before he received
@@ -81,8 +123,20 @@ const AboutPage = () => {
               more than ever on Dare Dollz the company she shares with her twin
               brother Darius Moreno.
             </Paragraph>
+          */}
           </GridRight>
         </TwoColumnGrid>
+        <ParagraphHeader>
+          Dare Dollz is doll and streetwear brand created by LA based artists and twins Darius and Dare Moreno 
+        </ParagraphHeader>
+        <Paragraph>
+            Dare Moreno is an L.A. based based actor, filmmaker, art director,
+            and entrepreneur. Moreno is best known for her food and travel
+            series A Girl’s Gotta Eat! Darius works in 2D and 3D mediums,
+            predominately sculpture and paintings. His work is inspired by the
+            grit of hip hop culture.
+        </Paragraph>
+        <IFrame src="https://www.youtube.com/embed/8InS6y58Bdk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></IFrame >
       </Container>
       <SEO
         title="About"

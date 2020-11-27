@@ -18,14 +18,15 @@ export const AddToCartWrapper = styled.div`
 
 export const AddToCartButton = styled.button`
   width: 65%;
-  margin-left: 5%;
+  font-weight: 600;
+  padding: 1.5rem;
   background-color: black;
   color: white;
-  padding: 10px 0 10px 0;
-  font-weight: 200;
-  font-size: 16px;
-  font-style: normal;
-  height: 30px;
+  text-transform: uppercase;
+  width:100%;
+  margin-top: 2rem;
+  border: 0.0625rem solid #000;
+  /* height: 30px; */
 `
 
 export const AddToCartContainer = styled.div``
@@ -65,6 +66,7 @@ export const QuantityInput = styled.input`
   text-align: center;
   padding: 100;
   margin: 0 20px 0 0;
+  border: 1px solid black;
 `
 
 export const Value = styled.div`
@@ -97,6 +99,11 @@ export const Option = styled.li<OptionProps>`
   border: 1px solid black;
   padding: 0.5rem;
   margin: 0.2rem;
+  cursor: default;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
   ${props =>
     props.selected &&
     css`

@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-
+import { css } from "@emotion/react"
 import { breakpoints } from "../../utils/styles"
 
 export const Wrapper = styled.div`
@@ -19,16 +19,29 @@ export const Product = styled.div`
   display: flex;
   min-height: 100%;
   flex-direction: column;
+  position: relative;
 `
 
-export const Title = styled.span`
+interface TitleProps {
+  hover: boolean;
+}
+export const Title = styled.span<TitleProps>`
   position: absolute;
-  top: 0;
   left: 0;
   top: 50%;
   width: 100%;
   text-align: center;
-  opacity: 0;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 18px;  
+  transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
+  opacity: 0; 
+    ${props =>
+      props.hover &&
+      css`
+        opacity: 1;
+      `};
 `
 
 export const PriceTag = styled.span`

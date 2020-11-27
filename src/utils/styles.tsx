@@ -26,6 +26,27 @@ export const GlobalStyle = props => (
   />
 )
 
+interface ImgHoverProps {
+  hover:boolean
+}
+
+export const ImgHover = styled(Image)<ImgHoverProps>`
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 1.45rem;
+  transition: opacity 0.15s ease-in-out;
+  ${props=>props.hover && css`
+    {
+      opacity: 0.5;
+    }
+  `}
+`
 export const Img = styled(Image)`
   max-width: 100%;
   margin-left: 0;
@@ -37,9 +58,7 @@ export const Img = styled(Image)`
   padding-top: 0;
   margin-bottom: 1.45rem;
   transition: opacity 0.15s ease-in-out;
-  &:hover {
-    opacity: 0.5;
-  }
+  
 `
 
 export const Container = styled.div`
@@ -53,7 +72,7 @@ export const TwoColumnGrid = styled.div`
   grid-template-rows: 1auto;
   grid-template-areas: "left . right";
 
-  @media (max-width: ${breakpoints.l}px) {
+  @media (max-width: ${breakpoints.s}px) {
     display: block;
   }
 `

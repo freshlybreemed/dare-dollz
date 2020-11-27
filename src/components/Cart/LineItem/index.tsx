@@ -1,10 +1,22 @@
 import React, { useContext } from "react"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 
-import StoreContext from "~/context/StoreContext"
-import { Wrapper } from "./styles"
+import StoreContext from "../../../context/StoreContext"
+import { Wrapper, CloseButton, Paragraph } from "./styles"
 
 const LineItem = props => {
+  const { close } = useStaticQuery(graphql`
+    {
+      close: file(relativePath: { in: "x.svg" }) {
+        id
+        childImageSharp {
+          fixed(width: 30) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+  `)
   const { item } = props
   const {
     removeLineItem,
@@ -34,14 +46,17 @@ const LineItem = props => {
       <Link to={`/product/${item.variant.product.handle}/`}>
         {variantImage}
       </Link>
-      <p>
-        {item.title}
-        {`  `}
+      <Paragraph>
+        {item.title} 
+      </Paragraph>
+      <Paragraph>
         {item.variant.title === !"Default Title" ? item.variant.title : ""}
-      </p>
       {selectedOptions}
+      </Paragraph>
       {item.quantity}
-      <button onClick={handleRemove}>Remove</button>
+      <CloseButton onClick={handleRemove}>
+        <svg aria-hidden="true" focusable="false" role="presentation" viewBox="0 0 16 16"><path d="M0 14.434l6.4-6.4-6.4-6.4L1.634 0l6.4 6.4 6.4-6.4L16 1.634l-6.4 6.4 6.4 6.4L14.434 16l-6.4-6.4-6.4 6.4z"></path></svg>
+      </CloseButton>
     </Wrapper>
   )
 }

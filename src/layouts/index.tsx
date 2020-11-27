@@ -1,15 +1,16 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
-import styled from "@emotion/styled"
-import ContextProvider from "~/provider/ContextProvider"
+import ContextProvider from "../provider/ContextProvider"
 import logoGIF from "../images/logo.gif"
-import { GlobalStyle } from "~/utils/styles"
-import Navigation from "~/components/Navigation"
+import { GlobalStyle } from "../utils/styles"
+import Navigation from "../components/Navigation"
+import Cart from "../components/Cart"
 import { Wrapper, Page } from "./styles"
-import { Mobile, MobileLinks } from "./styles"
+import { Mobile, MobileLink, CartWrapper } from "./styles"
 const Layout = ({ children }) => {
   const [hamburgerActive, setHamburgerActive] = useState(false)
+  const [cartActive, setCartActive] = useState(false)
 
   return (
     <ContextProvider>
@@ -23,27 +24,35 @@ const Layout = ({ children }) => {
               }
             }
           }
-        `}
-        render={data => (
+          `}
+        render={data => (<>
+          <CartWrapper style={cartActive ? { width: "50%" } : {}}>
+           <Cart setCartActive={setCartActive}
+            cartActive={cartActive}/>
+          </CartWrapper>
           <Page>
             <Navigation
               hamburgerActive={hamburgerActive}
               setHamburgerActive={setHamburgerActive}
+              setCartActive={setCartActive}
+              cartActive={cartActive}
               logo={logoGIF}
               siteTitle={data.site.siteMetadata.title}
             />
             <Mobile style={hamburgerActive ? { width: "100%" } : {}}>
-              <MobileLinks>About</MobileLinks>
-              <MobileLinks href="#">Services</MobileLinks>
-              <MobileLinks href="#">Clients</MobileLinks>
-              <MobileLinks href="#">Contact</MobileLinks>
+              <MobileLink>Comics</MobileLink>
+              <MobileLink href="/shop">Shop</MobileLink>
+              <MobileLink href="/dollz">Dollz</MobileLink>
+              <MobileLink href="/studio">Studio</MobileLink>
+              <MobileLink href="/contact">Contact</MobileLink>
             </Mobile>
+
 
             <Wrapper>
               {children}
               <footer></footer>
             </Wrapper>
-          </Page>
+          </Page></>
         )}
       />
     </ContextProvider>
