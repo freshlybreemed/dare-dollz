@@ -47,7 +47,12 @@ export const Img = styled(Image)`
   padding-top: 0;
   transition: opacity 0.15s ease-in-out;
   @media (max-width: ${breakpoints.m}px) {
-    max-width: 60%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media (max-width: ${breakpoints.s}px) {
+    max-width: 75%;
     margin-left: auto;
     margin-right: auto;
   }
