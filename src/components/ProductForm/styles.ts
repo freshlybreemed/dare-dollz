@@ -18,16 +18,15 @@ export const AddToCartWrapper = styled.div`
 
 export const AddToCartButton = styled.button`
   width: 65%;
-  margin-left: 5%;
-  border: black;
-  /* border */
-  background-color: white;
-  color: black;
-  padding: 10px 0 10px 0;
-  font-weight: 400;
-  font-size: 16px;
-  font-style: normal;
-  height: 30px;
+  font-weight: 600;
+  padding: 1.5rem;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  width:100%;
+  margin-top: 2rem;
+  border: 0.0625rem solid #000;
+  /* height: 30px; */
 `
 
 export const AddToCartContainer = styled.div``
@@ -67,6 +66,7 @@ export const QuantityInput = styled.input`
   text-align: center;
   padding: 100;
   margin: 0 20px 0 0;
+  border: 1px solid black;
 `
 
 export const Value = styled.div`
