@@ -189,7 +189,7 @@ const ProductForm = ({ product }) => {
                 disabled={!available || adding}
                 onClick={handleAddToCart}
               >
-                Add to Cart
+                {adding ? "Added!" : "Add to Cart"}
               </AddToCartButton>
             </AddToCartWrapper>
           </AddToCartContainer>
