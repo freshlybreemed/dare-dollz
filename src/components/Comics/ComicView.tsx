@@ -1,6 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { Grid, Comic, Img, Wrapper } from "./styles"
+import { Grid, Comic, Img, Wrapper, Paragraph, ParagraphHeader } from "./styles"
 import {
   Container,
   TwoColumnGrid,
@@ -42,6 +42,18 @@ const ComicView = () => {
             <Img fluid={secondCover.fluid} />
           </GridRight>
         </TwoColumnGrid>
+        {/* <ParagraphHeader></ParagraphHeader> */}
+        <Paragraph>
+          The Fabulous life of Dare Dollz follows the crime-fighting adventures
+          of four young fashionable women working for a private detective agency
+          in Carnado City.
+        </Paragraph>
+        <Paragraph>
+          Things start to heat up for the girls when a new trap rapper 8 Figga
+          rises in popularity. His influence on the youth is causing crimes to
+          rise in the city that they are paid to protect. And two things the
+          dollz don’t play about is their city or their money.
+        </Paragraph>
       </Container>
     </Wrapper>
   )

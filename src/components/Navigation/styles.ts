@@ -95,11 +95,14 @@ export const MenuLink = styled(Link)`
 export const MenuLogo = styled.img`
   float: right;
   padding-top: 1rem;
+  padding-left: 0.6rem;
   vertical-align: middle;
   @media (max-width: ${breakpoints.s}px) {
     width: 90px;
+    padding-left: none;
   }
   @media (min-width: ${breakpoints.s}px) {
+    padding-left: none;
     width: 120px;
   }
 `

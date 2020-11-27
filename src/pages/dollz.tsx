@@ -6,6 +6,13 @@ import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
 import { Container, TwoColumnGrid, GridLeft, GridRight } from "../utils/styles"
 
+const Paragraph = styled.p`
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding-top: 1rem;
+  /* padding-bottom: 1.5rem; */
+`
+
 const Wrapper = styled.p`
   padding-top: 3rem;
   padding-left: 1rem;
@@ -66,8 +73,22 @@ const ComicsPage = () => {
               <Img fluid={allContentfulAsset.edges[2].node.fluid} />
             </GridRight>
           </TwoColumnGrid>
+          <Paragraph>
+            The idea for Dare Dollz started on a bored afternoon while visiting
+            our grandparents. Our grandma who collects dolls always encouraged
+            us to make our own sets and accessories as kids for our toys. We
+            decided that we wanted dolls that looked exactly like us or more
+            like who we wanted to be. Then we created this universe very similar
+            to our own. Where everyone was vibrant, moody, and fly. Thus Dare
+            Dollz was born.
+          </Paragraph>
+          <Paragraph>
+            Centered around a group of smart, fashionable, and highly trained
+            women working for an undercover detective agency in Carnado city.
+            You will be able to join this universe very soon. Keep checking in.
+          </Paragraph>
         </Container>
-      </Wrapper>{" "}
+      </Wrapper>
     </>
   )
 }

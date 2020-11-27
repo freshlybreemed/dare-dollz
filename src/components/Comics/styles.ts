@@ -8,6 +8,28 @@ export const Wrapper = styled.p`
   padding-left: 2rem;
   padding-right: 2rem;
 `
+export const Paragraph = styled.p`
+  font-size: 1.2rem;
+  line-height: 1.5;
+  padding-top: 1rem;
+  /* padding-bottom: 1rem; */
+`
+export const ParagraphHeader = styled.p`
+  background: linear-gradient(140deg, #1c24e9, #9acd32);
+  /* -webkit-animation: AnimationName 59s ease infinite; */
+  /* -moz-animation: AnimationName 59s ease infinite;
+  -o-animation: AnimationName 59s ease infinite;
+  animation: AnimationName 59s ease infinite; */
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  margin-top: 2rem;
+  padding: 2.5rem;
+  /* padding-bottom:2.5rem; */
+`
+
 export const Img = styled(Image)`
   max-width: 100%;
   margin-left: 0;
