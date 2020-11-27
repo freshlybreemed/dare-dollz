@@ -17,6 +17,29 @@ export const Container = styled.div`
   /* max-width: 960px; */
 `
 
+export const CartWrapper = styled.div`
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.4;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  margin-right: 30px;
+  font-size: 1.25rem;
+  transition: opacity 0.15s ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
+  @media (max-width: ${breakpoints.s}px) {
+    float: right;
+    display: flex;
+    justify-content: center;
+  }
+`
+
 export const MenuLink = styled(Link)`
   color: black;
   text-transform: uppercase;
@@ -70,7 +93,7 @@ export const MenuLogoWrapper = styled(Link)`
 
 export const MenuLinks = styled.div`
   float: right;
-  z-index: 890;
+  z-index: 0;
   display: none;
   text-decoration: none;
   @media (min-width: 700px) {
