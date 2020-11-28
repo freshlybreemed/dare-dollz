@@ -77,16 +77,17 @@ export const Product = styled.div`
 const IndexPage = () => {
   const { allContentfulHomePage } = useStaticQuery(graphql`
     query {
-      allContentfulHomePage {
+     allContentfulHomePage {
         edges {
           node {
             id
             photos {
+              title
               fluid {
                 ...GatsbyContentfulFluid_noBase64
               }
             }
-          }
+          } 
         }
       }
     }
@@ -100,7 +101,7 @@ const IndexPage = () => {
       />
       <Wrapper>
         <Photos>
-          {allContentfulHomePage.edges[0].node.photos.map((curr, id) => {
+          {allContentfulHomePage.edges[0].node.photos.filter((curr)=>curr.title !== '38135587-8D11-4F8A-8FF8-42507626739F' && curr.title !=='3A7F8063-32AA-4102-8877-2FCAE91A5B01').map((curr, id) => {
             return (
               <Image
                 src={curr.fluid.src}
