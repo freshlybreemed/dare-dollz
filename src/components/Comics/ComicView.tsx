@@ -42,7 +42,6 @@ const ComicView = () => {
             <Img fluid={secondCover.fluid} />
           </GridRight>
         </TwoColumnGrid>
-        {/* <ParagraphHeader></ParagraphHeader> */}
         <Paragraph>
           The Fabulous life of Dare Dollz follows the crime-fighting adventures
           of four young fashionable women working for a private detective
