@@ -6,7 +6,6 @@ import ProductForm from "../components/ProductForm"
 import {
   PhotoRow,
   Img,
-  photoGallery,
   ProductTitle,
   ProductDescription,
   Container,
