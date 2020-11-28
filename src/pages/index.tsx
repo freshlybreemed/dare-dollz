@@ -110,25 +110,6 @@ const IndexPage = () => {
             )
           })}
         </Photos>
-        {/* <Img hover={false} fluid={allContentfulHomePage.edges[0].node.photos[0].fluid} />
-
-        <Grid>
-          {allContentfulHomePage.edges[0].node.photos.map((curr, id) => {
-            return (
-              id > 0 && (
-                <Product key={id}>
-                  <Link to="">
-                    {" "}
-                    <Img
-                      fluid={curr.fluid}
-                      // alt={handle}
-                    />
-                  </Link>
-                </Product>
-              )
-            )
-          })}
-        </Grid> */}
       </Wrapper>
     </>
   )
