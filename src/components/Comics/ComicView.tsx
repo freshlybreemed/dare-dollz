@@ -42,19 +42,16 @@ const ComicView = () => {
             <Img fluid={secondCover.fluid} />
           </GridRight>
         </TwoColumnGrid>
-        {/* <ParagraphHeader></ParagraphHeader> */}
         <Paragraph>
           The Fabulous life of Dare Dollz follows the crime-fighting adventures
-          of four young and fashionable women working for a private detective
+          of four young fashionable women working for a private detective
           agency in Carnado City.
         </Paragraph>
         <Paragraph>
           Protecting themselves and the city that pays them is their primary
           goal as well as keeping up their views on Open Book. Things start to
           heat up for the girls when a new trap rapper 8 Figga rises in
-          popularity. His influence on the youth is causing crimes to rise in
-          the city that they are paid to protect. And two things the dollz don’t
-          play about is their city or their money.
+          popularity. 
         </Paragraph>
         <Paragraph>
           His influence on the youth is causing crimes to rise in the city that
