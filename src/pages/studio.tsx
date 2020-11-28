@@ -220,7 +220,7 @@ const AboutPage = () => {
           }
         }
       }
-      darius: file(relativePath: { in: "Darius.JPG" }) {
+      darius: file(relativePath: { in: "Darius.jpg" }) {
         id
         childImageSharp {
           fluid {
