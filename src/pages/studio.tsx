@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "@emotion/styled"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
@@ -32,12 +32,12 @@ const Paragraph = styled.p`
   padding-top: 1rem;
   /* padding-bottom: 1.5rem; */
 `
-const Wrapper = styled.p`
+const Wrapper = styled.div`
   padding-top: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
 `
-const Header = styled.h3`
+const Names = styled.h3`
   font-size: 1.4rem;
   font-weight: 400;
   text-transform: uppercase;
@@ -49,7 +49,26 @@ const Header = styled.h3`
     font-size: 1.1rem;
   }
 `
-const Img = styled(Image)`
+
+const CreativeWork = styled.div`
+  padding-top:2rem;
+
+`
+const Header = styled.span`
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 1.15;
+  padding-bottom:.5rem;
+  border-bottom-color:  linear-gradient(140deg, #1c24e9, #9acd32);
+  border-bottom:solid;
+  @media (max-width: ${breakpoints.m}px) {
+    margin-top: 1rem;
+    /* margin-bottom: 1rem; */
+    font-size: 1.1rem;
+  }
+`
+const ImgHover = styled(Image)`
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -72,6 +91,21 @@ const Img = styled(Image)`
     filter: gray; /* IE 6-9 */
   }
 `
+const Img = styled(Image)`
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  filter: none;
+ 
+`
 const IFrame = styled.iframe`
   margin-top: 2rem;
   width: 100%;
@@ -87,8 +121,69 @@ const IFrame = styled.iframe`
   }
 `
 
+const Grid = styled.div`
+padding-top: 1rem;
+margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+
+  @media (max-width: ${breakpoints.s}px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+`
+const Product = styled.div`
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+`
+
+const Title = styled.h4`
+  font-weight: 600;
+  padding-top:.5rem;
+  text-transform:uppercase;
+  color: black;
+  text-decoration:none;
+  margin-top:0;
+  font-size: .9rem;
+  text-align: center;
+`
+const Description = styled.h4`
+  font-weight: 400;
+  padding-top:.5rem;
+  text-transform:uppercase;
+  margin-top:0;
+  font-size: .9rem;
+  text-align: center;
+`
+const ClientList = styled.section`
+  margin-top:3rem;
+  width:100%;
+`
+const Client = styled.a`
+  font-weight: 500;
+  font-size:1.2rem;
+  display: inline-block;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  padding-top: .25rem;
+    padding-bottom: .25rem;
+    cursor: default;
+
+  &:hover {
+    transition: color .15s ease-in;
+    color:${['#ff4136','#f48120','#faad3f'][Math.floor(Math.random()* Math.floor(3))]};
+  }
+  &:active {
+    transition: color .15s ease-in;
+  }
+`
+const VideoLink = styled(Link)`
+
+text-decoration:none;
+`
 const AboutPage = () => {
-  const { dare, darius } = useStaticQuery(graphql`
+  const { dare, darius, videos } = useStaticQuery(graphql`
     {
       dare: file(relativePath: { in: "dare.jpg" }) {
         id
@@ -98,11 +193,25 @@ const AboutPage = () => {
           }
         }
       }
-      darius: file(relativePath: { in: "darius.JPG" }) {
+      darius: file(relativePath: { in: "Darius.JPG" }) {
         id
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      videos: allContentfulVideos {
+        edges {
+          node {
+            thumbnail {
+              fluid {
+                ...GatsbyContentfulFluid_noBase64
+              }
+              description
+            }
+            title
+            url
           }
         }
       }
@@ -113,46 +222,12 @@ const AboutPage = () => {
       <Container>
         <TwoColumnGrid>
           <GridLeft>
-            <Img fluid={dare.childImageSharp.fluid} />
-            <Header>Dare Moreno</Header>
+            <ImgHover fluid={dare.childImageSharp.fluid} />
+            <Names>Dare Moreno</Names>
           </GridLeft>
           <GridRight>
-            <Img fluid={darius.childImageSharp.fluid} />
-            <Header>Darius Moreno</Header>
-            {/* <Paragraph>
-              Darius is an L.A. based artist who works in 2D and 3D mediums,
-              predominately sculpture and paintings. His work is inspired by the
-              grit of hip hop culture. This is evident when before he received
-              his degree in illustration at The New School for design he had
-              already directed the artwork for Goldlink’s Grammy nominated album
-              At What Cost. Darius continues to grow as an artist and creative
-              while gaining business relationships with major distributions such
-              as RCA records, Defjam, and Columbia records, to name a few. In
-              2018, Darius collaborated with Converse for a partnership with one
-              star. Darius also partnered with ASOS x GLAAD to do a painting for
-              there 2018 pride campaign. In 2019, Darius painted a promotional
-              piece for the rerelease of Miles Davis’s Birth of The Cool, while
-              partnering with Apple to teach a class on Pro create. Currently
-              Darius is focused on his new doll company Dare Dollz inc. with his
-              sister Dare Moreno.
-            </Paragraph>
-            <Header>Dare Moreno</Header>
-            <Paragraph>
-              Dare Moreno is an L.A. based based actor, filmmaker, art director,
-              and entrepreneur. Moreno is best known for her food and travel
-              series A Girl’s Gotta Eat! and the co-creation of the fashion doll
-              company Dare Dollz. Her production company however titled A Daring
-              Film has produced various projects for artists such as Goldlink,
-              Sebastian Mikael, and alem worldwide. She is also credited as a
-              writer and director on every project. Moreno gave her first on
-              screen performance in the indie film “April Again” released on
-              Amazon prime earlier this year and on HBO’s swiped. Her eclectic
-              style has landed her in publications such as Office magazine,
-              Vice, New York mag, The Source, and Mefeater. Now Dare is focused
-              more than ever on Dare Dollz the company she shares with her twin
-              brother Darius Moreno.
-            </Paragraph>
-          */}
+            <ImgHover fluid={darius.childImageSharp.fluid} />
+            <Names>Darius Moreno</Names>
           </GridRight>
         </TwoColumnGrid>
         <ParagraphHeader>
@@ -175,8 +250,39 @@ const AboutPage = () => {
         <Paragraph>
           Our videos & artworks have been featured in multiple publications such
           as Vice, Office Magazine, Paper, The Fader, Source, New York Mag,
-          Bubblegum Club, and Redbull radio. Here is some of our work:
+          Bubblegum Club, and Redbull radio. 
         </Paragraph>
+        <CreativeWork>
+          <Header>Recent Work:</Header>
+        </CreativeWork>
+        <Grid>
+          {videos.edges.map((curr)=>{
+            return (
+              <Product> 
+                <VideoLink to={curr.node.url}>
+                <Img fluid={curr.node.thumbnail.fluid}/>
+                <Title>{curr.node.title}</Title>
+                </VideoLink>
+              </Product>
+            )
+          })}
+        </Grid>
+        <CreativeWork>
+          <Header>Past Clients:</Header>
+          <ClientList>
+            <Client>Vice</Client>
+            <Client>Office Magazine</Client>
+            <Client>Paper</Client>
+            <Client>The Fader</Client>
+            <Client>Source</Client>
+            <Client>Bubblegum Club</Client>
+            <Client>Redbull radio</Client>
+          </ClientList>
+        </CreativeWork>
+        <CreativeWork>
+         <Header>Socials:</Header>
+
+        </CreativeWork>
         <IFrame
           src="https://www.youtube.com/embed/8InS6y58Bdk"
           frameborder="0"
