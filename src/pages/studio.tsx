@@ -199,6 +199,8 @@ const SocialsRow = styled.section`
   text-align:center;
   padding-left: 3rem;
   padding-right: 3rem;
+  margin-top: 2rem;
+
 `
 
 const Social = styled.a`
