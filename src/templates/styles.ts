@@ -5,7 +5,7 @@ import Image from "gatsby-image"
 export const Container = styled.div`
   margin: 0 auto;
   max-width: 900px;
-  padding: 0 1rem 0 2rem;
+  padding: 2rem 1rem 0 2rem;
   @media (max-width: ${breakpoints.m}px) {
     padding: 0 3rem 0 3rem;
   }
