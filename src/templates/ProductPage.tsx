@@ -11,7 +11,8 @@ import {
   Container,
   TwoColumnGrid,
   GridLeft,
-  GridRight
+  GridRight,
+  PhotoGallery
 } from "./styles"
 
 const ProductPage = ({ data }) => {
@@ -26,16 +27,26 @@ const ProductPage = ({ data }) => {
       <Container>
         <TwoColumnGrid>
           <GridLeft>
-          <Img
-            fluid={product.images[0].localFile.childImageSharp.fluid}
-            alt={product.title}
-            />
-          <PhotoRow>
-            {product.images.map((image,ind) =>  {
+          {product.images.map((image,ind) =>  {
+              console.log('bro',image)
               return (
-              <Img fluid={image.localFile.childImageSharp.fluid} />
-              )
-            })}
+                // <Img fluid={image.localFile.childImageSharp.fluid} />
+                <Img
+                  fluid={image.localFile.childImageSharp.fluid}
+                  // alt={product.title}
+                  />
+                )
+              })}
+          <PhotoRow>
+            <PhotoGallery>
+
+            {product.images.map((image,ind) =>  {
+              console.log('bro',image)
+              return (
+                <Img fluid={image.localFile.childImageSharp.fluid} />
+                )
+              })}
+              </PhotoGallery>
           </PhotoRow>
 
           </GridLeft>
@@ -49,12 +60,6 @@ const ProductPage = ({ data }) => {
           </GridRight>
         </TwoColumnGrid>
       </Container>
-      {/* <ProductContainer>
-        <GridLeftContainer>
-        </GridLeftContainer>
-        <GridRightContainer>
-        </GridRightContainer>
-      </ProductContainer> */}
     </>
   )
 }
