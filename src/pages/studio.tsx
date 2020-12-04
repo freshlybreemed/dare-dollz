@@ -297,7 +297,7 @@ const AboutPage = () => {
           })}
         </Grid>
         <CreativeWork>
-          <Header>Past Clients:</Header>
+          <Header>Press + Past Clients:</Header>
           <ClientList>
             <Client>Vice</Client>
             <Client>Office Magazine</Client>
@@ -305,7 +305,9 @@ const AboutPage = () => {
             <Client>The Fader</Client>
             <Client>Source</Client>
             <Client>Bubblegum Club</Client>
-            <Client>Redbull radio</Client>
+            <Client>Redbull Radio</Client>
+            <Client>EverPress</Client>
+            <Client>Naveszn</Client>
           </ClientList>
         </CreativeWork>
         <CreativeWork>
