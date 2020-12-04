@@ -45,11 +45,14 @@ export const Img = styled(Image)`
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
+  margin-bottom: 1rem;
+
   transition: opacity 0.15s ease-in-out;
   @media (max-width: ${breakpoints.m}px) {
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
+
   }
   @media (max-width: ${breakpoints.s}px) {
     max-width: 75%;
