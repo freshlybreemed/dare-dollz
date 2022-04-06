@@ -1,10 +1,19 @@
 import styled from "@emotion/styled"
 
-export const Wrapper = styled.div``
+export const Container = styled.div`
+  /* background-color: "#302F2F"; */
+`
+export const Wrapper = styled.div`
+  background-color: white;
+  text-align: center;
+  font-family: "Gunterz";
+  position: relative;
+`
 
 export const Page = styled.div`
+  background-color: #302f2f;
   transition: margin-left 0.5s;
-  padding: 20px 0 20px 0;
+  /* padding: 20px 0 20px 0; */
 `
 
 export const CartWrapper = styled.div`

@@ -16,6 +16,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: baseline;
   margin: 0 auto;
+  color: white;
   /* max-width: 960px; */
 `
 export const Img = styled(Image)`
@@ -70,7 +71,7 @@ export const CartWrapperMobile = styled.div`
 `
 
 export const MenuLink = styled(Link)`
-  color: black;
+  color: white;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 700;

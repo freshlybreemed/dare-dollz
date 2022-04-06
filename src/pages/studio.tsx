@@ -9,7 +9,8 @@ import {
   TwoColumnGrid,
   GridLeft,
   GridRight,
-  breakpoints
+  breakpoints,
+  ImgHover
 } from "../utils/styles"
 
 const ParagraphHeader = styled.p`
@@ -37,7 +38,6 @@ const Email = styled.a`
   font-weight: 700;
   /* text-decoration: none; */
   text-align: center;
-
 `
 
 const Paragraph = styled.p`
@@ -51,11 +51,13 @@ const Wrapper = styled.div`
   padding-top: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  background-color: black;
 `
 
 const Names = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
+  color: white;
   text-transform: uppercase;
   line-height: 1.15;
   margin-top: 2rem;
@@ -73,6 +75,7 @@ const CreativeWork = styled.div`
 const Header = styled.span`
   font-size: 1.4rem;
   font-weight: 400;
+  color: white;
   text-transform: uppercase;
   line-height: 1.15;
   padding-bottom: 0.5rem;
@@ -82,30 +85,6 @@ const Header = styled.span`
     margin-top: 1rem;
     /* margin-bottom: 1rem; */
     font-size: 1.1rem;
-  }
-`
-
-const ImgHover = styled(Image)`
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  -webkit-filter: none;
-  -moz-filter: none;
-  -ms-filter: none;
-  filter: none;
-  &:hover {
-    transition: opacity 0.15s ease-in-out;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter: gray; /* IE 6-9 */
   }
 `
 
@@ -159,6 +138,8 @@ const Product = styled.div`
 
 const Title = styled.h4`
   font-weight: 600;
+  color: white;
+
   padding-top: 0.5rem;
   text-transform: uppercase;
   color: black;
@@ -185,6 +166,7 @@ const ClientList = styled.section`
 const Client = styled.a`
   font-weight: 500;
   font-size: 1.2rem;
+  color: white;
   display: inline-block;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -294,14 +276,13 @@ const AboutPage = () => {
         </Paragraph>
         <Paragraph>
           <ParagraphHeader>
-          To contact us feel free to shoot us an email at{' '} 
+            To contact us feel free to shoot us an email at{" "}
             <Email href="mailto:daredollz95@gmail.com">
               daredollz95@gmail.com
             </Email>
-            </ParagraphHeader>
+          </ParagraphHeader>
         </Paragraph>
-        <CreativeWork>
-        </CreativeWork>
+        <CreativeWork></CreativeWork>
         <CreativeWork>
           <Header>Recent Work:</Header>
         </CreativeWork>
@@ -320,6 +301,7 @@ const AboutPage = () => {
         <CreativeWork>
           <Header>Press + Past Clients:</Header>
           <ClientList>
+            <Client>Puma</Client>
             <Client>Vice</Client>
             <Client>Office Magazine</Client>
             <Client>Paper</Client>
@@ -377,6 +359,32 @@ const AboutPage = () => {
                 stroke-miterlimit="1.414"
               >
                 <path d="M0 7.345c0-1.294.16-2.59.16-2.59s.156-1.1.636-1.587c.608-.637 1.408-.617 1.764-.684C3.84 2.36 8 2.324 8 2.324s3.362.004 5.6.166c.314.038.996.04 1.604.678.48.486.636 1.588.636 1.588S16 6.05 16 7.346v1.258c0 1.296-.16 2.59-.16 2.59s-.156 1.102-.636 1.588c-.608.638-1.29.64-1.604.678-2.238.162-5.6.166-5.6.166s-4.16-.037-5.44-.16c-.356-.067-1.156-.047-1.764-.684-.48-.487-.636-1.587-.636-1.587S0 9.9 0 8.605v-1.26zm6.348 2.73V5.58l4.323 2.255-4.32 2.24h-.002z" />
+              </svg>
+            </Social>
+            <Social
+              target="_blank"
+              href="https://www.youtube.com/channel/UCn1en9e5r3z6q3DWe9T0oFA"
+            >
+              <svg
+                width="48px"
+                height="48px"
+                viewBox="0 0 48 48"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  id="Icon/Social/tiktok-black"
+                  stroke="none"
+                  stroke-width="1"
+                  fill="none"
+                  fill-rule="evenodd"
+                >
+                  <path
+                    d="M38.0766847,15.8542954 C36.0693906,15.7935177 34.2504839,14.8341149 32.8791434,13.5466056 C32.1316475,12.8317108 31.540171,11.9694126 31.1415066,11.0151329 C30.7426093,10.0603874 30.5453728,9.03391952 30.5619062,8 L24.9731521,8 L24.9731521,28.8295196 C24.9731521,32.3434487 22.8773693,34.4182737 20.2765028,34.4182737 C19.6505623,34.4320127 19.0283477,34.3209362 18.4461858,34.0908659 C17.8640239,33.8612612 17.3337909,33.5175528 16.8862248,33.0797671 C16.4386588,32.6422142 16.0833071,32.1196657 15.8404292,31.5426268 C15.5977841,30.9658208 15.4727358,30.3459348 15.4727358,29.7202272 C15.4727358,29.0940539 15.5977841,28.4746337 15.8404292,27.8978277 C16.0833071,27.3207888 16.4386588,26.7980074 16.8862248,26.3604545 C17.3337909,25.9229017 17.8640239,25.5791933 18.4461858,25.3491229 C19.0283477,25.1192854 19.6505623,25.0084418 20.2765028,25.0219479 C20.7939283,25.0263724 21.3069293,25.1167239 21.794781,25.2902081 L21.794781,19.5985278 C21.2957518,19.4900128 20.7869423,19.436221 20.2765028,19.4380839 C18.2431278,19.4392483 16.2560928,20.0426009 14.5659604,21.1729264 C12.875828,22.303019 11.5587449,23.9090873 10.7814424,25.7878401 C10.003907,27.666593 9.80084889,29.7339663 10.1981162,31.7275214 C10.5953834,33.7217752 11.5748126,35.5530237 13.0129853,36.9904978 C14.4509252,38.4277391 16.2828722,39.4064696 18.277126,39.8028054 C20.2711469,40.1991413 22.3382874,39.9951517 24.2163416,39.2169177 C26.0948616,38.4384508 27.7002312,37.1209021 28.8296253,35.4300711 C29.9592522,33.7397058 30.5619062,31.7522051 30.5619062,29.7188301 L30.5619062,18.8324027 C32.7275484,20.3418321 35.3149087,21.0404263 38.0766847,21.0867664 L38.0766847,15.8542954 Z"
+                    id="Fill-1"
+                    fill="#000000"
+                  ></path>
+                </g>
               </svg>
             </Social>
             <Social target="_blank" href="https://twitter.com/daredollz">

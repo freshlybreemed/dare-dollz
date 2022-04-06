@@ -6,7 +6,7 @@ import logoGIF from "../images/logo.gif"
 import { GlobalStyle } from "../utils/styles"
 import Navigation from "../components/Navigation"
 import Cart from "../components/Cart"
-import { Wrapper, Page } from "./styles"
+import { Wrapper, Page, Container } from "./styles"
 import { Mobile, MobileLink, CartWrapper } from "./styles"
 const Layout = ({ children }) => {
   const [hamburgerActive, setHamburgerActive] = useState(false)
@@ -26,12 +26,13 @@ const Layout = ({ children }) => {
           }
         `}
         render={data => (
-          <>
+          <Container>
             <CartWrapper style={cartActive ? { width: "65%" } : {}}>
               <Cart setCartActive={setCartActive} cartActive={cartActive} />
             </CartWrapper>
             <Page>
               <Navigation
+                isVisable={false}
                 hamburgerActive={hamburgerActive}
                 setHamburgerActive={setHamburgerActive}
                 setCartActive={setCartActive}
@@ -51,7 +52,7 @@ const Layout = ({ children }) => {
                 <footer></footer>
               </Wrapper>
             </Page>
-          </>
+          </Container>
         )}
       />
     </ContextProvider>

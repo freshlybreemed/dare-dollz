@@ -5,12 +5,13 @@ import SEO from "../components/seo"
 import ProductGrid from "../components/ProductGrid"
 import styled from "@emotion/styled"
 import logoGIF from "../images/logo.gif"
+import "../css/typography.css"
+import Image from "gatsby-image"
 
-import { breakpoints, ImgHover } from "../utils/styles"
+import { breakpoints } from "../utils/styles"
+import { Container, Wrapper } from "../layouts/styles"
+import { css } from "@emotion/react"
 
-export const Wrapper = styled.div`
-  padding-top: 2rem;
-`
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -21,41 +22,6 @@ export const Grid = styled.div`
   }
 `
 
-const Image = styled.img`
-  /* Just in case there are inline attributes */
-  width: 100% !important;
-  height: auto !important;
-  padding-bottom: 1rem;
-
-  @media (max-width: 1200px) {
-    #photos {
-      -moz-column-count: 3;
-      -webkit-column-count: 3;
-      column-count: 3;
-    }
-  }
-  @media (max-width: 1000px) {
-    #photos {
-      -moz-column-count: 2;
-      -webkit-column-count: 2;
-      column-count: 2;
-    }
-  }
-  @media (max-width: 800px) {
-    #photos {
-      -moz-column-count: 2;
-      -webkit-column-count: 2;
-      column-count: 2;
-    }
-  }
-  @media (max-width: 400px) {
-    #photos {
-      -moz-column-count: 1;
-      -webkit-column-count: 1;
-      column-count: 1;
-    }
-  }
-`
 const Photos = styled.section`
   /* Prevent vertical gaps */
   line-height: 0;
@@ -74,10 +40,64 @@ export const Product = styled.div`
   flex-direction: column;
 `
 
+const H1 = styled("h1")`
+  font-size: 2.5rem;
+`
+const Button = styled("a")`
+  background-color: #9fedff;
+  padding: 0.5rem 1rem;
+  border-width: 0.08em;
+  border-color: black;
+  position: fixed;
+  border-style: solid;
+  &:hover {
+    background-color: #01ff8f;
+  }
+  font-size: 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+`
+const ImgHover = styled(Image)<{
+  hover: boolean
+}>`
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  margin-bottom: 0rem;
+  transition: opacity 0.15s ease-in-out;
+  ${props =>
+    props.hover &&
+    css`
+       {
+        opacity: 0.5;
+      }
+    `}
+`
 const IndexPage = () => {
-  const { allContentfulHomePage } = useStaticQuery(graphql`
+  const { allContentfulHomePage, heads } = useStaticQuery(graphql`
     query {
-     allContentfulHomePage {
+      heads: file(relativePath: { in: "headgrid.JPG" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      content: allContentfulHomePage {
         edges {
           node {
             id
@@ -87,31 +107,33 @@ const IndexPage = () => {
                 ...GatsbyContentfulFluid_noBase64
               }
             }
-          } 
+          }
         }
       }
     }
   `)
+  console.log(heads)
   return (
-    <>
+    <Container>
       <SEO
         title="Dare Dollz"
         image={logoGIF}
         keywords={[`dare dollz`, `daredollz`]}
       />
       <Wrapper>
-        <Photos>
-          {allContentfulHomePage.edges[0].node.photos.filter((curr)=>curr.title !== '38135587-8D11-4F8A-8FF8-42507626739F' && curr.title !=='3A7F8063-32AA-4102-8877-2FCAE91A5B01').map((curr, id) => {
-            return (
-              <Image
-                src={curr.fluid.src}
-                // alt={handle}
-              />
-            )
-          })}
-        </Photos>
+        <H1>Daredollz</H1>
+        <Button>Enter</Button>
+
+        <ImgHover
+          fluid={heads.childImageSharp.fluid}
+          // alt={handle}
+        />
+        <ImgHover
+          fluid={heads.childImageSharp.fluid}
+          // alt={handle}
+        />
       </Wrapper>
-    </>
+    </Container>
   )
 }
 

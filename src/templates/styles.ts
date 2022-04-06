@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { breakpoints } from "../utils/styles"
 import Image from "gatsby-image"
+import "../css/typography.css"
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -52,7 +53,6 @@ export const Img = styled(Image)`
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-
   }
   @media (max-width: ${breakpoints.s}px) {
     max-width: 75%;
@@ -80,7 +80,7 @@ export const ProductTitle = styled.h1`
   word-wrap: break-word;
   text-transform: uppercase;
   font-style: italic;
-  font-family: "Helvetica", "Helvetica", sans-serif;
+  font-family: "Gunterz", "Helvetica", sans-serif;
   font-weight: 600;
   margin: 0 0 0.5rem;
   line-height: 1.4;
@@ -93,6 +93,6 @@ export const ProductTitle = styled.h1`
 
 export const ProductDescription = styled.div`
   margin-top: 40px;
-  font-family: "Helvetica", "Helvetica", sans-serif;
+  font-family: "Gunterz", "Helvetica", sans-serif;
   font-weight: 300;
 `
