@@ -9,7 +9,7 @@ import "../css/typography.css"
 import Image from "gatsby-image"
 
 import { breakpoints } from "../utils/styles"
-import { Container, Wrapper } from "../layouts/styles"
+import { Container, MainButton, Wrapper } from "../layouts/styles"
 import { css } from "@emotion/react"
 
 export const Grid = styled.div`
@@ -43,30 +43,7 @@ export const Product = styled.div`
 const H1 = styled("h1")`
   font-size: 2.5rem;
 `
-const Button = styled("a")`
-  background-color: #9fedff;
-  padding: 0.5rem 1rem;
-  border-width: 0.08em;
-  text-decoration: none;
-  color: black;
-  border-color: black;
-  position: fixed;
-  border-style: solid;
-  &:hover {
-    background-color: #01ff8f;
-  }
-  font-size: 2.5rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-`
+
 const ImgHover = styled(Image)<{
   hover: boolean
 }>`
@@ -131,7 +108,7 @@ const IndexPage = () => {
       />
       <Wrapper>
         <H1>Daredollz</H1>
-        <Button href="/home">Enter</Button>
+        <MainButton href="/home">Enter</MainButton>
 
         <ImgHover
           fluid={doll5.childImageSharp.fluid}

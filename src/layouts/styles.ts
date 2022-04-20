@@ -30,7 +30,30 @@ export const CartWrapper = styled.div`
     padding-top: 15px;
   }
 `
-
+export const MainButton = styled("a")`
+  background-color: #9fedff;
+  padding: 0.5rem 1rem;
+  border-width: 0.08em;
+  text-decoration: none;
+  color: black;
+  border-color: black;
+  position: fixed;
+  border-style: solid;
+  &:hover {
+    background-color: #01ff8f;
+  }
+  font-size: 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+`
 export const Mobile = styled.div`
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */

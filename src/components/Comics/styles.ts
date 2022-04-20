@@ -10,9 +10,17 @@ export const Wrapper = styled.p`
 `
 export const Paragraph = styled.p`
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 2.5rem;
   padding-top: 1rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: "Gunterz-Medium";
   /* padding-bottom: 1rem; */
+  @media (max-width: ${breakpoints.m}px) {
+    width: 100%;
+    line-height: 2rem;
+  }
 `
 export const ParagraphHeader = styled.p`
   background: linear-gradient(140deg, #1c24e9, #9acd32);
