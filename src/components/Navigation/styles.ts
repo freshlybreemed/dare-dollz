@@ -5,11 +5,12 @@ import Image from "gatsby-image"
 import { breakpoints } from "../../utils/styles"
 
 export const Wrapper = styled.div`
-  margin-bottom: 3rem;
+  padding-bottom: 3rem;
 `
 
 export const Container = styled.div`
   display: flex;
+  /* padding-top: 3rem; */
   justify-content: space-between;
   align-items: baseline;
   margin: 0 auto;

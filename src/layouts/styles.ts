@@ -3,6 +3,14 @@ import styled from "@emotion/styled"
 export const Container = styled.div`
   /* background-color: "#302F2F"; */
 `
+
+export const MainWrapper = styled.div`
+  font-family: "Gunterz-Medium";
+  /* padding-top: 3rem; */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  /* background-color: black; */
+`
 export const Wrapper = styled.div`
   background-color: white;
   text-align: center;
@@ -30,9 +38,32 @@ export const CartWrapper = styled.div`
     padding-top: 15px;
   }
 `
-
+export const MainButton = styled("a")`
+  background-color: #9fedff;
+  padding: 0.5rem 1rem;
+  border-width: 0.08em;
+  text-decoration: none;
+  color: black;
+  border-color: black;
+  position: fixed;
+  border-style: solid;
+  &:hover {
+    background-color: #01ff8f;
+  }
+  font-size: 2.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+`
 export const Mobile = styled.div`
-  height: 100%; /* 100% Full-height */
+  /* height: 100%; 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
@@ -47,6 +78,9 @@ export const Mobile = styled.div`
   }
 `
 
+export const Character = styled.a`
+  font-family: "Helvetica-Neue";
+`
 export const MobileLink = styled.a`
   padding: 8px 30px 8px 32px;
   font-size: 25px;
