@@ -100,7 +100,7 @@ const Navigation = ({
           <MenuLink to="/dollz">Dollz</MenuLink>
           <MenuLink to="/shop">Shop</MenuLink>
           <MenuLink to="/comics">Comicz</MenuLink>
-          <MenuLink to="/studio">Studio</MenuLink>
+          <MenuLink to="/studio">Creatorz</MenuLink>
           <CartWrapper>
             {hasItems && (
               <div onClick={() => setCartActive(!cartActive)}>

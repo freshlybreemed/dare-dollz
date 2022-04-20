@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import styled from "@emotion/styled"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
+import addToMailchimp from "gatsby-plugin-mailchimp"
 
 import {
   Container,
@@ -13,6 +14,21 @@ import {
   ImgHover
 } from "../utils/styles"
 
+const SubmitButton = styled.input`
+  width: 40%;
+  font-weight: 600;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  width: 100%;
+  /* margin-top: 0rem; */
+  border: 0.0625rem solid #000;
+  /* height: 30px; */
+  @media (max-width: ${breakpoints.m}px) {
+    width: 90%;
+  }
+`
 const ParagraphHeader = styled.p`
   background: linear-gradient(140deg, #1c24e9, #9acd32);
   /* -webkit-animation: AnimationName 59s ease infinite; */
@@ -23,16 +39,26 @@ const ParagraphHeader = styled.p`
   line-height: 1.5;
   text-transform: uppercase;
   text-align: center;
-  font-weight: 700;
+  font-family: "Gunterz-Medium";
+
   margin-top: 2rem;
   padding: 2.5rem;
   /* padding-bottom:2.5rem; */
 `
-
+const Input = styled.input`
+  width: 40%;
+  padding: 0.4rem;
+  font-family: "Gunterz-Medium";
+  @media (max-width: ${breakpoints.m}px) {
+    width: 90%;
+  }
+`
 const Email = styled.a`
   /* font-size: 1.3rem; */
   line-height: 1.5;
   padding-top: 1rem;
+  font-family: "Gunterz-Medium";
+
   /* display: block; */
   /* color: black; */
   font-weight: 700;
@@ -44,6 +70,14 @@ const Paragraph = styled.p`
   font-size: 1.1rem;
   line-height: 1.5;
   padding-top: 1rem;
+  font-family: "Gunterz-Medium";
+  /* padding-bottom: 1.5rem; */
+`
+const SmallParagaph = styled.p`
+  font-size: 0.8rem;
+  line-height: 1.5;
+  padding-top: 1rem;
+  font-family: "Gunterz-Medium";
   /* padding-bottom: 1.5rem; */
 `
 
@@ -51,13 +85,15 @@ const Wrapper = styled.div`
   padding-top: 3rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  background-color: black;
+  /* background-color: black; */
 `
 
 const Names = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
-  color: white;
+  color: black;
+  font-family: "Gunterz-Medium-Italic";
+
   text-transform: uppercase;
   line-height: 1.15;
   margin-top: 2rem;
@@ -75,7 +111,7 @@ const CreativeWork = styled.div`
 const Header = styled.span`
   font-size: 1.4rem;
   font-weight: 400;
-  color: white;
+  color: black;
   text-transform: uppercase;
   line-height: 1.15;
   padding-bottom: 0.5rem;
@@ -166,7 +202,7 @@ const ClientList = styled.section`
 const Client = styled.a`
   font-weight: 500;
   font-size: 1.2rem;
-  color: white;
+  color: black;
   display: inline-block;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -205,6 +241,22 @@ const Social = styled.a`
 `
 
 const AboutPage = () => {
+  const [email, setEmail] = useState<string>("")
+  const [sent, setSent] = useState<boolean>(false)
+
+  const handleSubmit = e => {
+    console.log("peace")
+    e.preventDefault()
+    setSent(true)
+    addToMailchimp(email, { source: "Website" }, null)
+      .then(data => {
+        console.log(data)
+      })
+      .catch(e => {
+        console.log(e)
+      })
+  }
+
   const { dare, darius, videos } = useStaticQuery(graphql`
     {
       dare: file(relativePath: { in: "dare.jpg" }) {
@@ -253,26 +305,68 @@ const AboutPage = () => {
           </GridRight>
         </TwoColumnGrid>
         <ParagraphHeader>
-          "Dare Dollz are stylish, provocative, pop culture influenced dolls--as
-          well as a clothing line, and stop motion studio. Created by Darrion
-          and Darius Moreno"
+          Darius and Dare Moreno are the creators of Dare Dollz. The brother
+          sister duo grew up in Washington D.C. before moving to NYC in their
+          late teens.
         </ParagraphHeader>
         <Paragraph>
-          Dare Dollz was first established in the summer of 2018 while visiting
-          our grandparents in Virginia Beach. Since then our company now located
-          in Los Angeles, has grown into a creative space where we welcome
-          clients, artists and collaborators.
+          They attended performing arts schools such as the Ellington School of
+          the Arts in D.C., studying fine art, writing, and theater. Outside of
+          school, the Moreno's spent most of their time creating. Whether it was
+          building homes made up of shoeboxes for their toys or creating comic
+          books with their friends, it was no surprise they would grow to become
+          sought after creators.{" "}
         </Paragraph>
         <Paragraph>
-          {" "}
-          We provide services through our design & art studio such as
-          storyboarding, character design, set design, photoshoots, and stop
-          motion video shoots.{" "}
+          Darius, the youngest twin, illustrated the 2012 Christmas card for the
+          Obamas before graduating high school. He then majored in illustration
+          at The New School of Design, wherein his Junior year, he painted the
+          cover of Goldlink's grammy nominated album At What Cost.{" "}
         </Paragraph>
         <Paragraph>
-          Our videos & artworks have been featured in multiple publications such
-          as Vice, Office Magazine, Paper, The Fader, Source, New York Mag,
-          Bubblegum Club, and Redbull radio.
+          Dare, however, was not always a visual artist. She majored in theater
+          and minored in writing at Penn state. When she moved to New York in
+          2015, she became a food vlogger (video blogger), creating a popular
+          web series titled A Girl's Gotta Eat!. The vlog landed Moreno in
+          multiple publications such as N.Y., Vice, and Office magazine. In
+          addition, the exposure led to her filming episodes in various
+          countries like Japan, Taiwan, and South Korea.{" "}
+        </Paragraph>
+        <Paragraph>
+          In the summer of 2018, while visiting their grandmother, a porcelain
+          doll collector, the twins got the idea to create their own dolls. They
+          already had sculpting and sewing experience and used it to invent the
+          flashy, bold, and fabulous characters now known as the Dare Dollz.
+          Darius and Dare are now based out of Los Angeles, where they produce
+          dolls, comics, claymation, and other creative projects in their home
+          studio.
+        </Paragraph>
+        <Paragraph>
+          <ParagraphHeader>
+            <form>
+              Subscribe
+              <div>
+                <SmallParagaph>Email Address</SmallParagaph>
+              </div>
+              <Input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.currentTarget.value)}
+                name="EMAIL"
+                className="required email"
+              />
+              <div>
+                <div>
+                  <SubmitButton
+                    type="submit"
+                    value={sent ? "Thanks" : "Subscribe"}
+                    name="subscribe"
+                    onClick={handleSubmit}
+                  />
+                </div>
+              </div>
+            </form>
+          </ParagraphHeader>
         </Paragraph>
         <Paragraph>
           <ParagraphHeader>
@@ -299,7 +393,7 @@ const AboutPage = () => {
           })}
         </Grid>
         <CreativeWork>
-          <Header>Press + Past Clients:</Header>
+          <Header>Press and Clients:</Header>
           <ClientList>
             <Client>Puma</Client>
             <Client>Vice</Client>
@@ -366,11 +460,13 @@ const AboutPage = () => {
               href="https://www.youtube.com/channel/UCn1en9e5r3z6q3DWe9T0oFA"
             >
               <svg
-                width="48px"
-                height="48px"
-                viewBox="0 0 48 48"
-                version="1.1"
+                fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                stroke-linejoin="round"
+                stroke-miterlimit="1.414"
               >
                 <g
                   id="Icon/Social/tiktok-black"
@@ -421,3 +517,6 @@ const AboutPage = () => {
 }
 
 export default AboutPage
+function listFields(email: any, listFields: any) {
+  throw new Error("Function not implemented.")
+}

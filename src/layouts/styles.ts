@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 `
 
 export const Page = styled.div`
-  background-color: #302f2f;
+  /* background-color: #302f2f; */
   transition: margin-left 0.5s;
   /* padding: 20px 0 20px 0; */
 `

@@ -47,6 +47,8 @@ const Button = styled("a")`
   background-color: #9fedff;
   padding: 0.5rem 1rem;
   border-width: 0.08em;
+  text-decoration: none;
+  color: black;
   border-color: black;
   position: fixed;
   border-style: solid;
@@ -87,9 +89,17 @@ const ImgHover = styled(Image)<{
     `}
 `
 const IndexPage = () => {
-  const { allContentfulHomePage, heads } = useStaticQuery(graphql`
+  const { allContentfulHomePage, doll5, doll6 } = useStaticQuery(graphql`
     query {
-      heads: file(relativePath: { in: "headgrid.JPG" }) {
+      doll5: file(relativePath: { in: "doll5.jpeg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      doll6: file(relativePath: { in: "doll6.jpeg" }) {
         id
         childImageSharp {
           fluid {
@@ -112,7 +122,6 @@ const IndexPage = () => {
       }
     }
   `)
-  console.log(heads)
   return (
     <Container>
       <SEO
@@ -122,14 +131,14 @@ const IndexPage = () => {
       />
       <Wrapper>
         <H1>Daredollz</H1>
-        <Button>Enter</Button>
+        <Button href="/home">Enter</Button>
 
         <ImgHover
-          fluid={heads.childImageSharp.fluid}
+          fluid={doll5.childImageSharp.fluid}
           // alt={handle}
         />
         <ImgHover
-          fluid={heads.childImageSharp.fluid}
+          fluid={doll6.childImageSharp.fluid}
           // alt={handle}
         />
       </Wrapper>

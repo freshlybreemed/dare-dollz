@@ -18,7 +18,7 @@ export const GlobalStyle = props => (
         margin: 0;
       }
       html {
-        font-family: Helvetica Neue LT Std, Helvetica Neue, sans-serif;
+        font-family: "Gunterz";
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
       }
@@ -29,6 +29,8 @@ export const GlobalStyle = props => (
 interface ImgHoverProps {
   hover: boolean
 }
+
+export const H2 = styled("h2")``
 
 export const ImgHover = styled(Image)<ImgHoverProps>`
   max-width: 100%;

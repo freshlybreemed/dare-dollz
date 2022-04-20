@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
             </CartWrapper>
             <Page>
               <Navigation
-                isVisable={false}
+                isVisable={true}
                 hamburgerActive={hamburgerActive}
                 setHamburgerActive={setHamburgerActive}
                 setCartActive={setCartActive}

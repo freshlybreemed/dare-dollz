@@ -5,10 +5,7 @@ import Image from "gatsby-image"
 import { breakpoints } from "../../utils/styles"
 
 export const Wrapper = styled.div`
-  margin-bottom: 2rem;
-  @media (max-width: ${breakpoints.m}px) {
-    margin-bottom: 1.5rem;
-  }
+  margin-bottom: 3rem;
 `
 
 export const Container = styled.div`
@@ -16,7 +13,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: baseline;
   margin: 0 auto;
-  color: white;
+  color: black;
   /* max-width: 960px; */
 `
 export const Img = styled(Image)`
@@ -71,10 +68,11 @@ export const CartWrapperMobile = styled.div`
 `
 
 export const MenuLink = styled(Link)`
-  color: white;
+  color: black;
   text-transform: uppercase;
   text-decoration: none;
-  font-weight: 700;
+  /* font-weight: 200; */
+  font-family: "Gunterz-Bold";
   line-height: 1.4;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -96,7 +94,8 @@ export const MenuLink = styled(Link)`
 export const MenuLogo = styled.img`
   float: right;
   padding-top: 1rem;
-  padding-left: 0.6rem;
+  padding-right: 2rem;
+  padding-left: 1rem;
   vertical-align: middle;
   @media (max-width: ${breakpoints.s}px) {
     width: 90px;
