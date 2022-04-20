@@ -4,10 +4,16 @@ import { StaticQuery, graphql } from "gatsby"
 import ContextProvider from "../provider/ContextProvider"
 import logoGIF from "../images/logo.gif"
 import { GlobalStyle } from "../utils/styles"
-import Navigation from "../components/Navigation"
-import Cart from "../components/Cart"
-import { Wrapper, Page, Container } from "./styles"
-import { Mobile, MobileLink, CartWrapper } from "./styles"
+import Navigation from "./Navigation"
+import Cart from "./Cart"
+import {
+  Wrapper,
+  Page,
+  Container,
+  Mobile,
+  MobileLink,
+  CartWrapper
+} from "../layouts/styles"
 const Layout = ({ children }) => {
   const [hamburgerActive, setHamburgerActive] = useState(false)
   const [cartActive, setCartActive] = useState(false)

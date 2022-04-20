@@ -3,11 +3,11 @@ import reduce from "lodash/reduce"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import "./hamburgers.min.css"
+import logoGIF from "../../images/logo.gif"
 
 import StoreContext from "../../context/StoreContext"
 import {
   CartCounter,
-  Container,
   MenuLink,
   MenuLinks,
   MenuLogo,
@@ -16,21 +16,23 @@ import {
   MenuLogoWrapper,
   HamburgerWrapper,
   CartWrapperMobile,
-  Img
+  Img,
+  Container
 } from "./styles"
 // import { Img } from "../../utils/styles"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import { css } from "@emotion/react"
+import { Mobile, MobileLink } from "../../layouts/styles"
 
-const useQuantity = () => {
-  const {
-    store: { checkout }
-  } = useContext(StoreContext)
-  const items = checkout ? checkout.lineItems : []
-  const total = reduce(items, (acc, item) => acc + item.quantity, 0)
-  return [total !== 0, total]
-}
+// const useQuantity = () => {
+//   const {
+//     store: { checkout }
+//   } = useContext(StoreContext)
+//   const items = checkout ? checkout.lineItems : []
+//   const total = reduce(items, (acc, item) => acc + item.quantity, 0)
+//   return [total !== 0, total]
+// }
 
 interface OverlayProps {
   overlay: boolean
@@ -51,15 +53,9 @@ const Overlay = styled.div<OverlayProps>`
       display: block;
     `}
 `
-const Navigation = ({
-  siteTitle,
-  logo,
-  hamburgerActive,
-  setHamburgerActive,
-  setCartActive,
-  cartActive,
-  isVisable
-}) => {
+const Navigation = ({ isVisable }) => {
+  const [hamburgerActive, setHamburgerActive] = useState(false)
+  const [cartActive, setCartActive] = useState(false)
   const { cart } = useStaticQuery(graphql`
     {
       cart: file(relativePath: { in: "shopping-cart.png" }) {
@@ -72,7 +68,7 @@ const Navigation = ({
       }
     }
   `)
-  const [hasItems, quantity] = useQuantity()
+  // const [hasItems, quantity] = useQuantity()
   console.log(isVisable)
   if (!isVisable) return <div />
   return (
@@ -94,30 +90,37 @@ const Navigation = ({
           </button>
         </HamburgerWrapper>
         <MenuLogoWrapper to="/">
-          <MenuLogo alt="logo" src={logo} />
+          <MenuLogo alt="logo" src={logoGIF} />
         </MenuLogoWrapper>
+        <Mobile style={hamburgerActive ? { width: "100%" } : {}}>
+          <MobileLink href="/comics">Comics</MobileLink>
+          <MobileLink href="/shop">Shop</MobileLink>
+          <MobileLink href="/dollz">Dollz</MobileLink>
+          <MobileLink href="/studio">Studio</MobileLink>
+        </Mobile>
+
         <MenuLinks>
           <MenuLink to="/dollz">Dollz</MenuLink>
           <MenuLink to="/shop">Shop</MenuLink>
           <MenuLink to="/comics">Comicz</MenuLink>
           <MenuLink to="/studio">Creatorz</MenuLink>
-          <CartWrapper>
+          {/* <CartWrapper>
             {hasItems && (
               <div onClick={() => setCartActive(!cartActive)}>
                 <CartCounter>{quantity}</CartCounter>{" "}
                 <Img fixed={cart.childImageSharp.fixed} />
               </div>
-            )}
-          </CartWrapper>
+            )} */}
+          {/* </CartWrapper> */}
         </MenuLinks>
-        <CartWrapperMobile>
-          {hasItems && (
+        {/* <CartWrapperMobile> */}
+        {/* {hasItems && (
             <div onClick={() => setCartActive(!cartActive)}>
               <CartCounter>{quantity}</CartCounter>{" "}
               <Img fixed={cart.childImageSharp.fixed} />
             </div>
-          )}
-        </CartWrapperMobile>
+          )} */}
+        {/* </CartWrapperMobile> */}
         <Overlay overlay={cartActive} />
       </Container>
     </Wrapper>
@@ -129,7 +132,7 @@ Navigation.propTypes = {
 }
 
 Navigation.defaultProps = {
-  siteTitle: ``
+  siteTitle: `Dare Dollz`
 }
 
 export default Navigation

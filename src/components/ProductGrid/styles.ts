@@ -23,7 +23,7 @@ export const Product = styled.div`
 `
 
 interface TitleProps {
-  hover: boolean;
+  hover: boolean
 }
 export const Title = styled.span<TitleProps>`
   position: absolute;
@@ -34,14 +34,14 @@ export const Title = styled.span<TitleProps>`
   color: black;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 18px;  
+  font-size: 18px;
   transition: 0.2s; /* 0.5 second transition effect to slide in the sidenav */
-  opacity: 0; 
-    ${props =>
-      props.hover &&
-      css`
-        opacity: 1;
-      `};
+  opacity: 0;
+  ${props =>
+    props.hover &&
+    css`
+      opacity: 1;
+    `};
 `
 
 export const PriceTag = styled.span`

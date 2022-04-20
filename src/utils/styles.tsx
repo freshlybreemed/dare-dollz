@@ -63,13 +63,49 @@ export const Img = styled(Image)`
   margin-bottom: 1.45rem;
   transition: opacity 0.15s ease-in-out;
 `
+const SubmitButton = styled.input`
+  /* width: 40%; */
+  font-weight: 600;
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  /* width: 100%; */
+  /* margin-top: 0rem; */
+  border: 0.0625rem solid #000;
+  /* height: 30px; */
+  @media (max-width: ${breakpoints.m}px) {
+    width: 90%;
+  }
+`
+export const Input = styled.input`
+  width: 40%;
+  padding: 0.4rem;
+  font-family: "Helvetica";
+  @media (max-width: ${breakpoints.m}px) {
+    width: 90%;
+  }
+`
+export const Email = styled.a`
+  /* font-size: 1.3rem; */
+  line-height: 1.5;
+  padding-top: 1rem;
+
+  /* display: block; */
+  /* color: black; */
+  font-weight: 700;
+  /* text-decoration: none; */
+  text-align: center;
+`
 
 export const Container = styled.div`
   margin: 0 auto;
   max-width: 960px;
+  padding-top: 3rem;
 `
 
 export const TwoColumnGrid = styled.div`
+  /* padding-top: 3rem; */
   display: grid;
   grid-template-columns: 1fr 2rem 1fr;
   grid-template-rows: 1auto;
