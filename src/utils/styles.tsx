@@ -18,7 +18,7 @@ export const GlobalStyle = props => (
         margin: 0;
       }
       html {
-        font-family: Helvetica Neue LT Std, Helvetica Neue, sans-serif;
+        font-family: "Gunterz";
         -ms-text-size-adjust: 100%;
         -webkit-text-size-adjust: 100%;
       }
@@ -27,8 +27,10 @@ export const GlobalStyle = props => (
 )
 
 interface ImgHoverProps {
-  hover:boolean
+  hover: boolean
 }
+
+export const H2 = styled("h2")``
 
 export const ImgHover = styled(Image)<ImgHoverProps>`
   max-width: 100%;
@@ -39,13 +41,15 @@ export const ImgHover = styled(Image)<ImgHoverProps>`
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0rem;
   transition: opacity 0.15s ease-in-out;
-  ${props=>props.hover && css`
-    {
-      opacity: 0.5;
-    }
-  `}
+  ${props =>
+    props.hover &&
+    css`
+       {
+        opacity: 0.5;
+      }
+    `}
 `
 export const Img = styled(Image)`
   max-width: 100%;
@@ -58,7 +62,6 @@ export const Img = styled(Image)`
   padding-top: 0;
   margin-bottom: 1.45rem;
   transition: opacity 0.15s ease-in-out;
-  
 `
 
 export const Container = styled.div`

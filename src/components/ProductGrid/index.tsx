@@ -1,4 +1,4 @@
-import React, { useContext,useState } from "react"
+import React, { useContext, useState } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import StoreContext from "../../context/StoreContext"
@@ -9,7 +9,7 @@ const ProductGrid = () => {
   const {
     store: { checkout }
   } = useContext(StoreContext)
-  const [highlightedProduct,setHighlightedProduct] = useState('')
+  const [highlightedProduct, setHighlightedProduct] = useState("")
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query {
@@ -51,7 +51,7 @@ const ProductGrid = () => {
   return (
     <Wrapper>
       <Grid>
-        {allShopifyProduct.edges ? (
+        {[].length ? (
           allShopifyProduct.edges.map(
             ({
               node: {
@@ -62,15 +62,21 @@ const ProductGrid = () => {
                 variants: [firstVariant]
               }
             }) => (
-              <Product onMouseEnter={()=>setHighlightedProduct(id)}  key={id}>
+              <Product onMouseEnter={() => setHighlightedProduct(id)} key={id}>
                 <Link to={`/product/${handle}/`}>
                   {firstImage && firstImage.localFile && (
-                    <ImgHover hover={highlightedProduct === id}
+                    <ImgHover
+                      hover={highlightedProduct === id}
                       fluid={firstImage.localFile.childImageSharp.fluid}
                       alt={handle}
                     />
                   )}
-                  <Title onMouseEnter={()=>setHighlightedProduct(id)} hover={highlightedProduct === id}>{title}</Title>
+                  <Title
+                    onMouseEnter={() => setHighlightedProduct(id)}
+                    hover={highlightedProduct === id}
+                  >
+                    {title}
+                  </Title>
                 </Link>
               </Product>
             )

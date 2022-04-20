@@ -57,7 +57,8 @@ const Navigation = ({
   hamburgerActive,
   setHamburgerActive,
   setCartActive,
-  cartActive
+  cartActive,
+  isVisable
 }) => {
   const { cart } = useStaticQuery(graphql`
     {
@@ -72,7 +73,8 @@ const Navigation = ({
     }
   `)
   const [hasItems, quantity] = useQuantity()
-
+  console.log(isVisable)
+  if (!isVisable) return <div />
   return (
     <Wrapper>
       <Container>
@@ -97,8 +99,8 @@ const Navigation = ({
         <MenuLinks>
           <MenuLink to="/dollz">Dollz</MenuLink>
           <MenuLink to="/shop">Shop</MenuLink>
-          <MenuLink to="/comics">Comics</MenuLink>
-          <MenuLink to="/studio">Studio</MenuLink>
+          <MenuLink to="/comics">Comicz</MenuLink>
+          <MenuLink to="/studio">Creatorz</MenuLink>
           <CartWrapper>
             {hasItems && (
               <div onClick={() => setCartActive(!cartActive)}>

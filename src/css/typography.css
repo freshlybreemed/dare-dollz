@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "Gunterz";
+  src: url("../fonts/gunterz-black.otf");
+}
+@font-face {
+  font-family: "Gunterz-Bold";
+  src: url("../fonts/gunterz-bold.otf");
+}
+@font-face {
+  font-family: "Gunterz-Medium";
+  src: url("../fonts/gunterz-medium.otf");
+}
+@font-face {
+  font-family: "Gunterz-Medium-Italic";
+  src: url("../fonts/gunterz-mediumitalic.otf");
+}
+@font-face {
+  font-family: "Gunterz-Bold-Italic";
+  src: url("../fonts/gunterz-bolditalic.otf");
+}
+@font-face {
+  font-family: "Gunterz-Regular";
+  src: url("../fonts/gunterz-regular.otf");
+}
+@font-face {
+  font-family: "Gunterz-Italic";
+  src: url("../fonts/gunterz-blackitalic.otf");
+}

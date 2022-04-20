@@ -8,6 +8,7 @@ import { Container, TwoColumnGrid, GridLeft, GridRight } from "../utils/styles"
 
 const Paragraph = styled.p`
   font-size: 1.1rem;
+  font-family: "Gunterz-Medium";
   line-height: 1.5;
   padding-top: 1rem;
   /* padding-bottom: 1.5rem; */
@@ -42,21 +43,31 @@ const Img = styled(Image)`
   }
 `
 const ComicsPage = () => {
-  const { allContentfulAsset } = useStaticQuery(graphql`
+  const { dollz, box } = useStaticQuery(graphql`
     {
-      allContentfulAsset(filter: { title: { regex: "g/Doll/" } }) {
+      box: file(relativePath: { in: "box.jpeg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      dollz: allFile(filter: { relativePath: { regex: "g/doll/" } }) {
         edges {
           node {
-            title
-            fluid {
-              ...GatsbyContentfulFluid
+            id
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
       }
     }
   `)
-  console.log(allContentfulAsset)
+  console.log(dollz)
   return (
     <>
       <SEO
@@ -67,26 +78,27 @@ const ComicsPage = () => {
         <Container>
           <TwoColumnGrid>
             <GridLeft>
-              <Img fluid={allContentfulAsset.edges[0].node.fluid} />
+              <Img fluid={dollz.edges[0].node.childImageSharp.fluid} />
+              <Img fluid={dollz.edges[6].node.childImageSharp.fluid} />
+              <Img fluid={dollz.edges[4].node.childImageSharp.fluid} />
             </GridLeft>
             <GridRight>
-              <Img fluid={allContentfulAsset.edges[2].node.fluid} />
+              <Img fluid={dollz.edges[1].node.childImageSharp.fluid} />
+              <Img fluid={dollz.edges[3].node.childImageSharp.fluid} />
+              <Img fluid={dollz.edges[5].node.childImageSharp.fluid} />
             </GridRight>
           </TwoColumnGrid>
           <Paragraph>
-            The idea for Dare Dollz started on a bored afternoon while visiting
-            our grandparents. Our grandma who collects dolls always encouraged
-            us to make our own sets and accessories as kids for our toys. We
-            decided that we wanted dolls that looked exactly like us or more
-            like who we wanted to be. Then we created this universe very similar
-            to our own. Where everyone was vibrant, moody, and fly. Thus Dare
-            Dollz was born.
+            Every Dare Doll is sculpted into an eye-catching work of art. Made
+            up of resin, PVC, and acrylic paint, the hand-painted dolls are
+            designed with attention to even the smallest detail.
           </Paragraph>
           <Paragraph>
-            Centered around a group of smart, fashionable, and highly trained
-            women working for an undercover detective agency in Carnado city.
-            You will be able to join this universe very soon. Keep checking in.
+            Every figure is created to represent and relate to trendsetters like
+            you. And just like you, any and everywhere the Dare Dollz go, they
+            command attention.
           </Paragraph>
+          <Img fluid={box.childImageSharp.fluid} />
         </Container>
       </Wrapper>
     </>
