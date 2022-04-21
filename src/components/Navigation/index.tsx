@@ -3,7 +3,7 @@ import reduce from "lodash/reduce"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import "./hamburgers.min.css"
-import logoGIF from "../../images/logo.gif"
+import logoGIF from "../../images/daredollz.gif"
 
 import StoreContext from "../../context/StoreContext"
 import {
@@ -92,14 +92,18 @@ const Navigation = ({ isVisable }) => {
         <MenuLogoWrapper to="/">
           <MenuLogo alt="logo" src={logoGIF} />
         </MenuLogoWrapper>
-        <Mobile style={hamburgerActive ? { width: "100%" } : {}}>
-          <MobileLink href="/comics">Comics</MobileLink>
+        <Mobile
+          style={hamburgerActive ? { width: "100%", height: "100% " } : {}}
+        >
+          <MobileLink href="/about">About</MobileLink>
+          <MobileLink href="/comics">Comicz</MobileLink>
           <MobileLink href="/shop">Shop</MobileLink>
           <MobileLink href="/dollz">Dollz</MobileLink>
-          <MobileLink href="/studio">Studio</MobileLink>
+          <MobileLink href="/studio">Creatorz</MobileLink>
         </Mobile>
 
         <MenuLinks>
+          <MenuLink to="/about">About</MenuLink>
           <MenuLink to="/dollz">Dollz</MenuLink>
           <MenuLink to="/shop">Shop</MenuLink>
           <MenuLink to="/comics">Comicz</MenuLink>
