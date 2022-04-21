@@ -123,6 +123,7 @@ const ComicsPage = () => {
               </Email>
             </ParagraphHeader>
           </Paragraph>
+
           {/* <Img fluid={box.childImageSharp.fluid} /> */}
         </Container>
       </MainWrapper>

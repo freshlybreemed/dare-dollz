@@ -50,6 +50,7 @@ const Logo = styled(Image)`
   margin-right: auto;
   margin-top: 2rem;
 `
+
 const ImgHover = styled(Image)<{
   hover: boolean
 }>`

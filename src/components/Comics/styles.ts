@@ -21,6 +21,7 @@ export const Paragraph = styled.p`
     width: 90%;
     line-height: 2rem;
   }
+
   @media (max-width: ${breakpoints.m}px) {
     width: 100%;
     line-height: 2rem;
