@@ -13,15 +13,17 @@ import {
   breakpoints,
   ImgHover
 } from "../utils/styles"
+import Navigation from "../components/Navigation"
+import { MainWrapper } from "../layouts/styles"
 
 const SubmitButton = styled.input`
-  width: 40%;
+  /* width: 40%; */
   font-weight: 600;
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: black;
   color: white;
   text-transform: uppercase;
-  width: 100%;
+  /* width: 100%; */
   /* margin-top: 0rem; */
   border: 0.0625rem solid #000;
   /* height: 30px; */
@@ -39,16 +41,17 @@ const ParagraphHeader = styled.p`
   line-height: 1.5;
   text-transform: uppercase;
   text-align: center;
+  margin-top: 0;
   font-family: "Gunterz-Medium";
 
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   padding: 2.5rem;
   /* padding-bottom:2.5rem; */
 `
 const Input = styled.input`
   width: 40%;
   padding: 0.4rem;
-  font-family: "Gunterz-Medium";
+  font-family: "Helvetica";
   @media (max-width: ${breakpoints.m}px) {
     width: 90%;
   }
@@ -57,7 +60,6 @@ const Email = styled.a`
   /* font-size: 1.3rem; */
   line-height: 1.5;
   padding-top: 1rem;
-  font-family: "Gunterz-Medium";
 
   /* display: block; */
   /* color: black; */
@@ -82,7 +84,7 @@ const SmallParagaph = styled.p`
 `
 
 const Wrapper = styled.div`
-  padding-top: 3rem;
+  /* padding-top: 3rem; */
   padding-left: 2rem;
   padding-right: 2rem;
   /* background-color: black; */
@@ -257,9 +259,9 @@ const AboutPage = () => {
       })
   }
 
-  const { dare, darius, videos } = useStaticQuery(graphql`
+  const { creatorz, darius, videos } = useStaticQuery(graphql`
     {
-      dare: file(relativePath: { in: "dare.jpg" }) {
+      creatorz: file(relativePath: { in: "creatorz.jpg" }) {
         id
         childImageSharp {
           fluid {
@@ -292,23 +294,24 @@ const AboutPage = () => {
     }
   `)
   return (
-    <Wrapper>
+    <MainWrapper>
+      <Navigation isVisable />
       <Container>
         <TwoColumnGrid>
           <GridLeft>
-            <ImgHover fluid={dare.childImageSharp.fluid} />
-            <Names>Dare Moreno</Names>
+            <ImgHover fluid={creatorz.childImageSharp.fluid} />
+            {/* <Names>Dare Moreno</Names> */}
           </GridLeft>
           <GridRight>
-            <ImgHover fluid={darius.childImageSharp.fluid} />
-            <Names>Darius Moreno</Names>
+            {/* <ImgHover fluid={darius.childImageSharp.fluid} /> */}
+            {/* <Names>Darius Moreno</Names> */}
+            <ParagraphHeader>
+              Darius and Dare Moreno are the creators of Dare Dollz. The
+              brother/sister duo grew up in Washington D.C. before moving to NYC
+              in their late teens.
+            </ParagraphHeader>
           </GridRight>
         </TwoColumnGrid>
-        <ParagraphHeader>
-          Darius and Dare Moreno are the creators of Dare Dollz. The brother
-          sister duo grew up in Washington D.C. before moving to NYC in their
-          late teens.
-        </ParagraphHeader>
         <Paragraph>
           They attended performing arts schools such as the Ellington School of
           the Arts in D.C., studying fine art, writing, and theater. Outside of
@@ -355,15 +358,14 @@ const AboutPage = () => {
                 name="EMAIL"
                 className="required email"
               />
+              <SubmitButton
+                type="submit"
+                value={sent ? "Thanks" : "Subscribe"}
+                name="subscribe"
+                onClick={handleSubmit}
+              />
               <div>
-                <div>
-                  <SubmitButton
-                    type="submit"
-                    value={sent ? "Thanks" : "Subscribe"}
-                    name="subscribe"
-                    onClick={handleSubmit}
-                  />
-                </div>
+                <div></div>
               </div>
             </form>
           </ParagraphHeader>
@@ -512,7 +514,7 @@ const AboutPage = () => {
         title="About"
         keywords={[`dare moreno`, `darius moreno`, `dare dollz`]}
       />
-    </Wrapper>
+    </MainWrapper>
   )
 }
 

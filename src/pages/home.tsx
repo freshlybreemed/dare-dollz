@@ -7,6 +7,8 @@ import styled from "@emotion/styled"
 import logoGIF from "../images/logo.gif"
 
 import { breakpoints, ImgHover } from "../utils/styles"
+import { MainWrapper } from "../layouts/styles"
+import Navigation from "../components/Navigation"
 
 export const Wrapper = styled.div`
   padding-top: 2rem;
@@ -99,7 +101,9 @@ const IndexPage = () => {
         image={logoGIF}
         keywords={[`dare dollz`, `daredollz`]}
       />
-      <Wrapper>
+      <MainWrapper>
+        <Navigation isVisable />
+
         <Photos>
           {allContentfulHomePage.edges[0].node.photos
             .filter(
@@ -116,7 +120,7 @@ const IndexPage = () => {
               )
             })}
         </Photos>
-      </Wrapper>
+      </MainWrapper>
     </>
   )
 }

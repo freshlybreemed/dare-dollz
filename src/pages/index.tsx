@@ -44,6 +44,13 @@ const H1 = styled("h1")`
   font-size: 2.5rem;
 `
 
+const Logo = styled(Image)`
+  width: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+`
+
 const ImgHover = styled(Image)<{
   hover: boolean
 }>`
@@ -66,9 +73,9 @@ const ImgHover = styled(Image)<{
     `}
 `
 const IndexPage = () => {
-  const { allContentfulHomePage, doll5, doll6 } = useStaticQuery(graphql`
+  const { allContentfulHomePage, doll5, doll6, logo } = useStaticQuery(graphql`
     query {
-      doll5: file(relativePath: { in: "doll5.jpeg" }) {
+      doll5: file(relativePath: { in: "dollstand.jpeg" }) {
         id
         childImageSharp {
           fluid {
@@ -76,7 +83,15 @@ const IndexPage = () => {
           }
         }
       }
-      doll6: file(relativePath: { in: "doll6.jpeg" }) {
+      doll6: file(relativePath: { in: "dollstand5.jpeg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      logo: file(relativePath: { in: "newlogo.JPG" }) {
         id
         childImageSharp {
           fluid {
@@ -107,7 +122,7 @@ const IndexPage = () => {
         keywords={[`dare dollz`, `daredollz`]}
       />
       <Wrapper>
-        <H1>Daredollz</H1>
+        <Logo fluid={logo.childImageSharp.fluid} />
         <MainButton href="/home">Enter</MainButton>
 
         <ImgHover

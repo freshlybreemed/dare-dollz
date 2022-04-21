@@ -17,6 +17,11 @@ export const Paragraph = styled.p`
   margin-right: auto;
   font-family: "Gunterz-Medium";
   /* padding-bottom: 1rem; */
+  @media (max-width: ${breakpoints.l}px) {
+    width: 90%;
+    line-height: 2rem;
+  }
+
   @media (max-width: ${breakpoints.m}px) {
     width: 100%;
     line-height: 2rem;

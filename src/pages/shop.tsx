@@ -6,10 +6,9 @@ import SEO from "../components/seo"
 import ProductGrid from "../components/ProductGrid"
 import styled from "@emotion/styled"
 import { breakpoints } from "../utils/styles"
+import Navigation from "../components/Navigation"
+import { MainWrapper } from "../layouts/styles"
 
-export const Wrapper = styled.div`
-  padding-top: 2rem;
-`
 const Img = styled(Image)`
   max-width: 100%;
   margin-left: 0;
@@ -39,11 +38,13 @@ const ComingSoon = styled.div`
   padding-top: 3rem;
   margin-left: auto;
   margin-right: auto;
+  font-family: "Gunterz-Medium";
   width: 70%;
+  text-align: center;
   @media (max-width: ${breakpoints.m}px) {
     /* width: 90px; */
     margin-top: 2rem;
-    padding-top: 2rem;
+    /* padding-top: 2rem; */
   }
 `
 const IndexPage = () => {
@@ -62,13 +63,15 @@ const IndexPage = () => {
   return (
     <>
       <SEO title="Dare Dollz" keywords={[`dare dollz`, `daredollz`]} />
-      <Wrapper>
+      <MainWrapper>
+        <Navigation isVisable />
+
         {/* <ProductGrid /> */}
         <ComingSoon>
           Coming Soon
           <Img fluid={dollz.childImageSharp.fluid} />
         </ComingSoon>
-      </Wrapper>
+      </MainWrapper>
     </>
   )
 }

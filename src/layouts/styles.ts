@@ -3,6 +3,14 @@ import styled from "@emotion/styled"
 export const Container = styled.div`
   /* background-color: "#302F2F"; */
 `
+
+export const MainWrapper = styled.div`
+  font-family: "Gunterz-Medium";
+  /* padding-top: 3rem; */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  /* background-color: black; */
+`
 export const Wrapper = styled.div`
   background-color: white;
   text-align: center;
@@ -55,7 +63,7 @@ export const MainButton = styled("a")`
   user-select: none;
 `
 export const Mobile = styled.div`
-  height: 100%; /* 100% Full-height */
+  /* height: 100%; 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
@@ -70,6 +78,9 @@ export const Mobile = styled.div`
   }
 `
 
+export const Character = styled.a`
+  font-family: "Helvetica-Neue";
+`
 export const MobileLink = styled.a`
   padding: 8px 30px 8px 32px;
   font-size: 25px;
