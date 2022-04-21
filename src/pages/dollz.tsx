@@ -111,8 +111,8 @@ const ComicsPage = () => {
           </Paragraph>
           <Paragraph>
             Every figure is created to represent and relate to trendsetters like
-            you. And just like you, any and everywhere the Dare Dollz go, they
-            command attention.
+            you. And just like you, everywhere the Dare Dollz go, they command
+            attention.
           </Paragraph>
 
           <Paragraph>
@@ -123,6 +123,7 @@ const ComicsPage = () => {
               </Email>
             </ParagraphHeader>
           </Paragraph>
+
           {/* <Img fluid={box.childImageSharp.fluid} /> */}
         </Container>
       </MainWrapper>
