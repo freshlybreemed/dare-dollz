@@ -104,7 +104,7 @@ export const MenuLogo = styled.img`
   }
   @media (min-width: ${breakpoints.s}px) {
     padding-left: none;
-    width: 120px;
+    width: 90px;
   }
 `
 export const HamburgerWrapper = styled.div`
