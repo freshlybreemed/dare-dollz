@@ -73,7 +73,13 @@ const ImgHover = styled(Image)<{
     `}
 `
 const IndexPage = () => {
-  const { allContentfulHomePage, doll5, doll6, logo } = useStaticQuery(graphql`
+  const {
+    allContentfulHomePage,
+    doll5,
+    doll6,
+    logo,
+    banner
+  } = useStaticQuery(graphql`
     query {
       doll5: file(relativePath: { in: "dollstand.jpeg" }) {
         id
@@ -92,6 +98,14 @@ const IndexPage = () => {
         }
       }
       logo: file(relativePath: { in: "newlogo.JPG" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      banner: file(relativePath: { in: "dollbanner.png" }) {
         id
         childImageSharp {
           fluid {
@@ -126,11 +140,11 @@ const IndexPage = () => {
         <MainButton href="/home">Enter</MainButton>
 
         <ImgHover
-          fluid={doll5.childImageSharp.fluid}
+          fluid={banner.childImageSharp.fluid}
           // alt={handle}
         />
         <ImgHover
-          fluid={doll6.childImageSharp.fluid}
+          fluid={banner.childImageSharp.fluid}
           // alt={handle}
         />
       </Wrapper>

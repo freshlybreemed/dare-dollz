@@ -33,12 +33,13 @@ const ComicView = () => {
       }
     `
   )
-  console.log(firstCover)
-  const Button = styled.a`
+
+  const Button = styled.button`
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     text-align: center;
+    font-family: "Gunterz-Medium";
     display: block;
     top: auto;
     left: auto;
@@ -68,38 +69,26 @@ const ComicView = () => {
             <Img fluid={secondCover.fluid} />
           </GridRight> */}
         {/* </TwoColumnGrid> */}
-        <Button>Download now</Button>
         <Paragraph>
-          The Dare Dollz live in the city of Carnado in the year 2050. Carnado
-          City is an affluent city leading the way in innovative technology. As
-          a result, the city consists of and attracts the wealthiest people,
-          known to set lifestyle trends the average person won't ever
-          experience. Xio, Paris, Chanel, and Bleu have no shortage of wealth or
-          beauty. They are the archetype of Carnado City.
-        </Paragraph>
-        <Paragraph>
-          Known as social media mavens, they constantly engage with their
-          millions of followers online. Broadcasting the Carnado City lifestyle
-          of enjoyable leisure days and exciting nights full of entertainment to
-          all their fans. They seem to have it all, but there is more to these
-          ladies and Carnado City than meets the eye. They are signed to the
-          Darek Knox Agency, the most elite talent agency, where nothing and no
-          one is average.
-        </Paragraph>
-        <Paragraph>
-          The agency consists of extraordinary talent and exceptional beauty.
-          Because of their "perfect" appearance, the girls are affectionately
-          called "Darek's Dolls," later coining the shortened version "Dare
-          Dollz." Darek Knox and his expansive team recruit the top students in
+          Meet Dare Dollz, the young, stylish social media mavens who hold all
+          the keys to the futuristic city of Carnado. Xio, Paris, Chanel, and
+          Bleu seem to have it all, but there is more to these ladies and
+          Carnado City than meets the eye. The girls are signed to the Darek
+          Knox Agency, the most elite talent agency, where nothing and no one is
+          average. Darek Knox and his expansive team recruit the top students in
           academia, athletics, and creativity at a young age to cultivate their
-          talents, making them masters of their craft.
+          talents, making them the ultimate secret agents.
         </Paragraph>
         <Paragraph>
           Dare Dollz can be quite the femme Fatales, a fusion of mind, muscle,
           and, to be frank, a lot of seduction. Using these characteristics
-          always gets the dollz what they want. They can solve any problem for
-          the right price! Just remember that Dollz are really expensive.
+          always gets the Dollz what they want. However, this is about to change
+          when their latest mission involves 2050's most prominent rap artist, 8
+          Figga, and his addiction to money and fame. The Dollz have to face
+          their most powerful opponent while keeping up with their super famous
+          alter egos.
         </Paragraph>
+        <Button>Download now</Button>
       </Container>
     </Wrapper>
   )

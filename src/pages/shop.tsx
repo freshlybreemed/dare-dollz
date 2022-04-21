@@ -8,6 +8,7 @@ import styled from "@emotion/styled"
 import { breakpoints } from "../utils/styles"
 import Navigation from "../components/Navigation"
 import { MainWrapper } from "../layouts/styles"
+import Subscribe from "../components/subscribe"
 
 const Img = styled(Image)`
   max-width: 100%;
@@ -50,7 +51,7 @@ const ComingSoon = styled.div`
 const IndexPage = () => {
   const { dollz } = useStaticQuery(graphql`
     {
-      dollz: file(relativePath: { regex: "g/box/" }) {
+      dollz: file(relativePath: { regex: "g/box.jpeg/" }) {
         id
         childImageSharp {
           fluid {
@@ -71,6 +72,7 @@ const IndexPage = () => {
           Coming Soon
           <Img fluid={dollz.childImageSharp.fluid} />
         </ComingSoon>
+        <Subscribe text="Be the first to know" />
       </MainWrapper>
     </>
   )
