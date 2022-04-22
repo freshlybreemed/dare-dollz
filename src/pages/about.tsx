@@ -298,13 +298,6 @@ const AboutPage = () => {
     <MainWrapper>
       <Navigation isVisable />
       <Container>
-        {/* <TwoColumnGrid> */}
-        {/* <GridLeft> */}
-        {/* <Names>Dare Moreno</Names> */}
-        {/* </GridLeft>
-          <GridRight> */}
-        {/* <ImgHover fluid={darius.childImageSharp.fluid} /> */}
-        {/* <Names>Darius Moreno</Names> */}
         <ParagraphHeader>
           Dare Dollz began as a graphic novel inspired by the grit and glamour
           of urban culture. It has since developed into a brand expanding into
@@ -313,9 +306,7 @@ const AboutPage = () => {
         <ImgHover fluid={creatorz.childImageSharp.fluid} />
         {/* </GridRight>
         </TwoColumnGrid> */}
-
         <Subscribe text="Sign up for newest Comicz" />
-
         <CreativeWork></CreativeWork>
         <CreativeWork>
           <Header>Recent Work:</Header>
@@ -447,7 +438,6 @@ const AboutPage = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></IFrame>
-
         <Paragraph>
           <ParagraphHeader>
             To business inquires shoot us an email at{" "}
