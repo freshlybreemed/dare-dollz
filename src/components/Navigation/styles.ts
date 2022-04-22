@@ -101,6 +101,7 @@ export const MenuLogo = styled.img`
   @media (max-width: ${breakpoints.s}px) {
     width: 90px;
     padding-left: none;
+    padding-right: 0;
   }
   @media (min-width: ${breakpoints.s}px) {
     padding-left: none;

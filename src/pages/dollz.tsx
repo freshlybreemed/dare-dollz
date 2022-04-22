@@ -117,7 +117,7 @@ const ComicsPage = () => {
 
           <Paragraph>
             <ParagraphHeader>
-              To contact us feel free to shoot us an email at{" "}
+              For commisions{" "}
               <Email href="mailto:daredollz95@gmail.com">
                 daredollz95@gmail.com
               </Email>

@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 import SEO from "../components/seo"
 import Image from "gatsby-image"
 import addToMailchimp from "gatsby-plugin-mailchimp"
+import Subscribe from "../components/subscribe"
 
 import {
   Container,
@@ -261,7 +262,7 @@ const AboutPage = () => {
 
   const { creatorz, darius, videos } = useStaticQuery(graphql`
     {
-      creatorz: file(relativePath: { in: "creatorz.jpg" }) {
+      creatorz: file(relativePath: { in: "headgrid.JPG" }) {
         id
         childImageSharp {
           fluid {
@@ -297,87 +298,15 @@ const AboutPage = () => {
     <MainWrapper>
       <Navigation isVisable />
       <Container>
-        <TwoColumnGrid>
-          <GridLeft>
-            <ImgHover fluid={creatorz.childImageSharp.fluid} />
-            {/* <Names>Dare Moreno</Names> */}
-          </GridLeft>
-          <GridRight>
-            {/* <ImgHover fluid={darius.childImageSharp.fluid} /> */}
-            {/* <Names>Darius Moreno</Names> */}
-            <ParagraphHeader>
-              Darius and Dare Moreno are the creators of Dare Dollz. The
-              brother/sister duo grew up in Washington D.C. before moving to NYC
-              in their late teens.
-            </ParagraphHeader>
-          </GridRight>
-        </TwoColumnGrid>
-        <Paragraph>
-          They attended performing arts schools such as the Ellington School of
-          the Arts in D.C., studying fine art, writing, and theater. Outside of
-          school, the Moreno's spent most of their time creating. Whether it was
-          building homes made up of shoeboxes for their toys or creating comic
-          books with their friends, it was no surprise they would grow to become
-          sought after creators.{" "}
-        </Paragraph>
-        <Paragraph>
-          Darius, the youngest twin, illustrated the 2012 Christmas card for the
-          Obamas before graduating high school. He then majored in illustration
-          at The New School of Design, wherein his Junior year, he painted the
-          cover of Goldlink's grammy nominated album At What Cost.{" "}
-        </Paragraph>
-        <Paragraph>
-          Dare, however, was not always a visual artist. She majored in theater
-          and minored in writing at Penn state. When she moved to New York in
-          2015, she became a food vlogger (video blogger), creating a popular
-          web series titled A Girl's Gotta Eat!. The vlog landed Moreno in
-          multiple publications such as N.Y., Vice, and Office magazine. In
-          addition, the exposure led to her filming episodes in various
-          countries like Japan, Taiwan, and South Korea.{" "}
-        </Paragraph>
-        <Paragraph>
-          In the summer of 2018, while visiting their grandmother, a porcelain
-          doll collector, the twins got the idea to create their own dolls. They
-          already had sculpting and sewing experience and used it to invent the
-          flashy, bold, and fabulous characters now known as the Dare Dollz.
-          Darius and Dare are now based out of Los Angeles, where they produce
-          dolls, comics, claymation, and other creative projects in their home
-          studio.
-        </Paragraph>
-        <Paragraph>
-          <ParagraphHeader>
-            <form>
-              Subscribe
-              <div>
-                <SmallParagaph>Email Address</SmallParagaph>
-              </div>
-              <Input
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.currentTarget.value)}
-                name="EMAIL"
-                className="required email"
-              />
-              <SubmitButton
-                type="submit"
-                value={sent ? "Thanks" : "Subscribe"}
-                name="subscribe"
-                onClick={handleSubmit}
-              />
-              <div>
-                <div></div>
-              </div>
-            </form>
-          </ParagraphHeader>
-        </Paragraph>
-        <Paragraph>
-          <ParagraphHeader>
-            To contact us feel free to shoot us an email at{" "}
-            <Email href="mailto:daredollz95@gmail.com">
-              daredollz95@gmail.com
-            </Email>
-          </ParagraphHeader>
-        </Paragraph>
+        <ParagraphHeader>
+          Dare Dollz began as a graphic novel inspired by the grit and glamour
+          of urban culture. It has since developed into a brand expanding into
+          collectible dolls and apparel.
+        </ParagraphHeader>
+        <ImgHover fluid={creatorz.childImageSharp.fluid} />
+        {/* </GridRight>
+        </TwoColumnGrid> */}
+        <Subscribe text="Sign up for newest Comicz" />
         <CreativeWork></CreativeWork>
         <CreativeWork>
           <Header>Recent Work:</Header>
@@ -509,6 +438,14 @@ const AboutPage = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></IFrame>
+        <Paragraph>
+          <ParagraphHeader>
+            To business inquires shoot us an email at{" "}
+            <Email href="mailto:daredollz95@gmail.com">
+              daredollz95@gmail.com
+            </Email>
+          </ParagraphHeader>
+        </Paragraph>
       </Container>
       <SEO
         title="About"

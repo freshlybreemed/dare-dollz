@@ -15,22 +15,8 @@ import {
 } from "../utils/styles"
 import Navigation from "../components/Navigation"
 import { MainWrapper } from "../layouts/styles"
+import Subscribe from "../components/subscribe"
 
-const SubmitButton = styled.input`
-  /* width: 40%; */
-  font-weight: 600;
-  padding: 0.5rem;
-  background-color: black;
-  color: white;
-  text-transform: uppercase;
-  /* width: 100%; */
-  /* margin-top: 0rem; */
-  border: 0.0625rem solid #000;
-  /* height: 30px; */
-  @media (max-width: ${breakpoints.m}px) {
-    width: 90%;
-  }
-`
 const ParagraphHeader = styled.p`
   background: linear-gradient(140deg, #1c24e9, #9acd32);
   /* -webkit-animation: AnimationName 59s ease infinite; */
@@ -51,13 +37,13 @@ const ParagraphHeader = styled.p`
 const Input = styled.input`
   width: 40%;
   padding: 0.4rem;
-  font-family: "Helvetica";
+  font-family: "Gunterz-Medium";
   @media (max-width: ${breakpoints.m}px) {
     width: 90%;
   }
 `
 const Email = styled.a`
-  /* font-size: 1.3rem; */
+  font-size: 1rem;
   line-height: 1.5;
   padding-top: 1rem;
 
@@ -344,35 +330,10 @@ const AboutPage = () => {
           dolls, comics, claymation, and other creative projects in their home
           studio.
         </Paragraph>
+        {/* <Subscribe /> */}
         <Paragraph>
           <ParagraphHeader>
-            <form>
-              Subscribe
-              <div>
-                <SmallParagaph>Email Address</SmallParagaph>
-              </div>
-              <Input
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.currentTarget.value)}
-                name="EMAIL"
-                className="required email"
-              />
-              <SubmitButton
-                type="submit"
-                value={sent ? "Thanks" : "Subscribe"}
-                name="subscribe"
-                onClick={handleSubmit}
-              />
-              <div>
-                <div></div>
-              </div>
-            </form>
-          </ParagraphHeader>
-        </Paragraph>
-        <Paragraph>
-          <ParagraphHeader>
-            To contact us feel free to shoot us an email at{" "}
+            For business/press inquires shoot us an email at{" "}
             <Email href="mailto:daredollz95@gmail.com">
               daredollz95@gmail.com
             </Email>

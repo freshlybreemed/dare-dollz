@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { breakpoints } from "../utils/styles"
 
 export const Container = styled.div`
   /* background-color: "#302F2F"; */
@@ -10,6 +11,10 @@ export const MainWrapper = styled.div`
   padding-left: 2rem;
   padding-right: 2rem;
   /* background-color: black; */
+  @media (max-width: ${breakpoints.s}px) {
+    padding-left: 1rem;
+    padding-right: rem;
+  }
 `
 export const Wrapper = styled.div`
   background-color: white;
@@ -36,6 +41,31 @@ export const CartWrapper = styled.div`
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
   @media screen and (max-height: 450px) {
     padding-top: 15px;
+  }
+`
+export const MainButtonStatic = styled.button`
+  /* margin-left: auto;
+  margin-right: auto; */
+  /* width: 50%; */
+  text-align: center;
+  font-family: "Gunterz-Medium";
+  /* display: block; */
+  /* top: auto;
+  left: auto; */
+  border-color: black;
+  &:hover {
+    background-color: #01ff8f;
+  }
+  font-size: 1.5rem;
+  background-color: #9fedff;
+  /* padding: 0.5rem 1rem; */
+  border-width: 0.08em;
+  border-style: solid;
+  display: inline-block;
+  @media (max-width: ${breakpoints.m}px) {
+    display: block;
+    width: 93%;
+    font-size: 1.5rem;
   }
 `
 export const MainButton = styled("a")`
@@ -79,7 +109,7 @@ export const Mobile = styled.div`
 `
 
 export const Character = styled.a`
-  font-family: "Helvetica-Neue";
+  font-family: "Arial ";
 `
 export const MobileLink = styled.a`
   padding: 8px 30px 8px 32px;
