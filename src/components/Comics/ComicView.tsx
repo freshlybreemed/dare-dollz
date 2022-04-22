@@ -10,6 +10,7 @@ import {
 } from "../../utils/styles"
 import { MainButton } from "../../layouts/styles"
 import styled from "@emotion/styled"
+import Subscribe from "../subscribe"
 const ComicView = () => {
   const { firstCover, secondCover } = useStaticQuery(
     graphql`
@@ -34,30 +35,6 @@ const ComicView = () => {
     `
   )
 
-  const Button = styled.button`
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    text-align: center;
-    font-family: "Gunterz-Medium";
-    display: block;
-    top: auto;
-    left: auto;
-    border-color: black;
-
-    &:hover {
-      background-color: #01ff8f;
-    }
-    font-size: 2.5rem;
-    background-color: #9fedff;
-    padding: 0.5rem 1rem;
-    border-width: 0.08em;
-    border-style: solid;
-    @media (max-width: ${breakpoints.m}px) {
-      width: 100%;
-      font-size: 1.5rem;
-    }
-  `
   return (
     <Wrapper>
       <Container>
@@ -69,6 +46,8 @@ const ComicView = () => {
             <Img fluid={secondCover.fluid} />
           </GridRight> */}
         {/* </TwoColumnGrid> */}
+        <Subscribe text="Sign up for newest Comicz" />
+
         <Paragraph>
           Meet Dare Dollz, the young, stylish social media mavens who hold all
           the keys to the futuristic city of Carnado. Xio, Paris, Chanel, and
@@ -88,7 +67,6 @@ const ComicView = () => {
           their most powerful opponent while keeping up with their super famous
           alter egos.
         </Paragraph>
-        <Button>Download now</Button>
       </Container>
     </Wrapper>
   )
