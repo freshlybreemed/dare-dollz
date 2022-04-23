@@ -68,6 +68,14 @@ const Photos = styled.section`
   -moz-column-gap: 0px;
   column-count: 3;
   column-gap: 10px;
+  @media (max-width: ${breakpoints.m}px) {
+    -webkit-column-count: 1;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 3;
+    -moz-column-gap: 0px;
+    column-count: 1;
+    column-gap: 10px;
+  }
 `
 
 export const Product = styled.div`
