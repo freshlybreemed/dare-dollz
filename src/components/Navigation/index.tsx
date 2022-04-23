@@ -89,7 +89,7 @@ const Navigation = ({ isVisable }) => {
             </span>
           </button>
         </HamburgerWrapper>
-        <MenuLogoWrapper to="/">
+        <MenuLogoWrapper to="/home">
           <MenuLogo alt="logo" src={logoGIF} />
         </MenuLogoWrapper>
         <Mobile
