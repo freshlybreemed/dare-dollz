@@ -58,10 +58,10 @@ const Input = styled.input`
   }
 `
 const Email = styled.a`
-  /* font-size: 1.3rem; */
+  font-size: 1.2rem;
   line-height: 1.5;
   padding-top: 1rem;
-
+  display: block;
   /* display: block; */
   /* color: black; */
   font-weight: 700;
@@ -309,7 +309,7 @@ const AboutPage = () => {
 
         <Paragraph>
           <ParagraphHeader>
-            To business inquires shoot us an email at{" "}
+            For business/press inquires shoot us an email at:{" "}
             <Email href="mailto:daredollz95@gmail.com">
               daredollz95@gmail.com
             </Email>
