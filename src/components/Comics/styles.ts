@@ -7,6 +7,11 @@ export const Wrapper = styled.p`
   /* padding-top: 1rem; */
   padding-left: 2rem;
   padding-right: 2rem;
+  @media (max-width: ${breakpoints.m}px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    /* width: 90%; */
+  }
 `
 export const Paragraph = styled.p`
   font-size: 1.2rem;
