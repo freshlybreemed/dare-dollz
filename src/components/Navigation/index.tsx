@@ -25,14 +25,14 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/react"
 import { Mobile, MobileLink } from "../../layouts/styles"
 
-// const useQuantity = () => {
-//   const {
-//     store: { checkout }
-//   } = useContext(StoreContext)
-//   const items = checkout ? checkout.lineItems : []
-//   const total = reduce(items, (acc, item) => acc + item.quantity, 0)
-//   return [total !== 0, total]
-// }
+const useQuantity = () => {
+  const {
+    store: { checkout }
+  } = useContext(StoreContext)
+  const items = checkout ? checkout.lineItems : []
+  const total = reduce(items, (acc, item) => acc + item.quantity, 0)
+  return [total !== 0, total]
+}
 
 interface OverlayProps {
   overlay: boolean
@@ -68,7 +68,7 @@ const Navigation = ({ isVisable }) => {
       }
     }
   `)
-  // const [hasItems, quantity] = useQuantity()
+  const [hasItems, quantity] = useQuantity()
   console.log(isVisable)
   if (!isVisable) return <div />
   return (
@@ -108,23 +108,23 @@ const Navigation = ({ isVisable }) => {
           <MenuLink to="/shop">Shop</MenuLink>
           <MenuLink to="/comics">Comicz</MenuLink>
           <MenuLink to="/studio">Creatorz</MenuLink>
-          {/* <CartWrapper>
+          <CartWrapper>
             {hasItems && (
               <div onClick={() => setCartActive(!cartActive)}>
                 <CartCounter>{quantity}</CartCounter>{" "}
                 <Img fixed={cart.childImageSharp.fixed} />
               </div>
-            )} */}
-          {/* </CartWrapper> */}
+            )}
+          </CartWrapper>
         </MenuLinks>
-        {/* <CartWrapperMobile> */}
-        {/* {hasItems && (
+        <CartWrapperMobile>
+          {hasItems && (
             <div onClick={() => setCartActive(!cartActive)}>
               <CartCounter>{quantity}</CartCounter>{" "}
               <Img fixed={cart.childImageSharp.fixed} />
             </div>
-          )} */}
-        {/* </CartWrapperMobile> */}
+          )}
+        </CartWrapperMobile>
         <Overlay overlay={cartActive} />
       </Container>
     </Wrapper>

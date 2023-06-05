@@ -9,11 +9,13 @@ import {
   TwoColumnGrid,
   GridLeft,
   GridRight,
-  Email
+  Email,
+  ImgHover
 } from "../utils/styles"
 import Navigation from "../components/Navigation"
 import { MainWrapper } from "../layouts/styles"
 import { ParagraphHeader } from "../components/Comics/styles"
+import { Subtext } from "../components/Cart/styles"
 
 const Paragraph = styled.p`
   font-size: 1.1rem;
@@ -51,30 +53,20 @@ const Img = styled(Image)`
     filter: gray; /* IE 6-9 */
   }
 `
+const Header = styled.div`
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 300;
+`
+
 const ComicsPage = () => {
-  const { dollz, boxes } = useStaticQuery(graphql`
+  const { dollz, newdollbox } = useStaticQuery(graphql`
     {
-      boxes: allFile(filter: { relativePath: { regex: "g/dollbox/" } }) {
-        edges {
-          node {
-            id
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-      dollz: allFile(filter: { relativePath: { regex: "g/dollstand/" } }) {
-        edges {
-          node {
-            id
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
+      newdollbox: file(relativePath: { regex: "g/Box2/" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -89,10 +81,14 @@ const ComicsPage = () => {
       />
 
       <MainWrapper>
-        <Navigation isVisable />
+        {/* <Navigation isVisable /> */}
 
         <Container>
-          <TwoColumnGrid>
+          <ImgHover
+            fluid={newdollbox.childImageSharp.fluid}
+            // alt={handle}
+          />
+          {/* <TwoColumnGrid>
             <GridLeft>
               <Img fluid={dollz.edges[0].node.childImageSharp.fluid} />
               <Img fluid={boxes.edges[1].node.childImageSharp.fluid} />
@@ -103,17 +99,8 @@ const ComicsPage = () => {
               <Img fluid={boxes.edges[2].node.childImageSharp.fluid} />
               <Img fluid={boxes.edges[3].node.childImageSharp.fluid} />
             </GridRight>
-          </TwoColumnGrid>
-          <Paragraph>
-            Every Dare Doll is sculpted into an eye-catching work of art. Made
-            up of resin, PVC, and acrylic paint, the hand-painted dolls are
-            designed with attention to even the smallest detail.
-          </Paragraph>
-          <Paragraph>
-            Every figure is created to represent and relate to trendsetters like
-            you. And just like you, everywhere the Dare Dollz go, they command
-            attention.
-          </Paragraph>
+          </TwoColumnGrid> */}
+          <Header>Coming soon</Header>
 
           <Paragraph>
             <ParagraphHeader>

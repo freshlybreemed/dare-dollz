@@ -49,23 +49,29 @@ const ComicView = () => {
         <Subscribe text="Sign up for newest Comicz" />
 
         <Paragraph>
-          Meet Dare Dollz, the young, stylish social media mavens who hold all
-          the keys to the futuristic city of Carnado. Xio, Paris, Chanel, and
-          Bleu seem to have it all, but there is more to these ladies and
-          Carnado City than meets the eye. The girls are signed to the Darek
-          Knox Agency, the most elite talent agency, where nothing and no one is
-          average. Darek Knox and his expansive team recruit the top students in
-          academia, athletics, and creativity at a young age to cultivate their
-          talents, making them the ultimate secret agents.
+          Meet Demi, Paris, Chanel, and Bleu, known as Dare Dollz, the young,
+          stylish social media mavens who seem to have it all, but there is more
+          to these ladies than meets the eye. They are elite special agents who
+          lead double lives as prominent social media influencers in the
+          hyper-advanced metropolis of Carnado. Their latest mission is as
+          complex as their dual identities: to capture notorious rap artist and
+          criminal mastermind 8 Figga.
         </Paragraph>
         <Paragraph>
-          Dare Dollz can be quite the femme Fatales, a fusion of mind, muscle,
-          and, to be frank, a lot of seduction. Using these characteristics
-          always gets the Dollz what they want. However, this is about to change
-          when their latest mission involves 2050's most prominent rap artist, 8
-          Figga, and his addiction to money and fame. The Dollz have to face
-          their most powerful opponent while keeping up with their super famous
-          alter egos.
+          In the race against time, the agents must use every resource, from
+          advanced tech gadgets to social media prowess, to outsmart 8 Figga.
+          Their struggle against him tests their loyalties, friendships, and
+          individual strengths, culminating in a climactic showdown that could
+          forever change the face of Carnado.
+        </Paragraph>
+        <Paragraph>
+          "Dare Dollz: Age of Consent" is a thrilling, futuristic tale that
+          fuses elements of science fiction, action, and drama, exploring themes
+          of identity, technology, and the lengths one will go to uphold
+          justice."Dare Dollz: Age of Consent" is a thrilling, futuristic tale
+          that fuses elements of science fiction, action, and drama, exploring
+          themes of identity, technology, and the lengths one will go to uphold
+          justice.
         </Paragraph>
       </Container>
     </Wrapper>

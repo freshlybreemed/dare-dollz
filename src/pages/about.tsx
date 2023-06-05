@@ -262,7 +262,7 @@ const AboutPage = () => {
 
   const { creatorz, darius, videos } = useStaticQuery(graphql`
     {
-      creatorz: file(relativePath: { in: "headgrid.JPG" }) {
+      creatorz: file(relativePath: { in: "IMG_5824.jpg" }) {
         id
         childImageSharp {
           fluid {
@@ -299,9 +299,9 @@ const AboutPage = () => {
       <Navigation isVisable />
       <Container>
         <ParagraphHeader>
-          Dare Dollz began as a graphic novel inspired by the grit and glamour
-          of urban culture. It has since developed into a brand expanding into
-          collectible dolls and apparel.
+          Dare Dollz began as a line of collectible dolls inspired by the grit
+          and glamour of urban culture. It has since developed into a brand
+          expanding into comic books and apparel.
         </ParagraphHeader>
         <ImgHover fluid={creatorz.childImageSharp.fluid} />
         {/* </GridRight>

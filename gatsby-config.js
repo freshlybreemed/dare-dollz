@@ -21,19 +21,8 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // `gatsby-plugin-layout`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/logo.gif` // This path is relative to the root of the site.
-      }
-    },
+    `gatsby-plugin-layout`,
+
     {
       resolve: `gatsby-source-shopify`,
       options: {
@@ -77,24 +66,6 @@ module.exports = {
         spaceId: `ahava7ytbjix`,
         // Learn about environment variables: https://gatsby.dev/env-vars
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-      }
-    },
-    {
-      resolve: "gatsby-plugin-your-fonts",
-      options: {
-        host: "yourgithub.github.io/fonts",
-        fonts: [
-          `gunterz-black.css` // font-family: 'Font One';
-          // `font-two.css` // font-family: 'Font Two';
-        ]
-      }
-    },
-    {
-      resolve: "gatsby-plugin-mailchimp",
-      options: {
-        endpoint:
-          "https://daredollz.us14.list-manage.com/subscribe/post?u=fc6f1676f1d8445f434bc6d5f&amp;id=e9dc7ef6d7", // string; add your MC list endpoint here; see instructions below
-        timeout: 3500 // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

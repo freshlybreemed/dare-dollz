@@ -23,7 +23,7 @@ export const AddToCartButton = styled.button`
   background-color: black;
   color: white;
   text-transform: uppercase;
-  width:100%;
+  width: 100%;
   margin-top: 2rem;
   border: 0.0625rem solid #000;
   /* height: 30px; */
@@ -77,6 +77,7 @@ export const OptionsWrapper = styled.ul`
   margin: 0;
   padding: 0;
   font-weight: 300;
+  font-family: "Helvetica", sans-serif;
 `
 
 export const OptionsList = styled.li`
@@ -91,6 +92,7 @@ interface OptionProps {
 
 export const Option = styled.li<OptionProps>`
   margin-right: 10px;
+  font-family: "Helvetica", sans-serif;
   flex-basis: 22%;
   display: list-item;
   font-weight: 350;

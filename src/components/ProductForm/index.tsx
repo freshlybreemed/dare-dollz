@@ -113,7 +113,7 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3>{price}</h3>
+      <Option>{price}</Option>
       <OptionsWrapper>
         {options
           .filter(curr => curr.name !== "Title")
@@ -179,7 +179,7 @@ const ProductForm = ({ product }) => {
                 disabled={!available || adding}
                 onClick={handleAddToCart}
               >
-                {!available ? 'Sold Out' : adding ? "Added!" : "Add to Cart"}
+                {!available ? "Sold Out" : adding ? "Added!" : "Add to Cart"}
               </AddToCartButton>
             </AddToCartWrapper>
           </AddToCartContainer>

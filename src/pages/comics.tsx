@@ -15,7 +15,7 @@ const ComicsPage = () => {
     <>
       <SEO title="Comics" keywords={[`gatsby`, `application`, `react`]} />
       <MainWrapper>
-        <Navigation isVisable />
+        {/* <Navigation isVisable /> */}
 
         <ComicView />
       </MainWrapper>

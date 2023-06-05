@@ -65,13 +65,13 @@ const IndexPage = () => {
     <>
       <SEO title="Dare Dollz" keywords={[`dare dollz`, `daredollz`]} />
       <MainWrapper>
-        <Navigation isVisable />
+        {/* <Navigation isVisable /> */}
 
-        {/* <ProductGrid /> */}
-        <ComingSoon>
+        <ProductGrid />
+        {/* <ComingSoon>
           Coming Soon
           <Img fluid={dollz.childImageSharp.fluid} />
-        </ComingSoon>
+        </ComingSoon> */}
         <Subscribe text="Be the first to know" />
       </MainWrapper>
     </>

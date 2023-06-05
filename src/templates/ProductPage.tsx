@@ -14,6 +14,7 @@ import {
   GridRight,
   PhotoGallery
 } from "./styles"
+import Navigation from "../components/Navigation"
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
@@ -27,36 +28,31 @@ const ProductPage = ({ data }) => {
       <Container>
         <TwoColumnGrid>
           <GridLeft>
-          {product.images.map((image,ind) =>  {
-              console.log('bro',image)
+            {product.images.map((image, ind) => {
+              console.log("bro", image)
               return (
                 // <Img fluid={image.localFile.childImageSharp.fluid} />
                 <Img
                   fluid={image.localFile.childImageSharp.fluid}
                   // alt={product.title}
-                  />
-                )
-              })}
-          <PhotoRow>
-            <PhotoGallery>
-
-            {product.images.map((image,ind) =>  {
-              console.log('bro',image)
-              return (
-                <Img fluid={image.localFile.childImageSharp.fluid} />
-                )
-              })}
+                />
+              )
+            })}
+            <PhotoRow>
+              <PhotoGallery>
+                {product.images.map((image, ind) => {
+                  console.log("bro", image)
+                  return <Img fluid={image.localFile.childImageSharp.fluid} />
+                })}
               </PhotoGallery>
-          </PhotoRow>
-
+            </PhotoRow>
           </GridLeft>
           <GridRight>
-          <ProductTitle>{product.title}</ProductTitle>
-          <ProductDescription
-            dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-          />
-          <ProductForm product={product} />
-
+            <ProductTitle>{product.title}</ProductTitle>
+            <ProductDescription
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            />
+            <ProductForm product={product} />
           </GridRight>
         </TwoColumnGrid>
       </Container>

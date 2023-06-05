@@ -93,6 +93,6 @@ export const ProductTitle = styled.h1`
 
 export const ProductDescription = styled.div`
   margin-top: 40px;
-  font-family: "Gunterz", "Helvetica", sans-serif;
+  font-family: "Helvetica", sans-serif;
   font-weight: 300;
 `

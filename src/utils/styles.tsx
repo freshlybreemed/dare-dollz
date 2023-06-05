@@ -82,14 +82,14 @@ export const Input = styled.input`
   width: 40%;
   padding: 0.4rem;
   font-family: "Helvetica";
-  @media (max-width: ${breakpoints.m}px) {
-    width: 90%;
-  }
 `
 export const Email = styled.a`
-  /* font-size: 1.3rem; */
+  font-size: 1.5rem;
   line-height: 1.5;
   padding-top: 1rem;
+  @media (max-width: ${breakpoints.m}px) {
+    font-size: 1rem;
+  }
 
   /* display: block; */
   /* color: black; */

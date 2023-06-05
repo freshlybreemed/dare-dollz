@@ -247,7 +247,7 @@ const AboutPage = () => {
 
   const { creatorz, darius, videos, tiktok } = useStaticQuery(graphql`
     {
-      creatorz: file(relativePath: { in: "creatorz.jpg" }) {
+      creatorz: file(relativePath: { in: "IMG_5816.jpg" }) {
         id
         childImageSharp {
           fluid {
@@ -300,43 +300,59 @@ const AboutPage = () => {
             {/* <ImgHover fluid={darius.childImageSharp.fluid} /> */}
             {/* <Names>Darius Moreno</Names> */}
             <ParagraphHeader>
-              Darius and Dare Moreno are the creators of Dare Dollz. The
-              brother/sister duo grew up in Washington D.C. before moving to NYC
-              in their late teens.
+              Darius and Dare Moreno are the creative duo behind Dare Dollz. The
+              twin siblings grew up in Washignton D.C. before moving to New York
+              City in their late teens.
             </ParagraphHeader>
           </GridRight>
         </TwoColumnGrid>
         <Paragraph>
-          They attended performing arts schools such as the Ellington School of
-          the Arts in D.C., studying fine art, writing, and theater. Outside of
-          school, the Moreno's spent most of their time creating. Whether it was
-          building homes made up of shoeboxes for their toys or creating comic
-          books with their friends, it was no surprise they would grow to become
-          sought after creators.{" "}
+          Darius earned a degree in illustration at Parsons The New School of
+          Design and in his junior year illustrated the cover of grammy
+          nominated album “At What Cost” by Goldlink which catapulted his career
+          as a sought after illustrator. What sets Moreno’s work apart is his
+          profound ability to infuse his artwork with the essence of black and
+          Latino culture, reflecting his own experiences and heritage. His
+          exceptional illustrations have graced the covers of renowned
+          publications like Essence Magazine, where he skillfully captures the
+          beauty of these communities. His work not only celebrates the rich
+          tapestry of black and Latino culture but also challenges societal
+          norms and stereotypes, paving the way for greater inclusivity and
+          understanding.Through his art, Darius has become a powerful voice
+          within the queer and Afro-Latino communities, using his platform to
+          inspire and uplift others.
         </Paragraph>
         <Paragraph>
-          Darius, the youngest twin, illustrated the 2012 Christmas card for the
-          Obamas before graduating high school. He then majored in illustration
-          at The New School of Design, wherein his Junior year, he painted the
-          cover of Goldlink's grammy nominated album At What Cost.{" "}
+          Dare, on the other hand, embarked on a different artistic path, while
+          studying theatre at Penn State she took creative writing courses where
+          she discovered her knack for storytelling. When she relocated to New
+          York in 2015, Dare ventured into the world of food and travel vlogging
+          (video blogging), creating a captivating web series titled "A Girl's
+          Gotta Eat!" The series brought women from various industries together
+          to discuss their careers while trying out culinary delights around the
+          city. Her vlog's success led her to an exploration of food in
+          countries like Japan, Taiwan, and South Korea, broadening her
+          professional connections and enriching her creative repertoire. Dare
+          continues to use her platform to connect women in business, especially
+          of color, all over the world with one another, building a community
+          for support and guidance.
         </Paragraph>
         <Paragraph>
-          Dare, however, was not always a visual artist. She majored in theater
-          and minored in writing at Penn state. When she moved to New York in
-          2015, she became a food vlogger (video blogger), creating a popular
-          web series titled A Girl's Gotta Eat!. The vlog landed Moreno in
-          multiple publications such as N.Y., Vice, and Office magazine. In
-          addition, the exposure led to her filming episodes in various
-          countries like Japan, Taiwan, and South Korea.{" "}
+          In the summer of 2018, during a visit to their grandmother, a
+          porcelain doll collector, the twins were struck by inspiration.
+          Drawing from their experience in sculpting and sewing, they embarked
+          on an endeavor to create their own line of dolls. The result was the
+          birth of Dare Dollz. Their dolls, known for their bold and fabulous
+          designs, became a sensation, attracting attention from big companies
+          like Puma, who collaborated with Dare Dollz in Spring 2022.
         </Paragraph>
         <Paragraph>
-          In the summer of 2018, while visiting their grandmother, a porcelain
-          doll collector, the twins got the idea to create their own dolls. They
-          already had sculpting and sewing experience and used it to invent the
-          flashy, bold, and fabulous characters now known as the Dare Dollz.
-          Darius and Dare are now based out of Los Angeles, where they produce
-          dolls, comics, claymation, and other creative projects in their home
-          studio.
+          Today, Darius and Dare are based in Los Angeles, where they have
+          established their own home studio. From this artistic haven, they
+          continue to push boundaries and explore new realms of creativity. In
+          addition to their beloved Dare Dollz, they delve into a variety of
+          artistic endeavors, including comics, claymation, and other
+          captivating projects.
         </Paragraph>
         {/* <Subscribe /> */}
         <Paragraph>
@@ -352,10 +368,10 @@ const AboutPage = () => {
           <Header>Recent Work:</Header>
         </CreativeWork>
         <Grid>
-          {videos.edges.map(curr => {
+          {videos.edges.reverse().map(curr => {
             return (
               <Product>
-                <VideoLink to={curr.node.url}>
+                <VideoLink target="_blank" to={curr.node.url}>
                   <Img fluid={curr.node.thumbnail.fluid} />
                   <Title>{curr.node.title}</Title>
                 </VideoLink>
@@ -410,22 +426,7 @@ const AboutPage = () => {
                 <path d="M8 0C5.827 0 5.555.01 4.702.048 3.85.088 3.27.222 2.76.42c-.526.204-.973.478-1.417.923-.445.444-.72.89-.923 1.417-.198.51-.333 1.09-.372 1.942C.008 5.555 0 5.827 0 8s.01 2.445.048 3.298c.04.852.174 1.433.372 1.942.204.526.478.973.923 1.417.444.445.89.72 1.417.923.51.198 1.09.333 1.942.372.853.04 1.125.048 3.298.048s2.445-.01 3.298-.048c.852-.04 1.433-.174 1.942-.372.526-.204.973-.478 1.417-.923.445-.444.72-.89.923-1.417.198-.51.333-1.09.372-1.942.04-.853.048-1.125.048-3.298s-.01-2.445-.048-3.298c-.04-.852-.174-1.433-.372-1.942-.204-.526-.478-.973-.923-1.417-.444-.445-.89-.72-1.417-.923-.51-.198-1.09-.333-1.942-.372C10.445.008 10.173 0 8 0zm0 1.44c2.136 0 2.39.01 3.233.048.78.036 1.203.166 1.485.276.374.145.64.318.92.598.28.28.453.546.598.92.11.282.24.705.276 1.485.038.844.047 1.097.047 3.233s-.01 2.39-.048 3.233c-.036.78-.166 1.203-.276 1.485-.145.374-.318.64-.598.92-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.844.038-1.097.047-3.233.047s-2.39-.01-3.233-.048c-.78-.036-1.203-.166-1.485-.276-.374-.145-.64-.318-.92-.598-.28-.28-.453-.546-.598-.92-.11-.282-.24-.705-.276-1.485C1.45 10.39 1.44 10.136 1.44 8s.01-2.39.048-3.233c.036-.78.166-1.203.276-1.485.145-.374.318-.64.598-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276C5.61 1.45 5.864 1.44 8 1.44zm0 2.452c-2.27 0-4.108 1.84-4.108 4.108 0 2.27 1.84 4.108 4.108 4.108 2.27 0 4.108-1.84 4.108-4.108 0-2.27-1.84-4.108-4.108-4.108zm0 6.775c-1.473 0-2.667-1.194-2.667-2.667 0-1.473 1.194-2.667 2.667-2.667 1.473 0 2.667 1.194 2.667 2.667 0 1.473-1.194 2.667-2.667 2.667zm5.23-6.937c0 .53-.43.96-.96.96s-.96-.43-.96-.96.43-.96.96-.96.96.43.96.96z" />
               </svg>
             </Social>
-            <Social
-              target="_blank"
-              href="https://www.youtube.com/channel/UCn1en9e5r3z6q3DWe9T0oFA"
-            >
-              <svg
-                fill="currentColor"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                stroke-linejoin="round"
-                stroke-miterlimit="1.414"
-              >
-                <path d="M0 7.345c0-1.294.16-2.59.16-2.59s.156-1.1.636-1.587c.608-.637 1.408-.617 1.764-.684C3.84 2.36 8 2.324 8 2.324s3.362.004 5.6.166c.314.038.996.04 1.604.678.48.486.636 1.588.636 1.588S16 6.05 16 7.346v1.258c0 1.296-.16 2.59-.16 2.59s-.156 1.102-.636 1.588c-.608.638-1.29.64-1.604.678-2.238.162-5.6.166-5.6.166s-4.16-.037-5.44-.16c-.356-.067-1.156-.047-1.764-.684-.48-.487-.636-1.587-.636-1.587S0 9.9 0 8.605v-1.26zm6.348 2.73V5.58l4.323 2.255-4.32 2.24h-.002z" />
-              </svg>
-            </Social>
+
             <Social target="_blank" href="https://vm.tiktok.com/TTPdCbLHf2/">
               <Image fluid={tiktok.childImageSharp.fluid} />
             </Social>
@@ -447,12 +448,6 @@ const AboutPage = () => {
             </Social>
           </SocialsRow>
         </CreativeWork>
-        <IFrame
-          src="https://www.youtube.com/embed/8InS6y58Bdk"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></IFrame>
       </Container>
       <SEO
         title="About"

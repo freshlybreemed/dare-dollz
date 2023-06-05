@@ -78,9 +78,18 @@ const IndexPage = () => {
     doll5,
     doll6,
     logo,
+    bigDoll,
     banner
   } = useStaticQuery(graphql`
     query {
+      bigDoll: file(relativePath: { in: "IMG_5785-2.jpg" }) {
+        id
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       doll5: file(relativePath: { in: "dollstand.jpeg" }) {
         id
         childImageSharp {
@@ -140,11 +149,7 @@ const IndexPage = () => {
         <MainButton href="/home">Enter</MainButton>
 
         <ImgHover
-          fluid={banner.childImageSharp.fluid}
-          // alt={handle}
-        />
-        <ImgHover
-          fluid={banner.childImageSharp.fluid}
+          fluid={bigDoll.childImageSharp.fluid}
           // alt={handle}
         />
       </Wrapper>
