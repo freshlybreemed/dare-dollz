@@ -67,11 +67,11 @@ const IndexPage = () => {
       <MainWrapper>
         <Navigation isVisable />
 
-        {/* <ProductGrid /> */}
-        <ComingSoon>
+        <ProductGrid />
+        {/* <ComingSoon>
           Coming Soon
           <Img fluid={dollz.childImageSharp.fluid} />
-        </ComingSoon>
+        </ComingSoon> */}
         <Subscribe text="Be the first to know" />
       </MainWrapper>
     </>

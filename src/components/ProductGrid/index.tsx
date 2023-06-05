@@ -6,9 +6,10 @@ import { Wrapper, Grid, Product, Title, PriceTag } from "./styles"
 import { ImgHover } from "../..//utils/styles"
 
 const ProductGrid = () => {
-  const {
-    store: { checkout }
-  } = useContext(StoreContext)
+  // const {
+  //   store: { checkout }
+  // } = useContext(StoreContext)
+
   const [highlightedProduct, setHighlightedProduct] = useState("")
   const { allShopifyProduct } = useStaticQuery(
     graphql`
@@ -40,18 +41,18 @@ const ProductGrid = () => {
       }
     `
   )
-
-  const getPrice = price =>
-    Intl.NumberFormat(undefined, {
-      currency: checkout.currencyCode ? checkout.currencyCode : "USD",
-      minimumFractionDigits: 2,
-      style: "currency"
-    }).format(parseFloat(price ? price : 0))
+  console.log("br", useContext(StoreContext), allShopifyProduct)
+  // const getPrice = price =>
+  //   Intl.NumberFormat(undefined, {
+  //     currency: checkout.currencyCode ? checkout.currencyCode : "USD",
+  //     minimumFractionDigits: 2,
+  //     style: "currency"
+  //   }).format(parseFloat(price ? price : 0))
 
   return (
     <Wrapper>
       <Grid>
-        {[].length ? (
+        {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
             ({
               node: {
