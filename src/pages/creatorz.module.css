@@ -13,6 +13,7 @@
   @media (max-width: 576px) {
     display: block;
   }
+  margin-bottom: 2rem;
 }
 
 .gunnerz {
@@ -30,6 +31,10 @@
 }
 .gridRight {
   grid-area: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(140deg, #1c24e9, #9acd32);
 }
 .paddingBottomAndTop {
   padding-bottom: 2rem;
@@ -74,7 +79,6 @@
   margin-right: 2rem;
 }
 .coloredBox {
-  background: linear-gradient(140deg, #1c24e9, #9acd32);
   font-size: 1.5rem;
   line-height: 1.5;
   text-transform: uppercase;
@@ -84,9 +88,12 @@
   padding: 2.5rem;
 }
 
+.babyPadding {
+  margin-top: 1rem;
+}
 .paragraph {
   font-size: 1.1rem;
-  line-height: 1.5;
+  line-height: 1.75;
   padding-top: 1rem;
   font-family: "Gunterz-Medium";
 }
