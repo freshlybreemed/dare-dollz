@@ -1,0 +1,127 @@
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  padding-top: 3rem;
+}
+
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 2rem 1fr;
+  grid-template-rows: 1auto;
+  grid-template-areas: "left . right";
+
+  @media (max-width: 576px) {
+    display: block;
+  }
+}
+
+.gunnerz {
+  font-family: "Gunterz-Medium";
+  padding-top: 0.5rem;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+  margin-top: 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.gridLeft {
+  grid-area: left;
+}
+.gridRight {
+  grid-area: right;
+}
+.paddingBottomAndTop {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.client {
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: black;
+  display: inline-block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  cursor: default;
+
+  &:hover {
+    transition: color 0.15s ease-in;
+    color: #ff4136;
+  }
+  &:active {
+    transition: color 0.15s ease-in;
+  }
+}
+.clientList {
+  margin-top: 3rem;
+  width: 100%;
+  font-family: "Gunterz-Medium";
+}
+
+.socialsRow {
+  text-align: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: 2rem;
+}
+.socials {
+  display: inline-block;
+  color: black;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 2rem;
+}
+.coloredBox {
+  background: linear-gradient(140deg, #1c24e9, #9acd32);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+  font-family: "Gunterz-Medium";
+  padding: 2.5rem;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding-top: 1rem;
+  font-family: "Gunterz-Medium";
+}
+.subHeader {
+  font-size: 1.4rem;
+  font-weight: 400;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: black;
+  font-family: "Gunterz-Medium";
+  text-transform: uppercase;
+  line-height: 1.15;
+  padding-bottom: 0.5rem;
+  border-bottom-color: linear-gradient(140deg, #1c24e9, #9acd32);
+  border-bottom: solid;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+    /* margin-bottom: 1rem; */
+    font-size: 1.1rem;
+  }
+}
+
+.gridPosts {
+  padding-top: 1rem;
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.posts {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}

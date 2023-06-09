@@ -1,64 +1,47 @@
 {
-  "name": "dare-dollz",
-  "private": false,
-  "description": "Dare Dollz Offcial Store",
-  "version": "0.1.0",
-  "author": "Alexander Hörl <alexander.horl2@live.de>",
-  "engines": {
-    "node": "16.x" 
-  },
-  "dependencies": {
-    "@emotion/core": "^10.0.22",
-    "@emotion/react": "^11.1.1",
-    "@emotion/styled": "^10.0.22",
-    "classnames": "^2.2.6",
-    "gatsby": "^2.17.4",
-    "gatsby-image": "^2.2.29",
-    "gatsby-plugin-google-analytics": "^2.0.13",
-    "gatsby-plugin-layout": "^1.0.11",
-    "gatsby-plugin-mailchimp": "^5.2.2",
-    "gatsby-plugin-offline": "^3.0.16",
-    "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-root-import": "^2.0.5",
-    "gatsby-plugin-sharp": "^2.2.32",
-    "gatsby-source-contentful": "^4.1.0",
-    "gatsby-source-filesystem": "^2.1.33",
-    "gatsby-source-shopify": "^3.0.24",
-    "gatsby-transformer-sharp": "^2.3.0",
-    "isomorphic-fetch": "^3.0.0",
-    "js-yaml": "^3.13.1",
-    "lodash": "^4.17.19",
-    "prop-types": "^15.7.2",
-    "querystringify": "^2.0.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-helmet": "^5.2.1",
-    "set-value": "^2.0.1",
-    "shopify-buy": "^2.8.0"
-  },
+  "name": "gatsby-starter-shopify",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Gatsby starter using the latest Shopify plugin showcasing a store with product overview, individual product pages, and a cart.",
+  "author": "LekoArts <hello@lekoarts.de>",
+  "license": "0BSD",
   "keywords": [
     "gatsby",
     "shopify",
+    "starter",
     "ecommerce",
-    "store",
-    "shop"
+    "e-commerce"
   ],
-  "license": "MIT",
   "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
     "build": "gatsby build",
-    "dev": "gatsby develop",
-    "start": "npm run dev",
-    "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
-  "devDependencies": {
-    "prettier": "^1.15.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "dependencies": {
+    "@sindresorhus/slugify": "^1.1.0",
+    "debounce": "^1.2.1",
+    "dotenv": "^10.0.0",
+    "gatsby": "^5.0.0",
+    "gatsby-plugin-gatsby-cloud": "^5.0.0",
+    "gatsby-plugin-google-analytics": "^5.0.0",
+    "gatsby-plugin-image": "^3.0.0",
+    "gatsby-plugin-mailchimp": "^5.2.2",
+    "gatsby-plugin-sharp": "^5.0.0",
+    "gatsby-plugin-sitemap": "^6.0.0",
+    "gatsby-source-contentful": "^8.10.0",
+    "gatsby-source-filesystem": "^5.0.0",
+    "gatsby-source-shopify": "^6.0.0",
+    "gatsby-transformer-sharp": "^5.0.0",
+    "isomorphic-fetch": "^3.0.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
+    "query-string": "^7.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.1.0",
+    "shopify-buy": "^2.11.0",
+    "urql": "^2.0.2"
   }
 }

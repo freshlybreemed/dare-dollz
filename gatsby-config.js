@@ -1,75 +1,58 @@
 const path = require("path")
-
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
 
 module.exports = {
   siteMetadata: {
-    title: `Dare Dollz`,
-    description: `Created by @dariusxmoreno & @daremoreno`,
-    author: `@freshlybreemed`
+    siteTitle: "Dare Dollz",
+    siteTitleDefault: "Dare Dollz by @dariusxmoreno and @daremoreno",
+    siteUrl: "https://daredollz.com",
+    siteDescription:
+      " A Doll company and clothing line created by Darius and Dare Moreno",
+    siteImage: "/newlogo.png",
+    twitter: "@gatsbyjs",
+  },
+  flags: {
+    FAST_DEV: true,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`
-      }
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-layout`,
-
-    {
-      resolve: `gatsby-source-shopify`,
-      options: {
-        // The domain name of your Shopify shop. This is required.
-        // Example: 'gatsby-source-shopify-test-shop' if your Shopify address is
-        // 'gatsby-source-shopify-test-shop.myshopify.com'.
-        shopName: process.env.GATSBY_SHOP_NAME,
-
-        // An API access token to your Shopify shop. This is required.
-        // You can generate an access token in the "Manage private apps" section
-        // of your shop's Apps settings. In the Storefront API section, be sure
-        // to select "Allow this app to access your storefront data using the
-        // Storefront API".
-        // See: https://help.shopify.com/api/custom-storefronts/storefront-api/getting-started#authentication
-        accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
-
-        // Set verbose to true to display a verbose output on `npm run develop`
-        // or `npm run build`. This prints which nodes are being fetched and how
-        // much time was required to fetch and process the data.
-        // Defaults to true.
-        verbose: true
-      }
-    },
-    {
-      resolve: "gatsby-plugin-root-import",
-      options: {
-        "~": path.join(__dirname, "src/")
-      }
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-134421805-1",
-        anonymize: true,
-        respectDNT: true
-      }
-    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `ahava7ytbjix`,
         // Learn about environment variables: https://gatsby.dev/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
-      }
-    }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
-  ]
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: "gatsby-source-shopify",
+      options: {
+        storeUrl: `${process.env.GATSBY_SHOP_NAME}.myshopify.com`,
+        password: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
+        // shopifyConnections: ["collections"],
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://daredollz.us14.list-manage.com/subscribe/post?u=fc6f1676f1d8445f434bc6d5f&amp;id=e9dc7ef6d7&amp;f_id=009991e0f0", // string; add your MC list endpoint here; see instructions below
+        timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+    },
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-gatsby-cloud",
+    // Add your Google Analytics ID to the .env file to enable
+    // Otherwise, this plugin can be removed
+    process.env.GOOGLE_ANALYTICS_ID && {
+      resolve: "gatsby-plugin-google-analytics",
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+      },
+    },
+  ].filter(Boolean),
 }
