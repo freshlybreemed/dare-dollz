@@ -1,0 +1,74 @@
+.navLink {
+  background-color: var(--primary);
+  border-bottom-right-radius: var(--radius-sm);
+  clip: rect(1px, 1px, 1px, 1px);
+  color: var(--text-color-inverted);
+  font-size: var(--text-sm);
+  font-weight: var(--medium);
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  padding: var(--space-lg);
+  position: absolute;
+  top: 0;
+}
+.mainButton {
+  text-align: center;
+  padding: 0.5rem;
+  font-family: "Gunterz-Medium";
+
+  border-color: black;
+  &:hover {
+    background-color: #01ff8f;
+  }
+  font-size: 1.5rem;
+  background-color: #9fedff;
+  border-width: 0.08em;
+  border-style: solid;
+  display: inline-block;
+  @media (max-width: 768px) {
+    display: block;
+    width: 93%;
+    font-size: 1.5rem;
+  }
+}
+.input {
+  padding: 0.4rem;
+  font-family: "Gunterz-Medium";
+  display: inline-block;
+  flex-grow: 1;
+  font-size: 1rem;
+
+  @media (max-width: 768px) {
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 93%;
+  }
+}
+.flexDiv {
+  display: flex;
+  margin-top: 1rem;
+  @media (max-width: 768px) {
+    display: block;
+    /* width: 94%; */
+    font-size: 1.5rem;
+  }
+}
+.coloredBox {
+  background: linear-gradient(140deg, #1c24e9, #9acd32);
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 0;
+  font-family: "Gunterz-Medium";
+  padding: 2.5rem;
+}
+.navLink:focus {
+  clip: auto;
+  height: auto;
+  width: auto;
+  z-index: 20;
+}
