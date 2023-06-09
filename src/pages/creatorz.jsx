@@ -16,6 +16,7 @@ import {
   clientList,
   socialsRow,
   socials,
+  babyPadding,
 } from "./creatorz.module.css"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import { useStaticQuery, graphql } from "gatsby"
@@ -50,61 +51,69 @@ export default function IndexPage({ data }) {
             <StaticImage atl="" src={"../images/IMG_5816.jpg"} />
           </div>
           <div className={gridRight}>
-            <p className={coloredBox}>
+            <div className={coloredBox}>
               Darius and Dare Moreno are the creative duo behind Dare Dollz. The
               twin siblings grew up in Washignton D.C. before moving to New York
               City in their late teens.
+            </div>
+          </div>
+        </div>
+        <div className={paddingBottomAndTop}>
+          <span className={subHeader}>Bio</span>
+          <div className={babyPadding}>
+            <p className={paragraph}>
+              Darius earned a degree in illustration at Parsons The New School
+              of Design and in his junior year illustrated the cover of grammy
+              nominated album “At What Cost” by Goldlink which catapulted his
+              career as a sought after illustrator. What sets Moreno’s work
+              apart is his profound ability to infuse his artwork with the
+              essence of black and Latino culture, reflecting his own
+              experiences and heritage. His exceptional illustrations have
+              graced the covers of renowned publications like Essence Magazine,
+              where he skillfully captures the beauty of these communities. His
+              work not only celebrates the rich tapestry of black and Latino
+              culture but also challenges societal norms and stereotypes, paving
+              the way for greater inclusivity and understanding.Through his art,
+              Darius has become a powerful voice within the queer and
+              Afro-Latino communities, using his platform to inspire and uplift
+              others.
+            </p>
+            <p className={paragraph}>
+              Dare, on the other hand, embarked on a different artistic path,
+              while studying theatre at Penn State she took creative writing
+              courses where she discovered her knack for storytelling. When she
+              relocated to New York in 2015, Dare ventured into the world of
+              food and travel vlogging (video blogging), creating a captivating
+              web series titled "A Girl's Gotta Eat!" The series brought women
+              from various industries together to discuss their careers while
+              trying out culinary delights around the city. Her vlog's success
+              led her to an exploration of food in countries like Japan, Taiwan,
+              and South Korea, broadening her professional connections and
+              enriching her creative repertoire. Dare continues to use her
+              platform to connect women in business, especially of color, all
+              over the world with one another, building a community for support
+              and guidance.
+            </p>
+            <p className={paragraph}>
+              In the summer of 2018, during a visit to their grandmother, a
+              porcelain doll collector, the twins were struck by inspiration.
+              Drawing from their experience in sculpting and sewing, they
+              embarked on an endeavor to create their own line of dolls. The
+              result was the birth of Dare Dollz. Their dolls, known for their
+              bold and fabulous designs, became a sensation, attracting
+              attention from big companies like Puma, who collaborated with Dare
+              Dollz in Spring 2022.
+            </p>
+            <p className={paragraph}>
+              Today, Darius and Dare are based in Los Angeles, where they have
+              established their own home studio. From this artistic haven, they
+              continue to push boundaries and explore new realms of creativity.
+              In addition to their beloved Dare Dollz, they delve into a variety
+              of artistic endeavors, including comics, claymation, and other
+              captivating projects.
             </p>
           </div>
         </div>
-        <p className={paragraph}>
-          Darius earned a degree in illustration at Parsons The New School of
-          Design and in his junior year illustrated the cover of grammy
-          nominated album “At What Cost” by Goldlink which catapulted his career
-          as a sought after illustrator. What sets Moreno’s work apart is his
-          profound ability to infuse his artwork with the essence of black and
-          Latino culture, reflecting his own experiences and heritage. His
-          exceptional illustrations have graced the covers of renowned
-          publications like Essence Magazine, where he skillfully captures the
-          beauty of these communities. His work not only celebrates the rich
-          tapestry of black and Latino culture but also challenges societal
-          norms and stereotypes, paving the way for greater inclusivity and
-          understanding.Through his art, Darius has become a powerful voice
-          within the queer and Afro-Latino communities, using his platform to
-          inspire and uplift others.
-        </p>
-        <p className={paragraph}>
-          Dare, on the other hand, embarked on a different artistic path, while
-          studying theatre at Penn State she took creative writing courses where
-          she discovered her knack for storytelling. When she relocated to New
-          York in 2015, Dare ventured into the world of food and travel vlogging
-          (video blogging), creating a captivating web series titled "A Girl's
-          Gotta Eat!" The series brought women from various industries together
-          to discuss their careers while trying out culinary delights around the
-          city. Her vlog's success led her to an exploration of food in
-          countries like Japan, Taiwan, and South Korea, broadening her
-          professional connections and enriching her creative repertoire. Dare
-          continues to use her platform to connect women in business, especially
-          of color, all over the world with one another, building a community
-          for support and guidance.
-        </p>
-        <p className={paragraph}>
-          In the summer of 2018, during a visit to their grandmother, a
-          porcelain doll collector, the twins were struck by inspiration.
-          Drawing from their experience in sculpting and sewing, they embarked
-          on an endeavor to create their own line of dolls. The result was the
-          birth of Dare Dollz. Their dolls, known for their bold and fabulous
-          designs, became a sensation, attracting attention from big companies
-          like Puma, who collaborated with Dare Dollz in Spring 2022.
-        </p>
-        <p className={paragraph}>
-          Today, Darius and Dare are based in Los Angeles, where they have
-          established their own home studio. From this artistic haven, they
-          continue to push boundaries and explore new realms of creativity. In
-          addition to their beloved Dare Dollz, they delve into a variety of
-          artistic endeavors, including comics, claymation, and other
-          captivating projects.
-        </p>
         <p className={coloredBox}>
           For business/press inquires shoot us an email at{" "}
           <a href="mailto: daredollz95@gmail.com"> daredollz95@gmail.com</a>
@@ -112,7 +121,7 @@ export default function IndexPage({ data }) {
         <div className={paddingBottomAndTop}>
           <span className={subHeader}>Recent Work</span>
           <div className={gridPosts}>
-            {videos.edges.map((post) => {
+            {videos.edges.map(post => {
               console.log(post.node.url)
               return (
                 <div className={posts}>
@@ -125,6 +134,7 @@ export default function IndexPage({ data }) {
             })}
           </div>
         </div>
+        <span className={subHeader}>Press and Clients</span>
         <section className={clientList}>
           <a className={client}>Puma</a>
           <a className={client}>Vice</a>
